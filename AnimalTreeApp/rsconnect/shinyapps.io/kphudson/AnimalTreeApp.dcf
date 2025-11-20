@@ -1,0 +1,13 @@
+name: AnimalTreeApp
+title: AnimalTreeApp
+username: kphudson
+account: kphudson
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16037498
+bundleId: 11205091
+url: https://kphudson.shinyapps.io/AnimalTreeApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Photos/Chordata.jpg|Photos/Echinodermata.jpg|Photos/Hemichordata.jpg|Photos/Hexapoda.jpg|Photos/Nematoda.jpg

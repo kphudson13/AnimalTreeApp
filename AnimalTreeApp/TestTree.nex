@@ -1,0 +1,33 @@
+#NEXUS
+[R-package APE, Tue Nov 11 17:05:32 2025]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 10;
+	TAXLABELS
+		Ctenophora (genus in subkingdom SAR)
+		Chordata
+		Echinodermata
+		Hemichordata
+		Platyhelminthes
+		Mollusca
+		Arthropoda
+		Nematoda
+		Cnidaria
+		Porifera
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Ctenophora (genus in subkingdom SAR),
+		2	Chordata,
+		3	Echinodermata,
+		4	Hemichordata,
+		5	Platyhelminthes,
+		6	Mollusca,
+		7	Arthropoda,
+		8	Nematoda,
+		9	Cnidaria,
+		10	Porifera
+	;
+	TREE * UNTITLED = [&R] (1,(10,(9,((2,(3,4)Ambulacraria)Deuterostomia,((5,6)Lophotrochozoa,(7,8)Ecdysozoa)Protostomia))))Eukaryota;
+END;
