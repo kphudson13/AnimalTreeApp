@@ -1,22 +1,24 @@
-﻿Level,Clade,CommonName,Description
-Phylum,Ctenophora,Comb Jellies,Largest animals to use cilia
-Phylum,Porifera,Sponges,Aquatic simple animals. no true tissues
-Phylum,Cnidaria,Jelly fish and Anemonies ,Radial Symmetry. Blind gut
-Phylum,Platyhelminthes,Flatworms,Unsegmented. Blind gut
-Phylum,Nematoda,Nematodes,Ubiquitous in nature
-Phylum,Echinodermata,Starfish and Friends,
-Phylum,Arthropoda,Bugs and such,Jointed legs 
-Phylum,Hemichordata,Acorn worms,Weird
-Phylum,Chordata,Vertebrates and friends,Presence of a notochord. We are chordates.
-Phylum,Mollusca,Molluscs,Mantle and such
-Phylum,Brachiopoda,Brachiopods,The bivalves that aren't molluscs
-Phylum,Annelida,Segmented worms,Earthworms and friends
-Clade,Bilateria,Bilateral Animals,
-Clade,Deuterostomia,Deuterostomes,Anus developes before mouth
-Clade,Protostomia,Protostomes,Mouth developes before anus
-Clade,Nephrozoa,Nephrzoans,Excretory nephridia
-Subphylum,Hexapoda,Hexapods,Six legs
-Subphylum,Crustacea,Crustaceans,Crabs but also bugs
-Superphylum,Ecdysozoa,,Chitin based exoskeleton
-Subphylum,Chelicerata,Chelicerates,Spiders and Friends
-Class,Malacostrica,,Crabs and friends
+﻿Clade,Level,is.node,CommonName,Description
+Ctenophora,Phylum,Tip,Comb Jellies,Largest animals to use cilia
+Porifera,Phylum,Tip,Sponges,Aquatic simple animals. no true tissues
+Cnidaria,Phylum,Tip,Jelly fish and Anemonies ,Radial Symmetry. Blind gut
+Platyhelminthes,Phylum,Tip,Flatworms,Unsegmented. Blind gut
+Nematoda,Phylum,Tip,Nematodes,Ubiquitous in nature
+Echinodermata,Phylum,Tip,Starfish and Friends,
+Arthropoda,Phylum,Tip,Bugs and such,Jointed legs 
+Hemichordata,Phylum,Tip,Acorn worms,Weird
+Chordata,Phylum,Tip,Vertebrates and friends,Presence of a notochord. We are chordates.
+Mollusca,Phylum,Tip,Molluscs,Mantle and such
+Brachiopoda,Phylum,Tip,Brachiopods,The bivalves that aren't molluscs
+Annelida,Phylum,Tip,Segmented worms,Earthworms and friends
+Bilateria,Higher Clade,Node,Bilateral Animals,Left-right symmetry (sorta)
+Deuterostomia,Higher Clade,Node,Deuterostomes,Anus developes before mouth
+Protostomia,Higher Clade,Node,Protostomes,Mouth developes before anus
+Nephrozoa,Higher Clade,Node,Nephrzoans,Excretory nephridia
+Hexapoda,Subphylum,Tip,Hexapods,Six legs
+Crustacea,Subphylum,Tip,Crustaceans,Crabs but also bugs
+Ecdysozoa,Superphylum,Node,Ecdysozoans,Chitin based exoskeleton
+Chelicerata,Subphylum,Tip,Chelicerates,Spiders and Friends
+Malacostraca,Class,Tip,,Crabs and friends
+Spiralia,Higher Clade,node,Spiralians,Spiral cleavage
+Lophotrochoza,Higher Clade,Node,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore 

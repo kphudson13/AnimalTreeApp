@@ -1,5 +1,4 @@
 
-
 library(ape)
 library(shiny)
 library(ggplot2)
@@ -15,14 +14,14 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       h4("Info"),
-      verbatimTextOutput("tipDetails")
-    ),
+      uiOutput("tipPanel")
+    )
+    ,
     mainPanel(
       plotOutput("TreePlot", height = "600px", click = "plot_click")
     )
   )
 )
-
 
 # Define server logic
 server <- function(input, output) {
@@ -37,24 +36,40 @@ server <- function(input, output) {
     make_tree()
   })
   
-  # Display tip info on click
-  output$tipDetails <- renderPrint({
+  output$tipPanel <- renderUI({
     click <- input$plot_click
-    if (is.null(click)) return("Click a tip label to see details")
+    if (is.null(click)) return(tags$p("Click a tip label to see details"))
     
-    # Extract tree data from TreePlot object
     tree_data <- TreePlot$data
-    
-    # Find nearest tip
-    nearest <- nearPoints(tree_data, click, threshold = 50, maxpoints = 1)
-    if (nrow(nearest) == 0) return("No tip label detected")
+    nearest <- nearPoints(tree_data, click, xvar = "x", yvar = "y", threshold = 50, maxpoints = 1)
+    if (nrow(nearest) == 0) return(tags$p("No tip label detected"))
     
     label_clicked <- nearest$label
     info <- tip_info %>% filter(Clade == label_clicked)
     
-    if (nrow(info) == 0) return(cat(paste0("Label:", label_clicked, "\n", "No description available.")))
+    desc <- if (nrow(info) == 0) {
+      paste0("Label: ", label_clicked, "\nNo description available.")
+    } else {
+      paste0(info$Level, ": ", info$Clade, "\n", info$CommonName, "\n", info$Description)
+    }
     
-    cat(paste0(info$Level, ": ", info$Clade, "\n", info$CommonName, "\n", info$Description))
+    # Check file existence
+    exts <- c(".jpeg", ".jpg", ".png")
+    file_path <- NULL
+    for (ext in exts) {
+      candidate <- file.path("www", "Photos", paste0(label_clicked, ext))
+      if (file.exists(candidate)) {
+        file_path <- paste0("Photos/", label_clicked, ext)  # relative path for browser
+        break
+      }
+    }
+    
+    tagList(
+      tags$pre(desc),
+      if (!is.null(file_path)) {
+        tags$img(src = file_path, style = "width:100%; height:auto;")
+      }
+    )
   })
 }
 
