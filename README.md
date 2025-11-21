@@ -1,7 +1,6 @@
 **Animal Tree of Life**  
-      
-            \
-
+           \
+             \
               |
               |
              __
