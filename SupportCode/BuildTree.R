@@ -6,10 +6,9 @@ library(tidyverse)
 library(ggtree)
 
 # install.packages("BiocManager")
-# BiocManager::install("ggtree")
+# BiocManager::install("ggtree") # need these for ggtree 
 
-
-Descriptions <- read.csv("AnimalTreeApp/InvertDescriptions.csv")
+aDescriptions <- read.csv("AnimalTreeApp/InvertDescriptions.csv")
 
 taxa <- tnrs_match_names(Descriptions$Clade[Descriptions$Level == "Phylum" | 
                                               Descriptions$Level == "Subphylum" | 
