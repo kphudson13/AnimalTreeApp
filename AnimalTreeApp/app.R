@@ -38,7 +38,14 @@ server <- function(input, output) {
   
   output$tipPanel <- renderUI({
     click <- input$plot_click
-    if (is.null(click)) return(tags$p("Click a tip label to see details"))
+    if (is.null(click)) {
+      return(
+        tagList(tags$p("Click a tip label to see details"),
+                tags$img(src = "Photos/Metazoa.jpg", 
+                         style = "width:100%; height:auto;")
+        )
+      )
+    }
     
     tree_data <- TreePlot$data
     nearest <- nearPoints(tree_data, click, xvar = "x", yvar = "y", threshold = 50, maxpoints = 1)
