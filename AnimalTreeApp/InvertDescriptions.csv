@@ -1,24 +1,24 @@
-﻿Clade,Level,is.node,CommonName,Description
-Ctenophora,Phylum,Tip,Comb Jellies,Largest animals to use cilia
-Porifera,Phylum,Tip,Sponges,Aquatic simple animals. no true tissues
-Cnidaria,Phylum,Tip,Jelly fish and Anemonies ,Radial Symmetry. Blind gut
-Platyhelminthes,Phylum,Tip,Flatworms,Unsegmented. Blind gut
-Nematoda,Phylum,Tip,Nematodes,Ubiquitous in nature
-Echinodermata,Phylum,Tip,Starfish and Friends,
-Arthropoda,Phylum,Tip,Bugs and such,Jointed legs 
-Hemichordata,Phylum,Tip,Acorn worms,Weird
-Chordata,Phylum,Tip,Vertebrates and friends,Presence of a notochord. We are chordates.
-Mollusca,Phylum,Tip,Molluscs,Mantle and such
-Brachiopoda,Phylum,Tip,Brachiopods,The bivalves that aren't molluscs
-Annelida,Phylum,Tip,Segmented worms,Earthworms and friends
-Bilateria,Higher Clade,Node,Bilateral Animals,Left-right symmetry (sorta)
-Deuterostomia,Higher Clade,Node,Deuterostomes,Anus developes before mouth
-Protostomia,Higher Clade,Node,Protostomes,Mouth developes before anus
-Nephrozoa,Higher Clade,Node,Nephrzoans,Excretory nephridia
-Hexapoda,Subphylum,Tip,Hexapods,Six legs
-Crustacea,Subphylum,Tip,Crustaceans,Crabs but also bugs
-Ecdysozoa,Superphylum,Node,Ecdysozoans,Chitin based exoskeleton
-Chelicerata,Subphylum,Tip,Chelicerates,Spiders and Friends
-Malacostraca,Class,Tip,,Crabs and friends
-Spiralia,Higher Clade,node,Spiralians,Spiral cleavage
-Lophotrochoza,Higher Clade,Node,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore 
+﻿Clade,Level,is.node,CommonName,Description,PhotoLink
+Ctenophora,Phylum,Tip,Comb Jellies,Largest animals to use cilia,
+Porifera,Phylum,Tip,Sponges,Aquatic simple animals. no true tissues,https://www.pelajaran.co.id/ciri-ciri-struktur-reproduksi-klasifikasi-dan-peranan-porifera/
+Cnidaria,Phylum,Tip,Jelly fish and Anemonies ,Radial Symmetry. Blind gut,
+Platyhelminthes,Phylum,Tip,Flatworms,Unsegmented. Blind gut,
+Nematoda,Phylum,Tip,Nematodes,Ubiquitous in nature,
+Echinodermata,Phylum,Tip,Starfish and Friends,,https://en.wikipedia.org/wiki/Echinoderm
+Arthropoda,Phylum,Tip,Bugs and such,Jointed legs ,https://en.wikipedia.org/wiki/Arthropod
+Hemichordata,Phylum,Tip,Acorn worms,Weird,
+Chordata,Phylum,Tip,Vertebrates and friends,Presence of a notochord. We are chordates.,https://en.wikipedia.org/wiki/Chordate
+Mollusca,Phylum,Tip,Molluscs,Mantle and such,https://en.wikipedia.org/wiki/Mollusca
+Brachiopoda,Phylum,Tip,Brachiopods,The bivalves that aren't molluscs,
+Annelida,Phylum,Tip,Segmented worms,Earthworms and friends,https://en.wikipedia.org/wiki/Annelid
+Bilateria,Higher Clade,Node,Bilateral Animals,Left-right symmetry (sorta),
+Deuterostomia,Higher Clade,Node,Deuterostomes,Anus developes before mouth,
+Protostomia,Higher Clade,Node,Protostomes,Mouth developes before anus,
+Nephrozoa,Higher Clade,Node,Nephrzoans,Excretory nephridia,
+Hexapoda,Subphylum,Tip,Hexapods,Six legs,https://en.wikipedia.org/wiki/Hexapoda
+Crustacea,Subphylum,Tip,Crustaceans,Crabs but also bugs,
+Ecdysozoa,Superphylum,Node,Ecdysozoans,Chitin based exoskeleton,
+Chelicerata,Subphylum,Tip,Chelicerates,Spiders and Friends,
+Malacostraca,Class,Tip,,Crabs and friends,
+Spiralia,Higher Clade,node,Spiralians,Spiral cleavage,
+Lophotrochoza,Higher Clade,Node,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore ,
