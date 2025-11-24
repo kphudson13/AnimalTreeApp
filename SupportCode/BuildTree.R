@@ -11,11 +11,13 @@ library(ggtree)
 
 Descriptions <- read.csv("AnimalTreeApp/InvertDescriptions.csv") # call in the groups we cant
 
+
 taxa <- tnrs_match_names(Descriptions$Clade[
-  Descriptions$Level == "Superphylum" |
+  (Descriptions$Level == "Superphylum" |
     Descriptions$Level == "Phylum" | 
     Descriptions$Level == "Subphylum" | 
-    Descriptions$Level == "Class" ], 
+    Descriptions$Level == "Class") & 
+    Descriptions$Clade != "Medusozoa"], # medusozoa gives errors, will in later 
   context_name = "Animals") # Pull taxa
 
 tree <- tol_induced_subtree(ott_ids = taxa$ott_id) # Build Tree
@@ -29,8 +31,10 @@ tree$node.label[tree$node.label == "mrcaott42ott49"] <- "Nephrozoa "
 tree$node.label[tree$node.label == "Lophotrochozoa ott155737"] <- "Spiralia "
 tree$node.label[tree$node.label == "mrcaott42ott658"] <- "Chordata "
 tree$node.label[tree$node.label == "mrcaott56ott519"] <- "Lophotrochozoa "
+tree$node.label[tree$node.label == "mrcaott431ott3524"] <- "Medusozoa "
 tree$tip.label[tree$tip.label == "Ctenophora (phylum ncbi:10197)"] <- "Ctenophora"
 tree$tip.label[tree$tip.label == "Vertebrata (subphylum in Deuterostomia)"] <- "Vertebrata"
+tree$tip.label[tree$tip.label == "mrcaott150ott7012"] <- "Hexacorallia"
 
 #remove useless node labels
 tree$node.label <- ifelse(grepl(" ", tree$node.label), str_extract(tree$node.label, "^[^ ]+"), "")

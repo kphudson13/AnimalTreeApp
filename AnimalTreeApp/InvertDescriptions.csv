@@ -26,3 +26,11 @@ Nemertea,Phylum,Ribbon worms or Proboscis worms ,"Unsegmented, usually predators
 Tunicata,Subphylum,Tunicates,Only have a notocord in the larval stage. Previously called urochordates,https://en.wikipedia.org/wiki/Tunicate
 Vertebrata,Subphylum,Vertebrates and friends,"Vertical column, we are vertebrates",https://en.wikipedia.org/wiki/Vertebrate
 Metazoa,Kingdom,Animals,"Animals are motile in at least one stage, form from a blastula during embryonic development, have collagen, are heterotrophic",https://en.wikipedia.org/wiki/Invertebrate
+Anthozoa,Subphylum,Anthozoans,"Sea anemones, stony corals, soft corrals and sea pens. Generally sessile as adults. ",https://en.wikipedia.org/wiki/Anthozoa
+Medusozoa,Subphylum,Usually jellyfish,Have a true medusa stage,https://en.wikipedia.org/wiki/Medusozoa
+Insecta,Class,Insects,"Six legs, three part body plan (head, thoraz, abdomen), antennae. Most diverse group of animals.",https://en.wikipedia.org/wiki/Insect
+Collembola,Class,Springtails,"Six legs but wingless, bounce around. ",https://insightpestnorthwest.com/understanding-springtails-the-tiny-pests-that-can-cause-big-problems/
+Hydrozoa,Class,Hydrozoans,"Often collonial, some freshwater. Medusae have a velum.",https://alchetron.com/Hydrozoa
+Scyphozoa,Class,True jellyfish,Medusae have no velum. ,https://en.wikipedia.org/wiki/Scyphozoa
+Hexacorallia,Class,Hexacorals,Six fold symmetry,https://en.wikipedia.org/wiki/Hexacorallia
+Octocorallia,Class,Octocorals,Eight fold symmetry,https://en.wikipedia.org/wiki/Octocorallia
