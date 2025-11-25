@@ -22,12 +22,12 @@ ui <- fluidPage(
   # Intro section always visible
   fluidRow(
     column(
-      width = 3,  # text takes most of the row
+      width = 3,  # text takes less of the row
       h2("Metazoa Tree of Life"),  # use h2 for a nice title size
       h4("Click a label to see details")
     ),
     column(
-      width = 9,  # smaller column for the image
+      width = 9,  # larger column for the image
       tags$img(
         src = "Photos/Intro.png",
         style = "width:100%; height:auto;;", # shrink image
@@ -128,12 +128,11 @@ server <- function(input, output, session) {
     desc <- if (nrow(info) == 0) {
       paste0("Label: ", label_clicked, "\nNo description available.")
     } else {
-      paste0(info$Level, ": ", info$Clade, "\n",
-             info$CommonName, "\n", info$Description)
+      paste0(info$CommonName, "\n", info$Description)
     }
     
     # Image fallback logic
-    exts <- c(".jpeg", ".jpg", ".png")
+    exts <- c(".jpeg", ".jpg", ".png") 
     file_path <- NULL
     for (ext in exts) {
       candidate <- file.path("www", "Photos", paste0(label_clicked, ext))
@@ -141,13 +140,13 @@ server <- function(input, output, session) {
         file_path <- paste0("Photos/", label_clicked, ext)
         break
       }
-    }
+    } # store the file path of the photo for rendering later
     showModal(modalDialog(
       title = div(
         style = "display:flex; justify-content:space-between; align-items:center; width:100%;",
         
         # Left side: title text
-        span(paste("Details for", label_clicked)),
+        span(paste0(info$Level, ": ", info$Clade)),
         
         # Right side: close button
         tags$button(
@@ -157,23 +156,24 @@ server <- function(input, output, session) {
           `aria-label` = "Close",
           style = "margin-left:20px;"  # small spacing so it doesn't touch the title
         )
-      ),
+      ), # before this fits in title
       
       tagList(
-        tags$pre(style = "white-space: pre-wrap;", desc),
+        tags$pre(style = "white-space: pre-wrap;", desc
+                 ), # description
         if (!is.null(file_path)) {
           tags$img(src = file_path,
                    style = "width:100%; height:auto;",
-                   alt = paste("Image of", label_clicked))
-        },
+                   alt = paste("Image of", label_clicked)) # fallback text
+        }, # render image in www
         if (nrow(info) > 0 && !is.na(info$ImageLink)) {
-          tags$p(tags$a("More info", href = info$ImageLink, target = "_blank"))
-        }
-      ),
+          tags$p(info$ImageLink, style = "font-size:0.8rem") 
+        } # image link, smaller font
+      ), 
       
       easyClose = TRUE,
       footer = NULL
-    ))
+    )) 
     
   })
 }
