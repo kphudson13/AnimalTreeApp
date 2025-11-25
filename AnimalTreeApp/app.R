@@ -19,15 +19,32 @@ ui <- fluidPage(
     ")) # to fix issue where nav bar overlapped with main panel 
   ),
   theme = bs_theme(preset = "morph"),
-  titlePanel("Metazoa Tree of Life"), #the title
-  sidebarLayout(
-    sidebarPanel(
-      h4("Info"),
-      uiOutput("tipPanel")),
-    mainPanel(
+  # Intro section always visible
+  fluidRow(
+    column(
+      width = 3,  # text takes most of the row
+      h2("Metazoa Tree of Life"),  # use h2 for a nice title size
+      h4("Click a label to see details")
+    ),
+    column(
+      width = 9,  # smaller column for the image
+      tags$img(
+        src = "Photos/Intro.png",
+        style = "width:100%; height:auto;;", # shrink image
+        alt = "Metazoa overview image"
+      )
+    )
+  ),
+  
+  
+  # Main panel now full width
+  fluidRow(
+    column(
+      width = 12,
       plotOutput("TreePlot", height = "600px", click = "plot_click")
     )
   ),
+  
   # Footer navbar
   tags$head(
     tags$style(HTML("
@@ -88,33 +105,22 @@ ui <- fluidPage(
   )
 )
 
-# Define server logic
-server <- function(input, output) {
+server <- function(input, output, session) {
   
-  # Reactive tree object
   make_tree <- reactive({
     TreePlot + ggplot2::xlim(NA, 11)
   })
   
-  # Render tree plot
   output$TreePlot <- renderPlot({
     make_tree()
   })
   
-  output$tipPanel <- renderUI({
-    click <- input$plot_click
-    if (is.null(click)) {
-      return(
-        tagList(tags$p("Click a tip label to see details"),
-                tags$img(src = "Photos/Metazoa.jpg", 
-                         style = "width:100%; height:auto;") 
-        )
-      )
-    } # what shows up before a click 
-    
+  observeEvent(input$plot_click, {
     tree_data <- TreePlot$data
-    nearest <- nearPoints(tree_data, click, xvar = "x", yvar = "y", threshold = 50, maxpoints = 1)
-    if (nrow(nearest) == 0) return(tags$p("No tip label detected")) # if you miss
+    nearest <- nearPoints(tree_data, input$plot_click,
+                          xvar = "x", yvar = "y",
+                          threshold = 50, maxpoints = 1)
+    if (nrow(nearest) == 0) return()
     
     label_clicked <- nearest$label
     info <- tip_info %>% filter(Clade == label_clicked)
@@ -122,34 +128,53 @@ server <- function(input, output) {
     desc <- if (nrow(info) == 0) {
       paste0("Label: ", label_clicked, "\nNo description available.")
     } else {
-      paste0(info$Level, ": ", info$Clade, "\n", info$CommonName, "\n", info$Description)
-    } # paste descriptive info from csv
+      paste0(info$Level, ": ", info$Clade, "\n",
+             info$CommonName, "\n", info$Description)
+    }
     
-    # Use ImageLink column if available
-    img_link_text <- if (nrow(info) > 0 && !is.na(info$ImageLink)) info$ImageLink else NULL
-    
-    # Check image file existence
-    exts <- c(".jpeg", ".jpg", ".png") # to support multiple file types
+    # Image fallback logic
+    exts <- c(".jpeg", ".jpg", ".png")
     file_path <- NULL
     for (ext in exts) {
-      candidate <- file.path("www", "Photos", paste0(label_clicked, ext)) # theyre all in www so shiny finds them 
+      candidate <- file.path("www", "Photos", paste0(label_clicked, ext))
       if (file.exists(candidate)) {
-        file_path <- paste0("Photos/", label_clicked, ext)  # relative path for browser
+        file_path <- paste0("Photos/", label_clicked, ext)
         break
       }
     }
-    
-    tagList(
-      tags$pre(
-        style = "white-space: pre-wrap; overflow-wrap: normal; word-break: normal;",
-        desc
-      ), # wrap the description within the side bar
-      if (!is.null(file_path)) {
-        tagList(
-          tags$img(src = file_path, style = "width:100%; height:auto;"),
-          tags$p(img_link_text)
+    showModal(modalDialog(
+      title = div(
+        style = "display:flex; justify-content:space-between; align-items:center; width:100%;",
+        
+        # Left side: title text
+        span(paste("Details for", label_clicked)),
+        
+        # Right side: close button
+        tags$button(
+          type = "button",
+          class = "btn-close",   # Bootstrap 5 close icon
+          `data-bs-dismiss` = "modal",
+          `aria-label` = "Close",
+          style = "margin-left:20px;"  # small spacing so it doesn't touch the title
         )
-      })
+      ),
+      
+      tagList(
+        tags$pre(style = "white-space: pre-wrap;", desc),
+        if (!is.null(file_path)) {
+          tags$img(src = file_path,
+                   style = "width:100%; height:auto;",
+                   alt = paste("Image of", label_clicked))
+        },
+        if (nrow(info) > 0 && !is.na(info$ImageLink)) {
+          tags$p(tags$a("More info", href = info$ImageLink, target = "_blank"))
+        }
+      ),
+      
+      easyClose = TRUE,
+      footer = NULL
+    ))
+    
   })
 }
 
