@@ -1,4 +1,5 @@
 
+library(TreeTools) # to add tip
 library(ape)
 library(rotl)
 library(tidytree)
@@ -10,15 +11,24 @@ library(ggtree)
 
 Descriptions <- read.csv("AnimalTreeApp/InvertDescriptions.csv") # call in the groups we cant
 
-taxa <- tnrs_match_names(Descriptions$Clade[
-  (Descriptions$Level == "Superphylum" |
-     Descriptions$Level == "Phylum" | 
-     Descriptions$Level == "Subphylum" | 
-     Descriptions$Level == "Class") & 
-    Descriptions$Clade != "Medusozoa"], # medusozoa gives errors, will in later 
-  context_name = "Animals") # Pull taxa
+ranks <- c("Superphylum", "Phylum", "Subphylum", "Class")
+taxa <- tnrs_match_names(
+  Descriptions$Clade[Descriptions$Level %in% ranks],
+  context_name = "Animals") # to stop a weird error
 
-tree <- tol_induced_subtree(ott_ids = taxa$ott_id) # Build Tree
+# Drop pruned IDs before calling tol_induced_subtree
+taxa_clean <- taxa[!grepl("barren", taxa$flags) & !taxa$approximate_match, ]
+
+# Build tree only with valid IDs
+tree <- tryCatch(
+  tol_induced_subtree(ott_ids = taxa_clean$ott_id),
+  error = function(e) {
+    message("Subtree request failed: ", e$message)
+    return(NULL)  # or handle gracefully
+  }
+)
+
+# tree <- tol_induced_subtree(ott_ids = taxa$ott_id) # Build Tree
 
 # write.nexus(as.phylo(tree), "SupportCode/RawTree.nex")
 
@@ -30,6 +40,8 @@ tree$node.label[tree$node.label == "mrcaott42ott658"] <- "Chordata "
 tree$node.label[tree$node.label == "mrcaott56ott519"] <- "Lophotrochozoa "
 tree$node.label[tree$node.label == "mrcaott431ott3524"] <- "Medusozoa "
 tree$node.label[tree$node.label == "mrcaott49ott6612"] <- "Spiralia "
+tree$node.label[tree$node.label == "mrcaott56ott1881"] <- "Mollusca "
+tree$node.label[tree$node.label == "mrcaott42ott150"] <- "Eumetazoa "
 tree$node.label[tree$node.label == "Lophotrochozoa ott155737"] <- NA # named clades we dont want
 tree$node.label[tree$node.label == "Pancrustacea ott985906"] <- NA
 tree$node.label[tree$node.label == "Panarthropoda ott816442"] <- NA
@@ -48,12 +60,11 @@ if (is.null(tree$edge.length)) {
   tree$edge.length <- rep(1, nrow(tree$edge))  # give all edges length 1
 }
 
-
 pairs_to_collapse <- list(
   c("Ctenophora", "Porifera"),
   c("Platyhelminthes", "Rotifera"),
   c("Chaetognatha", "Rotifera"),
-  c("Platyhelminthes", "Chaetognatha")
+  c("Bivalvia", "Cephalopoda")
 )
 
 for (pair in pairs_to_collapse) {
@@ -64,9 +75,16 @@ for (pair in pairs_to_collapse) {
   }
 }
 
-tree <- di2multi(tree)
+tree <- AddTip(tree, where = getMRCA(tree, c("Hemichordata", "Bivalvia")),
+               label = "Xenacoelomorpha",
+               edgeLength = 1) # node label isnt working so see following code
 
-colnames(Descriptions)[colnames(Descriptions) == "Clade"] = "label" # i think this is necessary to match in desriptions
+# Assign the node label
+tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Xenacoelomorpha"), 1] - length(tree$tip.label)] <- "Bilateria"
+
+tree <- di2multi(tree) # only works once some edges have 0 length 
+
+colnames(Descriptions)[colnames(Descriptions) == "Clade"] = "label" # i think this is necessary to match in descriptions
 
 # reorder for the sake of the legend 
 Descriptions$Level <- factor(Descriptions$Level, levels = c("Higher Clade", "Superphylum", "Phylum", "Subphylum", "Class"))

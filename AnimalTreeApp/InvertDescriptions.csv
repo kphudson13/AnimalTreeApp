@@ -1,5 +1,5 @@
 ﻿Clade,Level,CommonName,Description,ImageLink
-Ctenophora,Phylum,Comb Jellies,"No stinging cells, recently thought to be sister to all other animals",
+Ctenophora,Phylum,Comb Jellies,"No stinging cells, some have transient anus. Recently thought to be sister to all other animals but that is contentious.",https://www.microscopemaster.com/phylum-ctenophora.html
 Porifera,Phylum,Sponges,Aquatic simple animals. no true tissues,https://www.pelajaran.co.id/ciri-ciri-struktur-reproduksi-klasifikasi-dan-peranan-porifera/
 Cnidaria,Phylum,Jelly fish and Anemonies ,Radial Symmetry. Blind gut,https://en.wikipedia.org/wiki/Cnidaria
 Platyhelminthes,Phylum,Flatworms,Unsegmented. Blind gut,https://en.wikipedia.org/wiki/Flatworm
@@ -28,7 +28,7 @@ Vertebrata,Subphylum,Vertebrates and friends,"Vertical column, we are vertebrate
 Metazoa,Kingdom,Animals,"Animals are motile in at least one stage, form from a blastula during embryonic development, have collagen, are heterotrophic",https://en.wikipedia.org/wiki/Invertebrate
 Anthozoa,Subphylum,Anthozoans,"Sea anemones, stony corals, soft corrals and sea pens. Generally sessile as adults. ",https://en.wikipedia.org/wiki/Anthozoa
 Medusozoa,Subphylum,Usually jellyfish,Have a true medusa stage,https://en.wikipedia.org/wiki/Medusozoa
-Insecta,Class,Insects,"Six legs, three part body plan (head, thoraz, abdomen), antennae. Most diverse group of animals.",https://en.wikipedia.org/wiki/Insect
+Insecta,Class,Insects,"Six legs, three part body plan (head, thorax, abdomen), antennae. Most diverse group of animals.",https://en.wikipedia.org/wiki/Insect
 Collembola,Class,Springtails,"Six legs but wingless, bounce around. ",https://insightpestnorthwest.com/understanding-springtails-the-tiny-pests-that-can-cause-big-problems/
 Hydrozoa,Class,Hydrozoans,"Often collonial, some freshwater. Medusae have a velum.",https://alchetron.com/Hydrozoa
 Scyphozoa,Class,True jellyfish,Medusae have no velum. ,https://en.wikipedia.org/wiki/Scyphozoa
@@ -38,6 +38,8 @@ Rotifera,Phylum,Wheel animals,"Small, usually solitary, 'wheels' of cilia - the 
 Chaetognatha,Phylum,Arrow worma,"Predatory marine worms, hooks on each side of the mouth",https://www.tnrp.com.au/arrow_worms_phylum_chaetognatha.html
 Onychophora,Phylum,Velvet worms,"Many legs, prey on other inverts by shooting adhesive slime",https://en.wikipedia.org/wiki/Onychophora
 Nematomorpha,Phylum,Horsehair worms,"Parasitic in arthropods, hard external cuticle",https://www.wildlifetrusts.org/wildlife-explorer/marine/worms/horsehair-worm
-Gastropoda,,,,
-Cephalopoda,,,,
-Bivalvia,,,,
+Gastropoda,Class,Snails and Slugs,Torsion rotates the visceral mass so the anus is above the head,https://en.wikipedia.org/wiki/Gastropoda
+Cephalopoda,Class,"Squid, octopus, cuttlefish, or nautilus","Most intellegent invertebrates, tentacles (suckers on end) or arms (suckers whole way down)",https://www.cell.com/current-biology/fulltext/S0960-9822(23)01056-4
+Bivalvia,Class,"Clams, oysters, & friends","Laterally compressed between two valves (shells). i.e., valves are left-right, not top-bottom",https://www.projetecolo.com
+Xenacoelomorpha,Phylum,Xenacoelomorphs,"Simple flattened worms, most basal bilaterians",https://en.wikipedia.org/wiki/Xenacoelomorpha
+Eumetazoa,Higher Clade,True animals,True tissues,https://www.lifeder.com/eumetazoa/
