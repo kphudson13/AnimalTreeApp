@@ -1,6 +1,10 @@
 ﻿Clade,Level,CommonName,Description,ImageLink
+Metazoa,Kingdom,Animals,"Animals are motile in at least one stage, form from a blastula during embryonic development, have collagen, are heterotrophic",https://fr.wikipedia.org/wiki/Metazoa
 Ctenophora,Phylum,Comb Jellies,"No stinging cells, some have transient anus. Recently thought to be sister to all other animals but that is contentious.",https://www.microscopemaster.com/phylum-ctenophora.html
 Porifera,Phylum,Sponges,Aquatic simple animals. no true tissues,https://www.pelajaran.co.id/ciri-ciri-struktur-reproduksi-klasifikasi-dan-peranan-porifera/
+Calcarea,Class,Calcareous sponges,Calcium carbonate spicules,https://naturaldigestionsystem.weebly.com/calcarea.html
+Demospongiae,Class,Common sponges,Network of solica and spongin,https://en.wikipedia.org/wiki/Demosponge
+Hexactinellida,Class,Glass sponges,Four- and/or six-pointed siliceous spicules,
 Cnidaria,Phylum,Jelly fish and Anemonies ,Radial Symmetry. Blind gut,https://en.wikipedia.org/wiki/Cnidaria
 Platyhelminthes,Phylum,Flatworms,Unsegmented. Blind gut,https://en.wikipedia.org/wiki/Flatworm
 Nematoda,Phylum,Nematodes,Ubiquitous in nature,https://en.wikipedia.org/wiki/Nematode
@@ -9,7 +13,7 @@ Arthropoda,Phylum,Arthropods,"Jointed legs, chitinous exoskeleton",https://en.wi
 Hemichordata,Phylum,Acorn worms & pterobranchs,Solitary marine worms,https://en.wikipedia.org/wiki/Hemichordate
 Chordata,Phylum,Chordates,"Presence of a notochord, also closed circulatory system and ceolom ",https://en.wikipedia.org/wiki/Chordate
 Mollusca,Phylum,Molluscs,Mantle and such,https://en.wikipedia.org/wiki/Mollusca
-Brachiopoda,Phylum,Brachiopods,"Top and bottom valve, unlike molluscan bivalves",https://simple.wikipedia.org/wiki/Brachiopod
+Brachiopoda,Phylum,Lampshells,"Top and bottom valve, unlike molluscan bivalves",https://simple.wikipedia.org/wiki/Brachiopod
 Annelida,Phylum,Segmented worms,Earthworms and friends,https://en.wikipedia.org/wiki/Annelid
 Bilateria,Higher Clade,Bilateral Animals,Left-right symmetry (sorta),https://simple.wikipedia.org/wiki/Bilateria
 Deuterostomia,Higher Clade,Deuterostomes,Anus developes before mouth,https://en.wikipedia.org/wiki/Deuterostome
@@ -25,11 +29,11 @@ Lophotrochozoa,Superphylum,Lophotrochozoans,Have either a trochophote larvae sta
 Nemertea,Phylum,Ribbon worms or Proboscis worms ,"Unsegmented, usually predators or parasites",https://pages.uoregon.edu/svetlana/iWeb/Home/Nemerteans.html
 Tunicata,Subphylum,Tunicates,Only have a notocord in the larval stage. Previously called urochordates,https://en.wikipedia.org/wiki/Tunicate
 Vertebrata,Subphylum,Vertebrates and friends,"Vertical column, we are vertebrates",https://en.wikipedia.org/wiki/Vertebrate
-Metazoa,Kingdom,Animals,"Animals are motile in at least one stage, form from a blastula during embryonic development, have collagen, are heterotrophic",https://en.wikipedia.org/wiki/Invertebrate
 Anthozoa,Subphylum,Anthozoans,"Sea anemones, stony corals, soft corrals and sea pens. Generally sessile as adults. ",https://en.wikipedia.org/wiki/Anthozoa
 Medusozoa,Subphylum,Usually jellyfish,Have a true medusa stage,https://en.wikipedia.org/wiki/Medusozoa
 Insecta,Class,Insects,"Six legs, three part body plan (head, thorax, abdomen), antennae. Most diverse group of animals.",https://en.wikipedia.org/wiki/Insect
 Collembola,Class,Springtails,"Six legs but wingless, bounce around. ",https://insightpestnorthwest.com/understanding-springtails-the-tiny-pests-that-can-cause-big-problems/
+Myriapoda,Class,Myriapods,"Centepedes, millipedes and friends. Many legs.",https://en.wikipedia.org/wiki/Myriapoda
 Hydrozoa,Class,Hydrozoans,"Often collonial, some freshwater. Medusae have a velum.",https://alchetron.com/Hydrozoa
 Scyphozoa,Class,True jellyfish,Medusae have no velum. ,https://en.wikipedia.org/wiki/Scyphozoa
 Hexacorallia,Class,Hexacorals,Six fold symmetry,https://en.wikipedia.org/wiki/Hexacorallia
@@ -43,3 +47,10 @@ Cephalopoda,Class,"Squid, octopus, cuttlefish, or nautilus","Most intellegent in
 Bivalvia,Class,"Clams, oysters, & friends","Laterally compressed between two valves (shells). i.e., valves are left-right, not top-bottom",https://www.projetecolo.com
 Xenacoelomorpha,Phylum,Xenacoelomorphs,"Simple flattened worms, most basal bilaterians",https://en.wikipedia.org/wiki/Xenacoelomorpha
 Eumetazoa,Higher Clade,True animals,True tissues,https://www.lifeder.com/eumetazoa/
+Bryozoa ,Phylum,Moss animals,"Small, live in sedentary colonies, single animals called zooids ",https://www.inaturalist.org/taxa/68104-Bryozoa
+Priapulida,Phylum,Penis worms,"Sunsegmented worms, extensible spiny proboscis.",https://en.wikipedia.org/wiki/Priapulida
+Tardigrada,Phylum,Water bears,"Cute and small, increadibly resilient",https://en.wikipedia.org/wiki/Tardigrade
+Arachnida,Class,Arachnids,"Eight legs on cephalothorax, also chelicera and pedipalps",https://commons.wikimedia.org/wiki/File:Arachnida_collage_(Update).jpg
+Merostomata,Class,Horseshoe crabs,"Not crabs, only living example is horseshoe crabs.",https://en.wikipedia.org/wiki/Xiphosura
+Pycnogonida,Class,Sea spiders,"Not spiders, marine animals. ",https://www.starfish.ch/register-i/crustaceans-sea-spiders.html
+Placozoa,Phylum,Placozoans,"Simplest of animals, move with ciliary motion. ",https://en.wikipedia.org/wiki/Placozoa

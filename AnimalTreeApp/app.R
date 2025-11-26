@@ -1,10 +1,21 @@
 
+######################
+# 
+# developed Nov 2025 by Kyle Hudson
+# kphudson@live.ca
+# This app is designed as a teaching tool, the taxonomy is incomplete
+# 
+# Live laugh love
+# -Kyle 
+# 
+######################
+
 library(ape)
 library(shiny)
 library(ggplot2)
 library(plotly)
 library(ggtree)
-library(bslib)
+library(bslib) # for the web app theme 
 
 load("ggTreeObject")
 tip_info <- read.csv("InvertDescriptions.csv")
@@ -36,14 +47,13 @@ ui <- fluidPage(
     )
   ),
   
-  
-  # Main panel now full width
+  # Main panel 
   fluidRow(
     column(
-      width = 12,
-      plotOutput("TreePlot", height = "600px", click = "plot_click")
-    )
-  ),
+      width = 12, # full width
+      plotOutput("TreePlot", height = paste0(30*length(tree$tip.label), "px"), click = "plot_click")
+    ) # height is dynamic, based off number of tips
+  ), 
   
   # Footer navbar
   tags$head(
@@ -108,7 +118,8 @@ ui <- fluidPage(
 server <- function(input, output, session) {
   
   make_tree <- reactive({
-    TreePlot + ggplot2::xlim(NA, 11)
+    xmax <- max(TreePlot$data$x, na.rm = TRUE)
+    TreePlot + ggplot2::xlim(NA, xmax + 1)  # add buffer
   })
   
   output$TreePlot <- renderPlot({
@@ -119,7 +130,7 @@ server <- function(input, output, session) {
     tree_data <- TreePlot$data
     nearest <- nearPoints(tree_data, input$plot_click,
                           xvar = "x", yvar = "y",
-                          threshold = 50, maxpoints = 1)
+                          threshold = 40, maxpoints = 1)
     if (nrow(nearest) == 0) return()
     
     label_clicked <- nearest$label

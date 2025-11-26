@@ -41,11 +41,12 @@ tree$node.label[tree$node.label == "mrcaott56ott519"] <- "Lophotrochozoa "
 tree$node.label[tree$node.label == "mrcaott431ott3524"] <- "Medusozoa "
 tree$node.label[tree$node.label == "mrcaott49ott6612"] <- "Spiralia "
 tree$node.label[tree$node.label == "mrcaott56ott1881"] <- "Mollusca "
-tree$node.label[tree$node.label == "mrcaott42ott150"] <- "Eumetazoa "
+tree$node.label[tree$node.label == "mrcaott42ott570365"] <- "Eumetazoa "
 tree$node.label[tree$node.label == "Lophotrochozoa ott155737"] <- NA # named clades we dont want
 tree$node.label[tree$node.label == "Pancrustacea ott985906"] <- NA
 tree$node.label[tree$node.label == "Panarthropoda ott816442"] <- NA
 tree$node.label[tree$node.label == "Ambulacraria ott6520512"] <- NA
+tree$node.label[tree$node.label == "Mandibulata ott985907"] <- NA
 tree$tip.label[tree$tip.label == "Ctenophora (phylum ncbi:10197)"] <- "Ctenophora" # no space for tips
 tree$tip.label[tree$tip.label == "Vertebrata (subphylum in Deuterostomia)"] <- "Vertebrata"
 tree$tip.label[tree$tip.label == "mrcaott150ott7012"] <- "Hexacorallia"
@@ -61,10 +62,11 @@ if (is.null(tree$edge.length)) {
 }
 
 pairs_to_collapse <- list(
-  c("Ctenophora", "Porifera"),
+  c("Ctenophora", "Calcarea"),
   c("Platyhelminthes", "Rotifera"),
   c("Chaetognatha", "Rotifera"),
-  c("Bivalvia", "Cephalopoda")
+  c("Bivalvia", "Cephalopoda"),
+  c("Hexactinellida", "Calcarea")
 )
 
 for (pair in pairs_to_collapse) {
@@ -93,7 +95,7 @@ TreePlot <- ggtree(tree, branch.length="none", aes(color=Level), size = 1.5) %<+
   geom_tiplab(fill="white", geom = "label", size = 5, fontface = 2) +
   geom_nodelab(subset = !is.na(node.label), 
                fill="white", geom = "label", size = 5, fontface = 2) +
-  theme(legend.position = c(0.1,0.8),
+  theme(legend.position = c(0.1,0.9),
         legend.title = element_blank(),
         legend.text = element_text(size=16))
 
