@@ -8,13 +8,13 @@ Visit the site [here](https://kphudson.shinyapps.io/AnimalTreeApp/) or learn mor
 >How some clades are organized is contentious amoung taxonomists, take this for what it is.  
 >Some support code will not work unless you have an Open Tree of Life API key.
             
-             \               \       /
-              |               \     / 
-              |                \.-./ 
-              |               (o\^/o)  _   _   _     __
-              |                ./ \.\ ( )-( )-( ) .-'  '-.
-             __                 {-} \(//  ||   \\/ (   )) '-.
-          | /  \ |                   //-__||__.-\\.       .-'
-         \_\\  //_/                 (/    ()     \)'-._.-'
-          .'/()\'.                  ||    ||      \\
-           \\  //                   ('    ('       ')
+             \               \       /                                   
+              |               \     /                                      
+              |                \.-./                                     @             _________ 
+              |               (o\^/o)  _   _   _     __                   \____       /         \
+              |                ./ \.\ ( )-( )-( ) .-'  '-.                /    \     /   ____    \
+             __                 {-} \(//  ||   \\/ (   )) '-.             \_    \   /   /    \    \
+          | /  \ |                   //-__||__.-\\.       .-'               \    \ (    \__/  )    )
+         \_\\  //_/                 (/    ()     \)'-._.-'                   \    \_\ \______/    /
+          .'/()\'.                  ||    ||      \\                          \      \           /___
+           \\  //                   ('    ('       ')                          \______\_________/____"-_
