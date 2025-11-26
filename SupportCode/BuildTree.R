@@ -4,7 +4,8 @@ library(ape)
 library(rotl)
 library(tidytree)
 library(tidyverse)
-library(ggtree)
+library(ggtree) # for the tree
+library(ggimage)
 
 # install.packages("BiocManager")
 # BiocManager::install("ggtree") # need these for ggtree 
@@ -85,11 +86,13 @@ tree <- AddTip(tree, where = getMRCA(tree, c("Hemichordata", "Bivalvia")),
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Xenacoelomorpha"), 1] - length(tree$tip.label)] <- "Bilateria"
 
 tree <- di2multi(tree) # only works once some edges have 0 length 
+write.nexus(tree, file = "AnimalTreeApp/tree.nex")
 
 colnames(Descriptions)[colnames(Descriptions) == "Clade"] = "label" # i think this is necessary to match in descriptions
 
 # reorder for the sake of the legend 
 Descriptions$Level <- factor(Descriptions$Level, levels = c("Higher Clade", "Superphylum", "Phylum", "Subphylum", "Class"))
+
 
 TreePlot <- ggtree(tree, branch.length="none", aes(color=Level), size = 1.5) %<+% Descriptions + # match descriptions to nodes
   geom_tiplab(fill="white", geom = "label", size = 5, fontface = 2) +
@@ -97,7 +100,7 @@ TreePlot <- ggtree(tree, branch.length="none", aes(color=Level), size = 1.5) %<+
                fill="white", geom = "label", size = 5, fontface = 2) +
   theme(legend.position = c(0.1,0.9),
         legend.title = element_blank(),
-        legend.text = element_text(size=16))
+        legend.text = element_text(size=16)) 
 
 save(TreePlot, file = "AnimalTreeApp/ggTreeObject") # save it so the app can call it
 

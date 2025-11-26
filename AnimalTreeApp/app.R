@@ -19,6 +19,7 @@ library(bslib) # for the web app theme
 
 load("ggTreeObject")
 tip_info <- read.csv("InvertDescriptions.csv")
+tree <- read.nexus("tree.nex", tree.names = "tree")
 
 # Define UI
 ui <- fluidPage(
@@ -108,11 +109,13 @@ ui <- fluidPage(
                   tags$a("Contact", href="mailto:hudson.k@ufl.edu"))),
             div(class = "col-12 col-md-4 text-md-end",
                 tags$p(
-                  "Hosted by ",
-                  tags$a("Shiny", href="https://www.shinyapps.io/")))
-        )
-    )
+                  actionLink("credits", "Credits"))  # clickable link
+                
+            )
+            
+        ))
   )
+  
 )
 
 server <- function(input, output, session) {
@@ -126,7 +129,7 @@ server <- function(input, output, session) {
     make_tree()
   })
   
-  observeEvent(input$plot_click, {
+  observeEvent(input$plot_click, { # all for the main panel
     tree_data <- TreePlot$data
     nearest <- nearPoints(tree_data, input$plot_click,
                           xvar = "x", yvar = "y",
@@ -186,6 +189,35 @@ server <- function(input, output, session) {
       footer = NULL
     )) 
     
+  })
+  
+  observeEvent(input$credits, {
+    showModal(modalDialog(
+      title = div(
+        style = "display:flex; justify-content:space-between; align-items:center; width:100%;",
+        
+        span("Credits"), # Left side: title text
+        
+        tags$button( 
+          type = "button",
+          class = "btn-close",   # Bootstrap 5 close icon
+          `data-bs-dismiss` = "modal",
+          `aria-label` = "Close",
+          style = "margin-left:20px;"  # spacing so it doesn’t touch the title
+        ) # Right side: close button
+      ),
+      
+      tagList(
+        tags$p("Hosted by ",
+               tags$a("Shiny", href="https://www.shinyapps.io/", target="_blank")),
+        tags$p("Built largely with ",
+               tags$a("ggtree", href="https://bioconductor.org/packages/ggtree/", target="_blank")),
+        tags$p("Thanks to Wikipedia for most of the pictures")
+      ),
+      
+      easyClose = TRUE,
+      footer = NULL
+    ))
   })
 }
 

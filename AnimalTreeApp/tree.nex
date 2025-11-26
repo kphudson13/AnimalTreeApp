@@ -1,0 +1,81 @@
+#NEXUS
+[R-package APE, Wed Nov 26 00:22:07 2025]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 34;
+	TAXLABELS
+		Vertebrata
+		Tunicata
+		Echinodermata
+		Hemichordata
+		Platyhelminthes
+		Rotifera
+		Gastropoda
+		Bivalvia
+		Cephalopoda
+		Nemertea
+		Brachiopoda
+		Annelida
+		Chaetognatha
+		Insecta
+		Collembola
+		Malacostraca
+		Myriapoda
+		Pycnogonida
+		Merostomata
+		Tardigrada
+		Onychophora
+		Nematoda
+		Priapulida
+		Nematomorpha
+		Hexacorallia
+		Octocorallia
+		Hydrozoa
+		Scyphozoa
+		Placozoa
+		Hexactinellida
+		Demospongiae
+		Calcarea
+		Ctenophora
+		Xenacoelomorpha
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Vertebrata,
+		2	Tunicata,
+		3	Echinodermata,
+		4	Hemichordata,
+		5	Platyhelminthes,
+		6	Rotifera,
+		7	Gastropoda,
+		8	Bivalvia,
+		9	Cephalopoda,
+		10	Nemertea,
+		11	Brachiopoda,
+		12	Annelida,
+		13	Chaetognatha,
+		14	Insecta,
+		15	Collembola,
+		16	Malacostraca,
+		17	Myriapoda,
+		18	Pycnogonida,
+		19	Merostomata,
+		20	Tardigrada,
+		21	Onychophora,
+		22	Nematoda,
+		23	Priapulida,
+		24	Nematomorpha,
+		25	Hexacorallia,
+		26	Octocorallia,
+		27	Hydrozoa,
+		28	Scyphozoa,
+		29	Placozoa,
+		30	Hexactinellida,
+		31	Demospongiae,
+		32	Calcarea,
+		33	Ctenophora,
+		34	Xenacoelomorpha
+	;
+	TREE * UNTITLED = [&U] (33:0,(29:1,((34:1,(((1:1,2:1)Chordata:1,(3:1,4:1)NA:1)Deuterostomia:1,((13:0,(6:0,5:0)NA:1,(12:1,((8:1,7:1,9:0)Mollusca:1,(10:1,11:1)NA:1)NA:1)Lophotrochozoa:1)Spiralia:1,(24:1,(((17:1,((15:1,14:1)Hexapoda:1,16:1)NA:1)NA:1,(19:1,18:1)Chelicerata:1)Arthropoda:1,(20:1,21:1)NA:1)NA:1,(22:1,23:1)NA:1)Ecdysozoa:1)Protostomia:1)Nephrozoa:0.5)Bilateria:0.5,((26:1,25:1)Anthozoa:1,(27:1,28:1)Medusozoa:1)Cnidaria:1)NA:1)Eumetazoa:1,(30:1,31:1,32:0)Porifera:1)Metazoa;
+END;
