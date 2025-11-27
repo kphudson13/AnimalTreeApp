@@ -212,6 +212,8 @@ server <- function(input, output, session) {
                tags$a("Shiny", href="https://www.shinyapps.io/", target="_blank")),
         tags$p("Built largely with ",
                tags$a("ggtree", href="https://bioconductor.org/packages/ggtree/", target="_blank")),
+        tags$p("Taxonomy modified from ", 
+               tags$a("Open Tree of Life", href="https://tree.opentreeoflife.org/about/open-tree-of-life", target="_blank")),
         tags$p("Thanks to Wikipedia for most of the pictures")
       ),
       
