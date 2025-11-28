@@ -5,7 +5,6 @@ library(rotl)
 library(tidytree)
 library(tidyverse)
 library(ggtree) # for the tree
-library(ggimage)
 
 # install.packages("BiocManager")
 # BiocManager::install("ggtree") # need these for ggtree 
@@ -93,14 +92,16 @@ colnames(Descriptions)[colnames(Descriptions) == "Clade"] = "label" # i think th
 # reorder for the sake of the legend 
 Descriptions$Level <- factor(Descriptions$Level, levels = c("Higher Clade", "Superphylum", "Phylum", "Subphylum", "Class"))
 
-
 TreePlot <- ggtree(tree, branch.length="none", aes(color=Level), size = 1.5) %<+% Descriptions + # match descriptions to nodes
   geom_tiplab(fill="white", geom = "label", size = 5, fontface = 2) +
   geom_nodelab(subset = !is.na(node.label), 
                fill="white", geom = "label", size = 5, fontface = 2) +
   theme(legend.position = c(0.1,0.9),
         legend.title = element_blank(),
-        legend.text = element_text(size=16)) 
+        legend.text = element_text(size=16),
+        legend.background = element_rect(fill = NA, colour = NA),
+        panel.background = element_rect(fill = NA, colour = NA),
+        plot.background  = element_rect(fill = NA, colour = NA)) # incase i decide to add a background
 
 save(TreePlot, file = "AnimalTreeApp/ggTreeObject") # save it so the app can call it
 

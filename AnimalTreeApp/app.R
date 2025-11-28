@@ -25,24 +25,38 @@ tree <- read.nexus("tree.nex", tree.names = "tree")
 ui <- fluidPage(
   tags$head(
     tags$style(HTML("
+      body {
+        background-image: url('Photos/Background.png'); /* path inside www/Photos */
+        background-size: cover;       /* scale to fill screen */
+        background-repeat: no-repeat; /* don’t tile */
+        background-attachment: fixed; /* stays fixed when scrolling */
+      }
+    "))
+  ),
+  
+  tags$head(
+    tags$style(HTML("
       .main-panel, .container-fluid {
         padding-bottom: 60px; /* adjust to match navbar height */
       }
     ")) # to fix issue where nav bar overlapped with main panel 
   ),
+  
   theme = bs_theme(preset = "morph"),
+  
   # Intro section always visible
   fluidRow(
+    style = "display:flex;", # this just centers the title better 
     column(
       width = 3,  # text takes less of the row
-      h2("Metazoa Tree of Life"),  # use h2 for a nice title size
+      h2("Metazoa Tree of Life", style = "margin-top:30px;"),  # use h2 for a nice title size
       h4("Click a label to see details")
     ),
     column(
       width = 9,  # larger column for the image
       tags$img(
         src = "Photos/Intro.png",
-        style = "width:100%; height:auto;;", # shrink image
+        style = "width:100%; height:auto;", # shrink image
         alt = "Metazoa overview image"
       )
     )
@@ -50,17 +64,24 @@ ui <- fluidPage(
   
   # Main panel 
   fluidRow(
+    tags$head(
+      tags$style(HTML("
+        .shiny-plot-output {
+        background-color: transparent !important; /* Make plot container transparent */
+      }
+    "))
+    ),
     column(
       width = 12, # full width
-      plotOutput("TreePlot", height = paste0(30*length(tree$tip.label), "px"), click = "plot_click")
-    ) # height is dynamic, based off number of tips
+      plotOutput("TreePlot", 
+                 height = paste0(30*length(tree$tip.label), "px"), # height is dynamic, based off number of tips
+                 click = "plot_click"))
   ), 
   
   # Footer navbar
   tags$head(
     tags$style(HTML("
-    /* Always reserve space equal to footer height */
-    body { margin-bottom: 40px; } /* adjust after testing */
+    body { margin-bottom: 40px; } /* reserve space equal to footer height */
 
     /* Full-width fixed footer with no outer padding that could shift content */
     .app-footer {
@@ -76,7 +97,7 @@ ui <- fluidPage(
 
     /* Inner container controls actual content width and alignment */
     .app-footer .container {
-      padding: 4px 4px;        /* your desired inner padding */
+      padding: 4px 4px;        /* inner padding */
     }
 
     /* Ensure columns don't collapse or inherit odd spacing */
@@ -93,7 +114,7 @@ ui <- fluidPage(
     line-height: 1.2;   /* tighten text line height */
     font-size: 0.9rem;  /* optional: slightly smaller text */
   }
-  "))
+  ")) # nested HTML to make the footer work with this theme 
   ),
   tags$div(
     class = "app-footer bg-light fixed-bottom",
@@ -110,7 +131,6 @@ ui <- fluidPage(
             div(class = "col-12 col-md-4 text-md-end",
                 tags$p(
                   actionLink("credits", "Credits"))  # clickable link
-                
             )
             
         ))
@@ -122,46 +142,51 @@ server <- function(input, output, session) {
   
   make_tree <- reactive({
     xmax <- max(TreePlot$data$x, na.rm = TRUE)
-    TreePlot + ggplot2::xlim(NA, xmax + 1)  # add buffer
+    TreePlot + ggplot2::xlim(NA, xmax + 1) # add buffer
   })
   
   output$TreePlot <- renderPlot({
     make_tree()
-  })
+  }, bg = "transparent")
   
   observeEvent(input$plot_click, { # all for the main panel
     tree_data <- TreePlot$data
     nearest <- nearPoints(tree_data, input$plot_click,
                           xvar = "x", yvar = "y",
                           threshold = 40, maxpoints = 1)
-    if (nrow(nearest) == 0) return()
+    if (nrow(nearest) == 0) return() # stops app from crashing if you click randomly 
     
-    label_clicked <- nearest$label
-    info <- tip_info %>% filter(Clade == label_clicked)
+    label_clicked <- nearest$label # the label that was clicked
+    info <- tip_info %>% filter(Clade == label_clicked) # save object for only that clade
     
     desc <- if (nrow(info) == 0) {
-      paste0("Label: ", label_clicked, "\nNo description available.")
+      paste0("Label: ", label_clicked) # back up for missing labels
     } else {
       paste0(info$CommonName, "\n", info$Description)
-    }
+    } # save description to print 
     
-    # Image fallback logic
-    exts <- c(".jpeg", ".jpg", ".png") 
-    file_path <- NULL
+    exts <- c(".jpeg", ".jpg", ".png") # Image fallback logic
+    file_path <- NULL # reset just incase 
     for (ext in exts) {
       candidate <- file.path("www", "Photos", paste0(label_clicked, ext))
-      if (file.exists(candidate)) {
-        file_path <- paste0("Photos/", label_clicked, ext)
-        break
+      if (file.exists(candidate)) { # this is only necessary if you're not sure every photo exists 
+        file_path <- paste0("Photos/", label_clicked, ext) # store filepath for the desired photo
+        break 
       }
-    } # store the file path of the photo for rendering later
+    }
+    
     showModal(modalDialog(
       title = div(
         style = "display:flex; justify-content:space-between; align-items:center; width:100%;",
         
         # Left side: title text
-        span(paste0(info$Level, ": ", info$Clade)),
-        
+        span(
+          if (nrow(info) == 0) {
+            paste0("No description available") # back up for missing labels
+          } else {
+            paste0(info$Level, ": ", info$Clade) # ptherwise print title 
+          }
+        ),
         # Right side: close button
         tags$button(
           type = "button",
@@ -174,7 +199,7 @@ server <- function(input, output, session) {
       
       tagList(
         tags$pre(style = "white-space: pre-wrap;", desc
-                 ), # description
+        ), # description
         if (!is.null(file_path)) {
           tags$img(src = file_path,
                    style = "width:100%; height:auto;",
