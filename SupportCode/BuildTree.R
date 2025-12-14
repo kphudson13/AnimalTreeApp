@@ -51,6 +51,8 @@ tree$tip.label[tree$tip.label == "Ctenophora (phylum ncbi:10197)"] <- "Ctenophor
 tree$tip.label[tree$tip.label == "Vertebrata (subphylum in Deuterostomia)"] <- "Vertebrata"
 tree$tip.label[tree$tip.label == "mrcaott150ott7012"] <- "Hexacorallia"
 tree$tip.label[tree$tip.label == "Onychophora (phylum in Holozoa)"] <- "Onychophora"
+tree$tip.label[tree$tip.label == "Appendicularia (class in Opisthokonta)"] <- "Larvacea"
+
 
 #remove useless node labels
 tree$node.label <- ifelse(grepl(" ", tree$node.label), str_extract(tree$node.label, "^[^ ]+"), "")
@@ -66,7 +68,8 @@ pairs_to_collapse <- list(
   c("Platyhelminthes", "Rotifera"),
   c("Chaetognatha", "Rotifera"),
   c("Bivalvia", "Cephalopoda"),
-  c("Hexactinellida", "Calcarea")
+  c("Hexactinellida", "Calcarea"),
+  c("Vertebrata", "Cephalochordata")
 )
 
 for (pair in pairs_to_collapse) {
