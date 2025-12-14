@@ -1,5 +1,5 @@
 
-######################
+###########################
 # 
 # developed Nov 2025 by Kyle Hudson
 # kphudson@live.ca
@@ -8,7 +8,7 @@
 # Live laugh love
 # -Kyle 
 # 
-######################
+###########################
 
 library(ape)
 library(shiny)
@@ -57,7 +57,7 @@ ui <- fluidPage(
       tags$img(
         src = "Photos/Intro.png",
         style = "width:100%; height:auto;", # shrink image
-        alt = "Metazoa overview image"
+        alt = "Metazoa overview image" # in case loading fails
       )
     )
   ),
@@ -160,19 +160,43 @@ server <- function(input, output, session) {
     info <- tip_info %>% filter(Clade == label_clicked) # save object for only that clade
     
     desc <- if (nrow(info) == 0) {
-      paste0("Label: ", label_clicked) # back up for missing labels
-    } else {
+      paste0("Label: ", label_clicked)
+    } else if (info$Anatomy == "") { # if anatomy is blank
       paste0(info$CommonName, "\n", info$Description)
-    } # save description to print 
+    } else {
+      paste0(info$CommonName, "\n", info$Description,
+             "\nAnatomy to know: ", info$Anatomy)
+    }
     
-    exts <- c(".jpeg", ".jpg", ".png") # Image fallback logic
-    file_path <- NULL # reset just incase 
+    exts <- c(".jpeg", ".jpg", ".png") # Image extensions
+    
+    file_path <- NULL # reset the parking lot 
     for (ext in exts) {
       candidate <- file.path("www", "Photos", paste0(label_clicked, ext))
-      if (file.exists(candidate)) { # this is only necessary if you're not sure every photo exists 
+      if (file.exists(candidate)) { # only necessary if you're not sure every photo exists 
         file_path <- paste0("Photos/", label_clicked, ext) # store filepath for the desired photo
-        break 
       }
+    }
+    
+    
+    anat_path <- NULL # reset the parking lot
+    for (n in 1:5) {
+      for (ext in exts) {
+        anat_candidate <- file.path("www", "Photos", paste0(label_clicked, "_anatomy", n, ext))
+        if (file.exists(anat_candidate)) {
+          anat_path[n] <- paste0("Photos/", label_clicked, "_anatomy", n, ext) # store filepath(s) for photo
+        }
+      }
+    }
+    
+    # Decide column width and image style up front
+    col_width <- if (length(anat_path) > 0) 6 else 12
+    img_style <- if (length(anat_path) == 0) {
+      # Centered when no anatomy
+      "display:block; margin-left:auto; margin-right:auto; max-width:80%; height:auto;"
+    } else {
+      # Constrain width in half-column
+      "max-width:100%; height:auto;"
     }
     
     showModal(modalDialog(
@@ -184,11 +208,11 @@ server <- function(input, output, session) {
           if (nrow(info) == 0) {
             paste0("No description available") # back up for missing labels
           } else {
-            paste0(info$Level, ": ", info$Clade) # ptherwise print title 
+            paste0(info$Level, ": ", info$Clade) # otherwise print title 
           }
         ),
-        # Right side: close button
-        tags$button(
+        
+        tags$button( # Right side: close button
           type = "button",
           class = "btn-close",   # Bootstrap 5 close icon
           `data-bs-dismiss` = "modal",
@@ -198,20 +222,40 @@ server <- function(input, output, session) {
       ), # before this fits in title
       
       tagList(
-        tags$pre(style = "white-space: pre-wrap;", desc
-        ), # description
-        if (!is.null(file_path)) {
-          tags$img(src = file_path,
-                   style = "width:100%; height:auto;",
-                   alt = paste("Image of", label_clicked)) # fallback text
-        }, # render image in www
-        if (nrow(info) > 0 && !is.na(info$ImageLink)) {
-          tags$p(info$ImageLink, style = "font-size:0.8rem") 
-        } # image link, smaller font
-      ), 
+        tags$pre(style = "white-space: pre-wrap;", desc),
+        fluidRow(
+          column(
+            width = col_width,
+            if (!is.null(file_path)) {
+              tags$img(src = file_path,
+                       style = img_style,
+                       alt = paste("Image of", label_clicked))
+            },
+            if (nrow(info) > 0 && !is.na(info$ImageLink)) {
+              tags$p(info$ImageLink,
+                     style = if (length(anat_path) == 0)
+                       "font-size:0.8rem; text-align:center;"
+                     else
+                       "font-size:0.8rem;")
+            }
+          ),
+          
+          if (length(anat_path) > 0) {
+            column(
+              width = 6, 
+              lapply(anat_path, function(path) {
+                tags$img(src = path,
+                         style = "width:100%; height:auto; margin-bottom:10px;",
+                         alt = paste("Anatomy of", label_clicked))
+              })
+            )
+          }
+        )
+      ),
       
-      easyClose = TRUE,
-      footer = NULL
+      size = "l",
+      easyClose = TRUE, # so you can click outside to close 
+      footer = NULL # removes extra dismiss button
     )) 
     
   })
