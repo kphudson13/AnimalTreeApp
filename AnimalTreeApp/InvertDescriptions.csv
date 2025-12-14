@@ -1,56 +1,75 @@
-﻿Clade,Level,CommonName,Description,ImageLink
-Metazoa,Kingdom,Animals,"Animals are motile in at least one stage, form from a blastula during embryonic development, have collagen, are heterotrophic",https://fr.wikipedia.org/wiki/Metazoa
-Ctenophora,Phylum,Comb Jellies,"No stinging cells, some have transient anus. Recently thought to be sister to all other animals but that is contentious.",https://www.microscopemaster.com/phylum-ctenophora.html
-Porifera,Phylum,Sponges,Aquatic simple animals. no true tissues,https://www.pelajaran.co.id/ciri-ciri-struktur-reproduksi-klasifikasi-dan-peranan-porifera/
-Calcarea,Class,Calcareous sponges,Calcium carbonate spicules,https://naturaldigestionsystem.weebly.com/calcarea.html
-Demospongiae,Class,Common sponges,Network of solica and spongin,https://en.wikipedia.org/wiki/Demosponge
-Hexactinellida,Class,Glass sponges,Four- and/or six-pointed siliceous spicules,
-Cnidaria,Phylum,Jelly fish and Anemonies ,Radial Symmetry. Blind gut,https://en.wikipedia.org/wiki/Cnidaria
-Platyhelminthes,Phylum,Flatworms,Unsegmented. Blind gut,https://en.wikipedia.org/wiki/Flatworm
-Nematoda,Phylum,Nematodes,Ubiquitous in nature,https://en.wikipedia.org/wiki/Nematode
-Echinodermata,Phylum,Starfish and Friends,"Evolved from bilateral animals, now pentaradial",https://en.wikipedia.org/wiki/Echinoderm
-Arthropoda,Phylum,Arthropods,"Jointed legs, chitinous exoskeleton",https://en.wikipedia.org/wiki/Arthropod
-Hemichordata,Phylum,Acorn worms & pterobranchs,Solitary marine worms,https://en.wikipedia.org/wiki/Hemichordate
-Chordata,Phylum,Chordates,"Presence of a notochord, also closed circulatory system and ceolom ",https://en.wikipedia.org/wiki/Chordate
-Mollusca,Phylum,Molluscs,Mantle and such,https://en.wikipedia.org/wiki/Mollusca
-Brachiopoda,Phylum,Lampshells,"Top and bottom valve, unlike molluscan bivalves",https://simple.wikipedia.org/wiki/Brachiopod
-Annelida,Phylum,Segmented worms,Earthworms and friends,https://en.wikipedia.org/wiki/Annelid
-Bilateria,Higher Clade,Bilateral Animals,Left-right symmetry (sorta),https://simple.wikipedia.org/wiki/Bilateria
-Deuterostomia,Higher Clade,Deuterostomes,Anus developes before mouth,https://en.wikipedia.org/wiki/Deuterostome
-Protostomia,Higher Clade,Protostomes,Mouth developes before anus,https://en.wikipedia.org/wiki/Protostome
-Nephrozoa,Higher Clade,Nephrozoans,Excretory nephridia,https://en.wikipedia.org/wiki/Nephrozoa
-Hexapoda,Subphylum,Hexapods,Six legs,https://en.wikipedia.org/wiki/Hexapoda
-Pancrustacea,,Crustaceans,Crabs but also bugs,https://www.researchgate.net/figure/Morphological-diversity-of-select-pancrustaceans-A-buoy-barnacle-Cirripedia-B_fig1_372991050
-Ecdysozoa,Superphylum,Ecdysozoans,Chitin based exoskeleton,https://en.wikipedia.org/wiki/Ecdysozoa
-Chelicerata,Subphylum,Chelicerates,Spiders and Friends,https://en.wikipedia.org/wiki/Chelicerata
-Malacostraca,Class,Crabs and friends,Abdominal appendages,https://en.wikipedia.org/wiki/Malacostraca
-Spiralia,Higher Clade,Spiralians,Spiral cleavage,https://en.wikipedia.org/wiki/Spiralia
-Lophotrochozoa,Superphylum,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore ,
-Nemertea,Phylum,Ribbon worms or Proboscis worms ,"Unsegmented, usually predators or parasites",https://pages.uoregon.edu/svetlana/iWeb/Home/Nemerteans.html
-Tunicata,Subphylum,Tunicates,Only have a notocord in the larval stage. Previously called urochordates,https://en.wikipedia.org/wiki/Tunicate
-Vertebrata,Subphylum,Vertebrates and friends,"Vertical column, we are vertebrates",https://en.wikipedia.org/wiki/Vertebrate
-Anthozoa,Subphylum,Anthozoans,"Sea anemones, stony corals, soft corrals and sea pens. Generally sessile as adults. ",https://en.wikipedia.org/wiki/Anthozoa
-Medusozoa,Subphylum,Usually jellyfish,Have a true medusa stage,https://en.wikipedia.org/wiki/Medusozoa
-Insecta,Class,Insects,"Six legs, three part body plan (head, thorax, abdomen), antennae. Most diverse group of animals.",https://en.wikipedia.org/wiki/Insect
-Collembola,Class,Springtails,"Six legs but wingless, bounce around. ",https://insightpestnorthwest.com/understanding-springtails-the-tiny-pests-that-can-cause-big-problems/
-Myriapoda,Class,Myriapods,"Centepedes, millipedes and friends. Many legs.",https://en.wikipedia.org/wiki/Myriapoda
-Hydrozoa,Class,Hydrozoans,"Often collonial, some freshwater. Medusae have a velum.",https://alchetron.com/Hydrozoa
-Scyphozoa,Class,True jellyfish,Medusae have no velum. ,https://en.wikipedia.org/wiki/Scyphozoa
-Hexacorallia,Class,Hexacorals,Six fold symmetry,https://en.wikipedia.org/wiki/Hexacorallia
-Octocorallia,Class,Octocorals,Eight fold symmetry,https://en.wikipedia.org/wiki/Octocorallia
-Rotifera,Phylum,Wheel animals,"Small, usually solitary, 'wheels' of cilia - the corona. ",https://www.cloudynights.com/forums/topic/639395-bdelloid-rotifer-from-a-birdbath/
-Chaetognatha,Phylum,Arrow worma,"Predatory marine worms, hooks on each side of the mouth",https://www.tnrp.com.au/arrow_worms_phylum_chaetognatha.html
-Onychophora,Phylum,Velvet worms,"Many legs, prey on other inverts by shooting adhesive slime",https://en.wikipedia.org/wiki/Onychophora
-Nematomorpha,Phylum,Horsehair worms,"Parasitic in arthropods, hard external cuticle",https://www.wildlifetrusts.org/wildlife-explorer/marine/worms/horsehair-worm
-Gastropoda,Class,Snails and Slugs,Torsion rotates the visceral mass so the anus is above the head,https://en.wikipedia.org/wiki/Gastropoda
-Cephalopoda,Class,"Squid, octopus, cuttlefish, or nautilus","Most intellegent invertebrates, tentacles (suckers on end) or arms (suckers whole way down)",https://www.cell.com/current-biology/fulltext/S0960-9822(23)01056-4
-Bivalvia,Class,"Clams, oysters, & friends","Laterally compressed between two valves (shells). i.e., valves are left-right, not top-bottom",https://www.projetecolo.com
-Xenacoelomorpha,Phylum,Xenacoelomorphs,"Simple flattened worms, most basal bilaterians",https://en.wikipedia.org/wiki/Xenacoelomorpha
-Eumetazoa,Higher Clade,True animals,True tissues,https://www.lifeder.com/eumetazoa/
-Bryozoa ,Phylum,Moss animals,"Small, live in sedentary colonies, single animals called zooids ",https://www.inaturalist.org/taxa/68104-Bryozoa
-Priapulida,Phylum,Penis worms,"Sunsegmented worms, extensible spiny proboscis.",https://en.wikipedia.org/wiki/Priapulida
-Tardigrada,Phylum,Water bears,"Cute and small, increadibly resilient",https://en.wikipedia.org/wiki/Tardigrade
-Arachnida,Class,Arachnids,"Eight legs on cephalothorax, also chelicera and pedipalps",https://commons.wikimedia.org/wiki/File:Arachnida_collage_(Update).jpg
-Merostomata,Class,Horseshoe crabs,"Not crabs, only living example is horseshoe crabs.",https://en.wikipedia.org/wiki/Xiphosura
-Pycnogonida,Class,Sea spiders,"Not spiders, marine animals. ",https://www.starfish.ch/register-i/crustaceans-sea-spiders.html
-Placozoa,Phylum,Placozoans,"Simplest of animals, move with ciliary motion. ",https://en.wikipedia.org/wiki/Placozoa
+﻿Clade,Level,CommonName,Description,Anatomy,ImageLink
+Metazoa,Kingdom,Animals,"Animals are motile in at least one stage, form from a blastula during embryonic development, have collagen, are heterotrophic",,https://fr.wikipedia.org/wiki/Metazoa
+Bilateria,Higher Clade,Bilateral Animals,Left-right symmetry (sorta),,https://simple.wikipedia.org/wiki/Bilateria
+Deuterostomia,Higher Clade,Deuterostomes,Anus developes before mouth,,https://en.wikipedia.org/wiki/Deuterostome
+Protostomia,Higher Clade,Protostomes,Mouth developes before anus,,https://en.wikipedia.org/wiki/Protostome
+Nephrozoa,Higher Clade,Nephrozoans,Excretory nephridia,,https://en.wikipedia.org/wiki/Nephrozoa
+Spiralia,Higher Clade,Spiralians,Spiral cleavage,,https://en.wikipedia.org/wiki/Spiralia
+Chordata,Phylum,Chordates,Includes vertebrates and their relatives,"Notochord, dorsal hollow nerve cord, pharyngeal gill slits, post anal tail, endostyle",https://en.wikipedia.org/wiki/Chordate
+Tunicata,Subphylum,"Tunicates, AKA Urochordata",Only have a notocord in the larval stage (usually).,,https://www.flickr.com/photos/svenalgerie/305699586
+Ascidiacea,Class,Ascidians or sea squirts,Sessile after their larval stage,,https://en.wikipedia.org/wiki/Tunicate
+Thaliacea,Class,,,,
+Larvacea,Class,"Larvaceans, AKA Appendicularia","Larvaceans retain their chordate features throughout adulthood. They live and filter feed in an house, an external gelatinous casing secreted by the body.",,https://www.thoughtco.com/biology-of-invertebrate-chordates-4156566
+Vertebrata,Subphylum,Vertebrates and friends,We are vertebrates,Vertical column,https://en.wikipedia.org/wiki/Vertebrate
+Cephalochordata,Subphylum,Lancelets and friends,Resemble a filter feeding benthic fish,No jaws,
+Hemichordata,Phylum,Acorn worms & pterobranchs,Solitary marine worms,No notochord,https://en.wikipedia.org/wiki/Hemichordate
+Echinodermata,Phylum,Starfish and Friends,"Evolved from bilateral animals, now pentaradial","Ambulacral grooves, oral and aboral surfaces, water vascular system, tube feet, madreporite, endoskeleton, coelomic cavity ",https://en.wikipedia.org/wiki/Echinoderm
+Crinoidea,Class,Feather stars,,,
+Asteroidea,Class,Sea stars (star fish),,,"Tube foot, Ampulla, Radial canal, Coelom, Spine, Pedicellaria, Pyloric caecum, Gonad"
+Ophiuroidea,Class,Brittle stars ,,,
+Echinoidea,Class,Sea urchins ,,Aristotle's lantern,
+Holothuroidea,Class,Sea cucumbers,Have come back to bilateral symmetry ,,
+Mollusca,Phylum,Molluscs,Mantle and such,"Ventral muscular foot, Radula (teeth), Mantle (epithelial structure that secretes the shell)",https://en.wikipedia.org/wiki/Mollusca
+Aplacophora,Class,Aplacophorans,Deep sea worms ,Secrete calcareous spicules instead of a shell,
+Monoplacophora,Class,Monoplacophorans,"Deep sea benthic animals, thought to be extinct until 1950s",Single shell,
+Polyplacophora,Class,Chitons,"Generally shallow, intertidal ","Seven or eight separate shell plates, girdle (edge of mantle, often embedded with spicules)",
+Gastropoda,Class,Snails and Slugs,Torsion rotates the visceral mass so the anus is above the head,Operculum,https://en.wikipedia.org/wiki/Gastropoda
+Cephalopoda,Class,"Squid, octopus, cuttlefish, or nautilus","Most intellegent invertebrates, tentacles (suckers on end) or arms (suckers whole way down)","Closed circulatory system, Foot modified into the siphon and arms/tentacles, Shell that is reduced or lost (usually), Large collection of cerebral ganglia",https://www.cell.com/current-biology/fulltext/S0960-9822(23)01056-4
+Nautiloidea,Subclass,Nautiluses,"Still have their shell, used to be much more diverse",External coiled/chambered shell,
+Coleoidea,Subclass,"Squid, octopus, cuttlefish",,"Reduced internal shell, Chromatophores - pigmented cells that produce color, contraction and expansion of sacs allow color change",
+Bivalvia,Class,"Clams, oysters, & friends","Laterally compressed between two valves (shells), usually sessile",,https://www.projetecolo.com
+Annelida,Phylum,Segmented worms,"At least one pair of chitinous setae, metameric segmenation",,https://en.wikipedia.org/wiki/Annelid
+Polychaeta,Class,Bristle worms,Tube dwelling and errant lifestyles,Parapodia with bristles,
+Clitella,Class,,,,
+Oligochaeta,Subclass,Earthworms and friends,All individuals are hermaphroditic,clitellum,
+Hirunidae,Subclass,Leaches,Have suckers to attach to hosts ,,
+,,,,,
+Ctenophora,Phylum,Comb Jellies,"No stinging cells, some have transient anus. Recently thought to be sister to all other animals but that is contentious.",,https://www.microscopemaster.com/phylum-ctenophora.html
+Porifera,Phylum,Sponges,Aquatic simple animals. no true tissues,,https://www.pelajaran.co.id/ciri-ciri-struktur-reproduksi-klasifikasi-dan-peranan-porifera/
+Calcarea,Class,Calcareous sponges,Calcium carbonate spicules,,https://naturaldigestionsystem.weebly.com/calcarea.html
+Demospongiae,Class,Common sponges,Network of solica and spongin,,https://en.wikipedia.org/wiki/Demosponge
+Hexactinellida,Class,Glass sponges,Four- and/or six-pointed siliceous spicules,,
+Cnidaria,Phylum,Jelly fish and Anemonies ,Radial Symmetry. Blind gut,,https://en.wikipedia.org/wiki/Cnidaria
+Platyhelminthes,Phylum,Flatworms,Unsegmented. Blind gut,,https://en.wikipedia.org/wiki/Flatworm
+Nematoda,Phylum,Nematodes,Ubiquitous in nature,,https://en.wikipedia.org/wiki/Nematode
+Arthropoda,Phylum,Arthropods,"Jointed legs, chitinous exoskeleton",,https://en.wikipedia.org/wiki/Arthropod
+Brachiopoda,Phylum,Lampshells,"Top and bottom valve, unlike molluscan bivalves",,https://simple.wikipedia.org/wiki/Brachiopod
+Hexapoda,Subphylum,Hexapods,Six legs,,https://en.wikipedia.org/wiki/Hexapoda
+Pancrustacea,,Crustaceans,Crabs but also bugs,,https://www.researchgate.net/figure/Morphological-diversity-of-select-pancrustaceans-A-buoy-barnacle-Cirripedia-B_fig1_372991050
+Ecdysozoa,Superphylum,Ecdysozoans,Chitin based exoskeleton,,https://en.wikipedia.org/wiki/Ecdysozoa
+Chelicerata,Subphylum,Chelicerates,Spiders and Friends,,https://en.wikipedia.org/wiki/Chelicerata
+Malacostraca,Class,Crabs and friends,Abdominal appendages,,https://en.wikipedia.org/wiki/Malacostraca
+Lophotrochozoa,Superphylum,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore ,,
+Nemertea,Phylum,Ribbon worms or Proboscis worms ,"Unsegmented, usually predators or parasites",,https://pages.uoregon.edu/svetlana/iWeb/Home/Nemerteans.html
+Anthozoa,Subphylum,Anthozoans,"Sea anemones, stony corals, soft corrals and sea pens. Generally sessile as adults. ",,https://en.wikipedia.org/wiki/Anthozoa
+Medusozoa,Subphylum,Usually jellyfish,Have a true medusa stage,,https://en.wikipedia.org/wiki/Medusozoa
+Insecta,Class,Insects,"Six legs, three part body plan (head, thorax, abdomen), antennae. Most diverse group of animals.",,https://en.wikipedia.org/wiki/Insect
+Collembola,Class,Springtails,"Six legs but wingless, bounce around. ",,https://insightpestnorthwest.com/understanding-springtails-the-tiny-pests-that-can-cause-big-problems/
+Myriapoda,Class,Myriapods,"Centepedes, millipedes and friends. Many legs.",,https://en.wikipedia.org/wiki/Myriapoda
+Hydrozoa,Class,Hydrozoans,"Often collonial, some freshwater. Medusae have a velum.",,https://alchetron.com/Hydrozoa
+Scyphozoa,Class,True jellyfish,Medusae have no velum. ,,https://en.wikipedia.org/wiki/Scyphozoa
+Hexacorallia,Class,Hexacorals,Six fold symmetry,,https://en.wikipedia.org/wiki/Hexacorallia
+Octocorallia,Class,Octocorals,Eight fold symmetry,,https://en.wikipedia.org/wiki/Octocorallia
+Rotifera,Phylum,Wheel animals,"Small, usually solitary, 'wheels' of cilia - the corona. ",,https://www.cloudynights.com/forums/topic/639395-bdelloid-rotifer-from-a-birdbath/
+Chaetognatha,Phylum,Arrow worma,"Predatory marine worms, hooks on each side of the mouth",,https://www.tnrp.com.au/arrow_worms_phylum_chaetognatha.html
+Onychophora,Phylum,Velvet worms,"Many legs, prey on other inverts by shooting adhesive slime",,https://en.wikipedia.org/wiki/Onychophora
+Nematomorpha,Phylum,Horsehair worms,"Parasitic in arthropods, hard external cuticle",,https://www.wildlifetrusts.org/wildlife-explorer/marine/worms/horsehair-worm
+Xenacoelomorpha,Phylum,Xenacoelomorphs,"Simple flattened worms, most basal bilaterians",,https://en.wikipedia.org/wiki/Xenacoelomorpha
+Eumetazoa,Higher Clade,True animals,True tissues,,https://www.lifeder.com/eumetazoa/
+Bryozoa ,Phylum,Moss animals,"Small, live in sedentary colonies, single animals called zooids ",,https://www.inaturalist.org/taxa/68104-Bryozoa
+Priapulida,Phylum,Penis worms,"Sunsegmented worms, extensible spiny proboscis.",,https://en.wikipedia.org/wiki/Priapulida
+Tardigrada,Phylum,Water bears,"Cute and small, increadibly resilient",,https://en.wikipedia.org/wiki/Tardigrade
+Arachnida,Class,Arachnids,"Eight legs on cephalothorax, also chelicera and pedipalps",,https://commons.wikimedia.org/wiki/File:Arachnida_collage_(Update).jpg
+Merostomata,Class,Horseshoe crabs,"Not crabs, only living example is horseshoe crabs.",,https://en.wikipedia.org/wiki/Xiphosura
+Pycnogonida,Class,Sea spiders,"Not spiders, marine animals. ",,https://www.starfish.ch/register-i/crustaceans-sea-spiders.html
+Placozoa,Phylum,Placozoans,"Simplest of animals, move with ciliary motion. ",,https://en.wikipedia.org/wiki/Placozoa
