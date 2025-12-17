@@ -1,24 +1,31 @@
 #NEXUS
-[R-package APE, Fri Dec 12 17:50:25 2025]
+[R-package APE, Wed Dec 17 12:36:08 2025]
 
 BEGIN TAXA;
-	DIMENSIONS NTAX = 37;
+	DIMENSIONS NTAX = 46;
 	TAXLABELS
 		Vertebrata
-		Ascidiacea
+		Clitella
 		Thaliacea
 		Larvacea
 		Cephalochordata
-		Echinodermata
+		Echinoidea
+		Holothuroidea
+		Ophiuroidea
+		Asteroidea
+		Crinoidea
 		Hemichordata
 		Platyhelminthes
 		Rotifera
 		Gastropoda
 		Bivalvia
-		Cephalopoda
+		Coleoidea
+		Nautiloidea
+		Monoplacophora
+		Polyplacophora
 		Nemertea
 		Brachiopoda
-		Annelida
+		Hirudinea
 		Chaetognatha
 		Insecta
 		Collembola
@@ -41,47 +48,58 @@ BEGIN TAXA;
 		Calcarea
 		Ctenophora
 		Xenacoelomorpha
+		Polychaeta
+		Oligochaeta
 	;
 END;
 BEGIN TREES;
 	TRANSLATE
 		1	Vertebrata,
-		2	Ascidiacea,
+		2	Clitella,
 		3	Thaliacea,
 		4	Larvacea,
 		5	Cephalochordata,
-		6	Echinodermata,
-		7	Hemichordata,
-		8	Platyhelminthes,
-		9	Rotifera,
-		10	Gastropoda,
-		11	Bivalvia,
-		12	Cephalopoda,
-		13	Nemertea,
-		14	Brachiopoda,
-		15	Annelida,
-		16	Chaetognatha,
-		17	Insecta,
-		18	Collembola,
-		19	Malacostraca,
-		20	Myriapoda,
-		21	Pycnogonida,
-		22	Merostomata,
-		23	Tardigrada,
-		24	Onychophora,
-		25	Nematoda,
-		26	Priapulida,
-		27	Nematomorpha,
-		28	Hexacorallia,
-		29	Octocorallia,
-		30	Hydrozoa,
-		31	Scyphozoa,
-		32	Placozoa,
-		33	Hexactinellida,
-		34	Demospongiae,
-		35	Calcarea,
-		36	Ctenophora,
-		37	Xenacoelomorpha
+		6	Echinoidea,
+		7	Holothuroidea,
+		8	Ophiuroidea,
+		9	Asteroidea,
+		10	Crinoidea,
+		11	Hemichordata,
+		12	Platyhelminthes,
+		13	Rotifera,
+		14	Gastropoda,
+		15	Bivalvia,
+		16	Coleoidea,
+		17	Nautiloidea,
+		18	Monoplacophora,
+		19	Polyplacophora,
+		20	Nemertea,
+		21	Brachiopoda,
+		22	Hirudinea,
+		23	Chaetognatha,
+		24	Insecta,
+		25	Collembola,
+		26	Malacostraca,
+		27	Myriapoda,
+		28	Pycnogonida,
+		29	Merostomata,
+		30	Tardigrada,
+		31	Onychophora,
+		32	Nematoda,
+		33	Priapulida,
+		34	Nematomorpha,
+		35	Hexacorallia,
+		36	Octocorallia,
+		37	Hydrozoa,
+		38	Scyphozoa,
+		39	Placozoa,
+		40	Hexactinellida,
+		41	Demospongiae,
+		42	Calcarea,
+		43	Ctenophora,
+		44	Xenacoelomorpha,
+		45	Polychaeta,
+		46	Oligochaeta
 	;
-	TREE * UNTITLED = [&U] (36:0,(32:1,((37:1,(((5:0,1:1,(2:1,3:1,4:1)Tunicata:1)Chordata:1,(6:1,7:1)NA:1)Deuterostomia:1,((16:0,(9:0,8:0)NA:1,(15:1,((11:1,10:1,12:0)Mollusca:1,(13:1,14:1)NA:1)NA:1)Lophotrochozoa:1)Spiralia:1,(27:1,(((20:1,((18:1,17:1)Hexapoda:1,19:1)NA:1)NA:1,(22:1,21:1)Chelicerata:1)Arthropoda:1,(23:1,24:1)NA:1)NA:1,(25:1,26:1)NA:1)Ecdysozoa:1)Protostomia:1)Nephrozoa:0.5)Bilateria:0.5,((29:1,28:1)Anthozoa:1,(30:1,31:1)Medusozoa:1)Cnidaria:1)NA:1)Eumetazoa:1,(33:1,34:1,35:0)Porifera:1)Metazoa;
+	TREE * UNTITLED = [&U] (43:0,(39:1,((44:1,(((5:0,1:1,(3:1,4:1,2:1)Tunicata:1)Chordata:1,(11:1,(6:1,7:1,8:1,9:1,10:0)Echinodermata:1)NA:1)Deuterostomia:1,((23:0,(13:0,12:0)NA:1,(((15:0,14:0,18:1,(16:1,17:1)Cephalopoda:1,19:0)Mollusca:1,(20:1,21:1)NA:1)NA:1,((22:0.25,46:1)Clitella:0.25,45:1)Annelida:0.5)Lophotrochozoa:1)Spiralia:1,(34:1,(((27:1,((25:1,24:1)Hexapoda:1,26:1)NA:1)NA:1,(29:1,28:1)Chelicerata:1)Arthropoda:1,(30:1,31:1)NA:1)NA:1,(32:1,33:1)NA:1)Ecdysozoa:1)Protostomia:1)Nephrozoa:0.5)Bilateria:0.5,((36:1,35:1)Anthozoa:1,(37:1,38:1)Medusozoa:1)Cnidaria:1)NA:1)Eumetazoa:1,(40:1,41:1,42:0)Porifera:1)Metazoa;
 END;

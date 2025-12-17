@@ -8,31 +8,31 @@ Spiralia,Higher Clade,Spiralians,Spiral cleavage,,https://en.wikipedia.org/wiki/
 Chordata,Phylum,Chordates,Includes vertebrates and their relatives,"Notochord, dorsal hollow nerve cord, pharyngeal gill slits, post anal tail, endostyle",https://en.wikipedia.org/wiki/Chordate
 Tunicata,Subphylum,"Tunicates, AKA Urochordata",Only have a notocord in the larval stage (usually).,,https://www.flickr.com/photos/svenalgerie/305699586
 Ascidiacea,Class,Ascidians or sea squirts,Sessile after their larval stage,,https://en.wikipedia.org/wiki/Tunicate
-Thaliacea,Class,,,,
+Thaliacea,Class,,"Pelagic for their lifeaspan, solitary and clonial forms",,https://alchetron.com/Thaliacea
 Larvacea,Class,"Larvaceans, AKA Appendicularia","Larvaceans retain their chordate features throughout adulthood. They live and filter feed in an house, an external gelatinous casing secreted by the body.",,https://www.thoughtco.com/biology-of-invertebrate-chordates-4156566
 Vertebrata,Subphylum,Vertebrates and friends,We are vertebrates,Vertical column,https://en.wikipedia.org/wiki/Vertebrate
-Cephalochordata,Subphylum,Lancelets and friends,Resemble a filter feeding benthic fish,No jaws,
+Cephalochordata,Subphylum,Lancelets and friends,Resemble a filter feeding benthic fish,No jaws,https://zookeys.pensoft.net/article/33901/
 Hemichordata,Phylum,Acorn worms & pterobranchs,Solitary marine worms,No notochord,https://en.wikipedia.org/wiki/Hemichordate
 Echinodermata,Phylum,Starfish and Friends,"Evolved from bilateral animals, now pentaradial","Ambulacral grooves, oral and aboral surfaces, water vascular system, tube feet, madreporite, endoskeleton, coelomic cavity ",https://en.wikipedia.org/wiki/Echinoderm
-Crinoidea,Class,Feather stars,,,
-Asteroidea,Class,Sea stars (star fish),,,"Tube foot, Ampulla, Radial canal, Coelom, Spine, Pedicellaria, Pyloric caecum, Gonad"
-Ophiuroidea,Class,Brittle stars ,,,
-Echinoidea,Class,Sea urchins ,,Aristotle's lantern,
-Holothuroidea,Class,Sea cucumbers,Have come back to bilateral symmetry ,,
+Crinoidea,Class,Feather stars and sea lilies,,,https://en.wikipedia.org/wiki/Crinoid
+Asteroidea,Class,Sea stars (star fish),Usually predatory marine animals,"Tube foot, Ampulla, Radial canal, Coelom, Spine, Pedicellaria, Pyloric caecum, Gonad",https://www.pinterest.com/pin/278519558174677917/
+Ophiuroidea,Class,Brittle stars ,"The internal organs of digestion and reproduction never enter the arms, as they do in the Asteroidea",,https://en.wikipedia.org/wiki/Brittle_star
+Echinoidea,Class,Sea urchins and sand dollars,,Aristotle's lantern,https://en.wikipedia.org/wiki/Sea_urchin
+Holothuroidea,Class,Sea cucumbers,Have come back to bilateral symmetry ,,https://en.wikipedia.org/wiki/Sea_cucumber
 Mollusca,Phylum,Molluscs,Mantle and such,"Ventral muscular foot, Radula (teeth), Mantle (epithelial structure that secretes the shell)",https://en.wikipedia.org/wiki/Mollusca
-Aplacophora,Class,Aplacophorans,Deep sea worms ,Secrete calcareous spicules instead of a shell,
-Monoplacophora,Class,Monoplacophorans,"Deep sea benthic animals, thought to be extinct until 1950s",Single shell,
-Polyplacophora,Class,Chitons,"Generally shallow, intertidal ","Seven or eight separate shell plates, girdle (edge of mantle, often embedded with spicules)",
+Aplacophora,Class,Aplacophorans,Deep sea worms ,Secrete calcareous spicules instead of a shell,https://en.wikipedia.org/wiki/Aplacophora
+Monoplacophora,Class,Monoplacophorans,"Deep sea benthic animals, thought to be extinct until 1950s. Not to be confused with gastrpod limpets. ",Single shell,https://www.biorxiv.org/content/10.1101/2023.11.08.566290v1.full
+Polyplacophora,Class,Chitons,"Generally shallow, intertidal ","Seven or eight separate shell plates, girdle (edge of mantle, often embedded with spicules)",https://en.wikipedia.org/wiki/Chiton
 Gastropoda,Class,Snails and Slugs,Torsion rotates the visceral mass so the anus is above the head,Operculum,https://en.wikipedia.org/wiki/Gastropoda
 Cephalopoda,Class,"Squid, octopus, cuttlefish, or nautilus","Most intellegent invertebrates, tentacles (suckers on end) or arms (suckers whole way down)","Closed circulatory system, Foot modified into the siphon and arms/tentacles, Shell that is reduced or lost (usually), Large collection of cerebral ganglia",https://www.cell.com/current-biology/fulltext/S0960-9822(23)01056-4
-Nautiloidea,Subclass,Nautiluses,"Still have their shell, used to be much more diverse",External coiled/chambered shell,
+Nautiloidea,Subclass,Nautiluses,"Still have their shell, used to be much more diverse",External coiled/chambered shell,https://en.wikipedia.org/wiki/Nautilus
 Coleoidea,Subclass,"Squid, octopus, cuttlefish",,"Reduced internal shell, Chromatophores - pigmented cells that produce color, contraction and expansion of sacs allow color change",
 Bivalvia,Class,"Clams, oysters, & friends","Laterally compressed between two valves (shells), usually sessile",,https://www.projetecolo.com
 Annelida,Phylum,Segmented worms,"At least one pair of chitinous setae, metameric segmenation",,https://en.wikipedia.org/wiki/Annelid
 Polychaeta,Class,Bristle worms,Tube dwelling and errant lifestyles,Parapodia with bristles,
-Clitella,Class,,,,
-Oligochaeta,Subclass,Earthworms and friends,All individuals are hermaphroditic,clitellum,
-Hirunidae,Subclass,Leaches,Have suckers to attach to hosts ,,
+Clitella,Class,Clitellates,,,
+Oligochaeta,Subclass,Earthworms and friends,All individuals are hermaphroditic,clitellum,https://en.wikipedia.org/wiki/Oligochaeta
+Hirudinea,Subclass,Leaches,Have suckers to attach to hosts ,,https://en.wikipedia.org/wiki/Leech
 ,,,,,
 Ctenophora,Phylum,Comb Jellies,"No stinging cells, some have transient anus. Recently thought to be sister to all other animals but that is contentious.",,https://www.microscopemaster.com/phylum-ctenophora.html
 Porifera,Phylum,Sponges,Aquatic simple animals. no true tissues,,https://www.pelajaran.co.id/ciri-ciri-struktur-reproduksi-klasifikasi-dan-peranan-porifera/

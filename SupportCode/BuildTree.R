@@ -11,7 +11,7 @@ library(ggtree) # for the tree
 
 Descriptions <- read.csv("AnimalTreeApp/InvertDescriptions.csv") # call in the groups we cant
 
-ranks <- c("Superphylum", "Phylum", "Subphylum", "Class")
+ranks <- c("Superphylum", "Phylum", "Subphylum", "Class", "Subclass")
 taxa <- tnrs_match_names(
   Descriptions$Clade[Descriptions$Level %in% ranks],
   context_name = "Animals") # to stop a weird error
@@ -52,6 +52,8 @@ tree$tip.label[tree$tip.label == "Vertebrata (subphylum in Deuterostomia)"] <- "
 tree$tip.label[tree$tip.label == "mrcaott150ott7012"] <- "Hexacorallia"
 tree$tip.label[tree$tip.label == "Onychophora (phylum in Holozoa)"] <- "Onychophora"
 tree$tip.label[tree$tip.label == "Appendicularia (class in Opisthokonta)"] <- "Larvacea"
+# tree$tip.label[tree$tip.label == "Polychaeta (class in Lophotrochozoa)"] <- "Polychaeta"
+# tree$tip.label[tree$tip.label == "Oligochaeta (subclass in Opisthokonta)"] <- "Oligochaeta"
 
 
 #remove useless node labels
@@ -64,14 +66,19 @@ if (is.null(tree$edge.length)) {
 }
 
 pairs_to_collapse <- list(
-  c("Ctenophora", "Calcarea"),
-  c("Platyhelminthes", "Rotifera"),
-  c("Chaetognatha", "Rotifera"),
-  c("Bivalvia", "Cephalopoda"),
-  c("Hexactinellida", "Calcarea"),
-  c("Vertebrata", "Cephalochordata")
+  c("Ctenophora", "Calcarea"), # collapse spiralians 
+  c("Platyhelminthes", "Rotifera"), # collapse spiralians 
+  c("Chaetognatha", "Rotifera"), # collapse spiralians 
+  c("Bivalvia", "Gastropoda"), # collapse mollusks
+  c("Monoplacophora", "Gastropoda"), # collapse mollusks
+  c("Polyplacophora", "Bivalvia"), # collapse mollusks
+  c("Hexactinellida", "Calcarea"), # collapse sponges
+  c("Vertebrata", "Cephalochordata"), # collapse chordates  
+  c("Crinoidea", "Asteroidea"), # collapse echinoderms 
+  c("Echinoidea", "Asteroidea") # collapse echinoderms 
 )
 
+# to collapse unwanted nodes 
 for (pair in pairs_to_collapse) {
   node <- getMRCA(tree, pair)
   if (!is.na(node)) {
@@ -80,6 +87,7 @@ for (pair in pairs_to_collapse) {
   }
 }
 
+# to add a tip that was problematic 
 tree <- AddTip(tree, where = getMRCA(tree, c("Hemichordata", "Bivalvia")),
                label = "Xenacoelomorpha",
                edgeLength = 1) # node label isnt working so see following code
@@ -87,13 +95,29 @@ tree <- AddTip(tree, where = getMRCA(tree, c("Hemichordata", "Bivalvia")),
 # Assign the node label
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Xenacoelomorpha"), 1] - length(tree$tip.label)] <- "Bilateria"
 
+# to add another tip that was problematic 
+tree <- AddTip(tree, where = "Hirudinea",
+               label = "Polychaeta",
+               edgeLength = 1)
+
+# Assign the node label
+tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Polychaeta"), 1] - length(tree$tip.label)] <- "Annelida"
+
+# to add another tip that was problematic 
+tree <- AddTip(tree, where = "Hirudinea",
+               label = "Oligochaeta",
+               edgeLength = 1)
+
+# Assign the node label
+tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Oligochaeta"), 1] - length(tree$tip.label)] <- "Clitella"
+
 tree <- di2multi(tree) # only works once some edges have 0 length 
 write.nexus(tree, file = "AnimalTreeApp/tree.nex")
 
 colnames(Descriptions)[colnames(Descriptions) == "Clade"] = "label" # i think this is necessary to match in descriptions
 
 # reorder for the sake of the legend 
-Descriptions$Level <- factor(Descriptions$Level, levels = c("Higher Clade", "Superphylum", "Phylum", "Subphylum", "Class"))
+Descriptions$Level <- factor(Descriptions$Level, levels = c("Higher Clade", "Superphylum", "Phylum", "Subphylum", "Class", "Subclass"))
 
 TreePlot <- ggtree(tree, branch.length="none", aes(color=Level), size = 1.5) %<+% Descriptions + # match descriptions to nodes
   geom_tiplab(fill="white", geom = "label", size = 5, fontface = 2) +
