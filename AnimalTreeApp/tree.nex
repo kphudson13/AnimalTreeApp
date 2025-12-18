@@ -1,8 +1,8 @@
 #NEXUS
-[R-package APE, Wed Dec 17 12:36:08 2025]
+[R-package APE, Wed Dec 17 19:17:43 2025]
 
 BEGIN TAXA;
-	DIMENSIONS NTAX = 46;
+	DIMENSIONS NTAX = 77;
 	TAXLABELS
 		Vertebrata
 		Clitella
@@ -15,7 +15,8 @@ BEGIN TAXA;
 		Asteroidea
 		Crinoidea
 		Hemichordata
-		Platyhelminthes
+		Cestoda
+		Trematoda
 		Rotifera
 		Gastropoda
 		Bivalvia
@@ -27,11 +28,36 @@ BEGIN TAXA;
 		Brachiopoda
 		Hirudinea
 		Chaetognatha
-		Insecta
+		Lepidoptera
+		Diptera
+		Coleoptera
+		Hymenoptera
+		Hemiptera
+		Blattodea
+		Orthoptera
+		Odonata
 		Collembola
-		Malacostraca
-		Myriapoda
-		Pycnogonida
+		Isopoda
+		Amphipoda
+		Caridea
+		Brachyura
+		Astacidea
+		Achelata
+		Anomura
+		Euphausiacea
+		Stomatopoda
+		Cirripedia
+		Ostracoda
+		Pentastomida
+		Chilopoda
+		Diplopoda
+		Opiliones
+		Solifugae
+		Araneae
+		Uropygi
+		Amblypygi
+		Scorpiones
+		Pseudoscorpiones
 		Merostomata
 		Tardigrada
 		Onychophora
@@ -48,8 +74,13 @@ BEGIN TAXA;
 		Calcarea
 		Ctenophora
 		Xenacoelomorpha
+		Turbellia
 		Polychaeta
 		Oligochaeta
+		Pycnogonida
+		Trilobita
+		Copepoda
+		Branchiopoda
 	;
 END;
 BEGIN TREES;
@@ -65,41 +96,72 @@ BEGIN TREES;
 		9	Asteroidea,
 		10	Crinoidea,
 		11	Hemichordata,
-		12	Platyhelminthes,
-		13	Rotifera,
-		14	Gastropoda,
-		15	Bivalvia,
-		16	Coleoidea,
-		17	Nautiloidea,
-		18	Monoplacophora,
-		19	Polyplacophora,
-		20	Nemertea,
-		21	Brachiopoda,
-		22	Hirudinea,
-		23	Chaetognatha,
-		24	Insecta,
-		25	Collembola,
-		26	Malacostraca,
-		27	Myriapoda,
-		28	Pycnogonida,
-		29	Merostomata,
-		30	Tardigrada,
-		31	Onychophora,
-		32	Nematoda,
-		33	Priapulida,
-		34	Nematomorpha,
-		35	Hexacorallia,
-		36	Octocorallia,
-		37	Hydrozoa,
-		38	Scyphozoa,
-		39	Placozoa,
-		40	Hexactinellida,
-		41	Demospongiae,
-		42	Calcarea,
-		43	Ctenophora,
-		44	Xenacoelomorpha,
-		45	Polychaeta,
-		46	Oligochaeta
+		12	Cestoda,
+		13	Trematoda,
+		14	Rotifera,
+		15	Gastropoda,
+		16	Bivalvia,
+		17	Coleoidea,
+		18	Nautiloidea,
+		19	Monoplacophora,
+		20	Polyplacophora,
+		21	Nemertea,
+		22	Brachiopoda,
+		23	Hirudinea,
+		24	Chaetognatha,
+		25	Lepidoptera,
+		26	Diptera,
+		27	Coleoptera,
+		28	Hymenoptera,
+		29	Hemiptera,
+		30	Blattodea,
+		31	Orthoptera,
+		32	Odonata,
+		33	Collembola,
+		34	Isopoda,
+		35	Amphipoda,
+		36	Caridea,
+		37	Brachyura,
+		38	Astacidea,
+		39	Achelata,
+		40	Anomura,
+		41	Euphausiacea,
+		42	Stomatopoda,
+		43	Cirripedia,
+		44	Ostracoda,
+		45	Pentastomida,
+		46	Chilopoda,
+		47	Diplopoda,
+		48	Opiliones,
+		49	Solifugae,
+		50	Araneae,
+		51	Uropygi,
+		52	Amblypygi,
+		53	Scorpiones,
+		54	Pseudoscorpiones,
+		55	Merostomata,
+		56	Tardigrada,
+		57	Onychophora,
+		58	Nematoda,
+		59	Priapulida,
+		60	Nematomorpha,
+		61	Hexacorallia,
+		62	Octocorallia,
+		63	Hydrozoa,
+		64	Scyphozoa,
+		65	Placozoa,
+		66	Hexactinellida,
+		67	Demospongiae,
+		68	Calcarea,
+		69	Ctenophora,
+		70	Xenacoelomorpha,
+		71	Turbellia,
+		72	Polychaeta,
+		73	Oligochaeta,
+		74	Pycnogonida,
+		75	Trilobita,
+		76	Copepoda,
+		77	Branchiopoda
 	;
-	TREE * UNTITLED = [&U] (43:0,(39:1,((44:1,(((5:0,1:1,(3:1,4:1,2:1)Tunicata:1)Chordata:1,(11:1,(6:1,7:1,8:1,9:1,10:0)Echinodermata:1)NA:1)Deuterostomia:1,((23:0,(13:0,12:0)NA:1,(((15:0,14:0,18:1,(16:1,17:1)Cephalopoda:1,19:0)Mollusca:1,(20:1,21:1)NA:1)NA:1,((22:0.25,46:1)Clitella:0.25,45:1)Annelida:0.5)Lophotrochozoa:1)Spiralia:1,(34:1,(((27:1,((25:1,24:1)Hexapoda:1,26:1)NA:1)NA:1,(29:1,28:1)Chelicerata:1)Arthropoda:1,(30:1,31:1)NA:1)NA:1,(32:1,33:1)NA:1)Ecdysozoa:1)Protostomia:1)Nephrozoa:0.5)Bilateria:0.5,((36:1,35:1)Anthozoa:1,(37:1,38:1)Medusozoa:1)Cnidaria:1)NA:1)Eumetazoa:1,(40:1,41:1,42:0)Porifera:1)Metazoa;
+	TREE * UNTITLED = [&U] (69:0,(65:1,((70:1,(((5:0,1:1,(3:1,4:1,2:1)Tunicata:1)Chordata:1,(11:1,(6:1,7:1,8:1,9:1,10:0)Echinodermata:1)NA:1)Deuterostomia:1,((24:1,((14:1,(71:0,12:1,13:1)Platyhelminthes:0.5)NA:1,(((16:0,15:0,19:1,(17:1,18:1)Cephalopoda:1,20:0)Mollusca:1,(21:1,22:1)NA:1)NA:1,((23:0.25,73:1)Clitella:0.25,72:1)Annelida:0.5)Lophotrochozoa:1)NA:1)Spiralia:1,(60:0,((((33:1,(32:0,28:0,25:1,26:1,27:0,29:0,31:1,30:1)Insecta:1)Hexapoda:2,(76:0,77:0,(34:1,35:1,41:1,(36:0,40:0,37:0,39:1,38:1)Decapoda:1,42:0)Malacostraca:1,43:1,44:1,45:1)Crustacea:0.5)NA:1,(47:1,46:1)Myriapoda:1)NA:1,(74:0,75:0,55:1,(48:1,49:1,54:0,53:0,50:0,51:1,52:1)Arachnida:1)Chelicerata:0.5)Arthropoda:1,(56:1,57:1)NA:1,58:1,59:1)Ecdysozoa:1)Protostomia:1)Nephrozoa:0.5)Bilateria:0.5,((62:1,61:1)Anthozoa:1,(63:1,64:1)Medusozoa:1)Cnidaria:1)NA:1)Eumetazoa:1,(66:1,67:1,68:0)Porifera:1)Metazoa;
 END;
