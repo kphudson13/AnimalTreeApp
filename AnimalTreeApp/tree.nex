@@ -1,8 +1,8 @@
 #NEXUS
-[R-package APE, Wed Dec 17 19:17:43 2025]
+[R-package APE, Fri Dec 19 17:25:21 2025]
 
 BEGIN TAXA;
-	DIMENSIONS NTAX = 77;
+	DIMENSIONS NTAX = 87;
 	TAXLABELS
 		Vertebrata
 		Clitella
@@ -64,15 +64,22 @@ BEGIN TAXA;
 		Nematoda
 		Priapulida
 		Nematomorpha
-		Hexacorallia
-		Octocorallia
+		Scleractinia
+		Corallimorpharia
+		Zoantharia
+		Antipatharia
+		Actiniaria
+		Ceriantharia
+		Helioporacea
+		Pennatulacea
 		Hydrozoa
 		Scyphozoa
+		Cubozoa
 		Placozoa
 		Hexactinellida
 		Demospongiae
 		Calcarea
-		Ctenophora
+		Nuda
 		Xenacoelomorpha
 		Turbellia
 		Polychaeta
@@ -81,6 +88,9 @@ BEGIN TAXA;
 		Trilobita
 		Copepoda
 		Branchiopoda
+		Staurozoa
+		Alcyonacea
+		Tenticulata
 	;
 END;
 BEGIN TREES;
@@ -145,23 +155,33 @@ BEGIN TREES;
 		58	Nematoda,
 		59	Priapulida,
 		60	Nematomorpha,
-		61	Hexacorallia,
-		62	Octocorallia,
-		63	Hydrozoa,
-		64	Scyphozoa,
-		65	Placozoa,
-		66	Hexactinellida,
-		67	Demospongiae,
-		68	Calcarea,
-		69	Ctenophora,
-		70	Xenacoelomorpha,
-		71	Turbellia,
-		72	Polychaeta,
-		73	Oligochaeta,
-		74	Pycnogonida,
-		75	Trilobita,
-		76	Copepoda,
-		77	Branchiopoda
+		61	Scleractinia,
+		62	Corallimorpharia,
+		63	Zoantharia,
+		64	Antipatharia,
+		65	Actiniaria,
+		66	Ceriantharia,
+		67	Helioporacea,
+		68	Pennatulacea,
+		69	Hydrozoa,
+		70	Scyphozoa,
+		71	Cubozoa,
+		72	Placozoa,
+		73	Hexactinellida,
+		74	Demospongiae,
+		75	Calcarea,
+		76	Nuda,
+		77	Xenacoelomorpha,
+		78	Turbellia,
+		79	Polychaeta,
+		80	Oligochaeta,
+		81	Pycnogonida,
+		82	Trilobita,
+		83	Copepoda,
+		84	Branchiopoda,
+		85	Staurozoa,
+		86	Alcyonacea,
+		87	Tenticulata
 	;
-	TREE * UNTITLED = [&U] (69:0,(65:1,((70:1,(((5:0,1:1,(3:1,4:1,2:1)Tunicata:1)Chordata:1,(11:1,(6:1,7:1,8:1,9:1,10:0)Echinodermata:1)NA:1)Deuterostomia:1,((24:1,((14:1,(71:0,12:1,13:1)Platyhelminthes:0.5)NA:1,(((16:0,15:0,19:1,(17:1,18:1)Cephalopoda:1,20:0)Mollusca:1,(21:1,22:1)NA:1)NA:1,((23:0.25,73:1)Clitella:0.25,72:1)Annelida:0.5)Lophotrochozoa:1)NA:1)Spiralia:1,(60:0,((((33:1,(32:0,28:0,25:1,26:1,27:0,29:0,31:1,30:1)Insecta:1)Hexapoda:2,(76:0,77:0,(34:1,35:1,41:1,(36:0,40:0,37:0,39:1,38:1)Decapoda:1,42:0)Malacostraca:1,43:1,44:1,45:1)Crustacea:0.5)NA:1,(47:1,46:1)Myriapoda:1)NA:1,(74:0,75:0,55:1,(48:1,49:1,54:0,53:0,50:0,51:1,52:1)Arachnida:1)Chelicerata:0.5)Arthropoda:1,(56:1,57:1)NA:1,58:1,59:1)Ecdysozoa:1)Protostomia:1)Nephrozoa:0.5)Bilateria:0.5,((62:1,61:1)Anthozoa:1,(63:1,64:1)Medusozoa:1)Cnidaria:1)NA:1)Eumetazoa:1,(66:1,67:1,68:0)Porifera:1)Metazoa;
+	TREE * UNTITLED = [&R] (((72:1,((77:1,(((5:0,1:1,(3:1,4:1,2:1)Tunicata:1)Chordata:1,(11:1,(6:1,7:1,8:1,9:1,10:0)Echinodermata:1)NA:1)Deuterostomia:1,((24:1,((14:1,(78:0,12:1,13:1)Platyhelminthes:0.5)NA:1,(((16:0,15:0,19:1,(17:1,18:1)Cephalopoda:1,20:0)Mollusca:1,(21:1,22:1)NA:1)NA:1,((23:0.25,80:1)Clitella:0.25,79:1)Annelida:0.5)Lophotrochozoa:1)NA:1)Spiralia:1,(60:0,((((33:1,(32:0,28:0,25:1,26:1,27:0,29:0,31:1,30:1)Insecta:1)Hexapoda:2,(83:0,84:0,(34:1,35:1,41:1,(36:0,40:0,37:0,39:1,38:1)Decapoda:1,42:0)Malacostraca:1,43:1,44:1,45:1)Crustacea:0.5)NA:1,(47:1,46:1)Myriapoda:1)NA:1,(81:0,82:0,55:1,(48:1,49:1,54:0,53:0,50:0,51:1,52:1)Arachnida:1)Chelicerata:0.5)Arthropoda:1,(56:1,57:1)NA:1,58:1,59:1)Ecdysozoa:1)Protostomia:1)Nephrozoa:0.5)Bilateria:0.5,(((66:1,(65:0,61:1,62:1,64:1,63:1)Hexacorallia:1)NA:1,(86:0,67:1,68:1)Octocorallia:0.5)Anthozoa:1,(69:0,70:0,71:0.5,85:1)Medusozoa:1)Cnidaria:1)NA:1)Eumetazoa:1,(73:1,74:1,75:0)Porifera:1)NA:1,(76:0.5,87:1)Ctenophora:0.5)Metazoa;
 END;

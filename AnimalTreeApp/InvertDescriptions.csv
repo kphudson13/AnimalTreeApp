@@ -68,7 +68,7 @@ Lepidoptera,Order,Butterflies and moths,,,https://en.wikipedia.org/wiki/Lepidopt
 Diptera,Order,Flies,,,https://www.facebook.com/sagaOptics/posts/flies-diptera-one-of-the-four-mega-diverse-insect-orders-with-about-160000-speci/1128463808996788/
 Orthoptera,Order,Grasshoppers,,,https://en.wikipedia.org/wiki/Orthoptera
 Blattodea,Order,Cockroaches and termites,,,https://pressbooks.bccampus.ca/unbcbiol322/chapter/blattodea/
-Crustacea,Subphylum,Crustaceans (now this should include hexapods),,,
+Crustacea,Subphylum,Crustaceans (now this should include hexapods),,,https://www.ebay.com/itm/167738071155
 Malacostraca,Class,,Abdominal appendages,,https://en.wikipedia.org/wiki/Malacostraca
 Isopoda,Order,"Rolly-pollies, wood lice, giant deep sea isopods",,,https://tropicalisopods.com/products/isopoda-sp-dream-for-sale
 Amphipoda,Order,Scuds or side-swimmers,,,https://www.istockphoto.com/photos/amphipoda
@@ -85,24 +85,37 @@ Ostracoda,Class,Seed Shrimp,,,https://en.wikipedia.org/wiki/Ostracod
 Copepoda,Class,Copepods,,,https://www.algaebarn.com/blog/copepods/a-primer-on-the-different-characteristics-and-uses-of-the-major-copepod-groups/
 Pentastomida,Class,Tounge worms,"Not worms, parastic crustaceans",,https://en.wikipedia.org/wiki/Pentastomida
 Cirripedia,Class,Barnacles,Highly derived group of sessile arthropods. Most are suspension feeders - feed with cirri.,,https://en.wikipedia.org/wiki/Barnacle
-,,,,,
-Ctenophora,Phylum,Comb Jellies,"No stinging cells, some have transient anus. Recently thought to be sister to all other animals but that is contentious.",,https://www.microscopemaster.com/phylum-ctenophora.html
+Cnidaria,Phylum,Jelly fish and Anemonies ,"Diploblastic: have an ectoderm, endoderm and a mesoglea. All have stinging cells called Nematocytes (cnidocytes), which contain a nematocyst (cnida). Blind gut and no circulatory system. ",,https://en.wikipedia.org/wiki/Cnidaria
+Medusozoa,Subphylum,Usually jellyfish,Have a true medusa stage,,https://en.wikipedia.org/wiki/Medusozoa
+Hydrozoa,Class,Hydrozoans,"Many have a colonial polyp stage and planktonic medusae stage. Includes siphonophores, such as Portuguese man o’ war, where polyps have division of jobs.",,https://alchetron.com/Hydrozoa
+Scyphozoa,Class,True jellyfish,Medusae have no velum. Asexual stage where medusae will bud off a polyp - strobilation.,,https://en.wikipedia.org/wiki/Scyphozoa
+Cubozoa,Class,Box jellyfish,Polyp and medusae stage. Distinctive 4 sides. A few species have deadly stings. More complex nervous system with complex eyes and a ring nerve.,,https://www.britannica.com/animal/box-jellyfish
+Staurozoa,Class,Stalked jellyfish,Attached medusoid form. Do not have a polyp phase,,https://www.seawater.no/fauna/cnidaria/Staurozoa.html
+Anthozoa,Class,Anthozoans,"Sea anemones, stony corals, soft corrals and sea pens. Generally sessile as adults. ",,https://en.wikipedia.org/wiki/Anthozoa
+Ceriantharia,Subclass,Tube anemones,,,
+Hexacorallia,Subclass,Hexacorals,Six fold symmetry,,https://en.wikipedia.org/wiki/Hexacorallia
+Actiniaria,Order,Sea anemones,"Typically sessile, some have symbiotic relationships with zooxanthellae or dinoflagellates",,https://en.wikipedia.org/wiki/Actinia
+Scleractinia,Order,Stony corals,Secrete calcium carbonate -- built key habitat of the ocean’s most diverse regions. Many are colonial but can also be solitary. Many have symbionts called zooxanthellae. ,,https://redseacreatures.com/taxon/invertebrate/stinging/hard-corals
+Antipatharia,Order,Thorny corals,"Generally deep sea. Characteristic thin, flexible black skeleton. Affected by poaching. ",,https://www.shutterstock.com/search/antipatharia?dd_referrer=https%3A%2F%2Fwww.google.com%2F
+Corallimorpharia,Order,Solitary corals,Solitary polyps without skeletons,,https://en.wikipedia.org/wiki/Corallimorpharia
+Zoantharia,Order,"Generally colonial polyps, attached by a string-like structure called a stolon, or arranged in mats but can be solitary. Soft structure - commonly incorporate sand and other material for structure.",,,https://en.wikipedia.org/wiki/Zoantharia
+Octocorallia,Subclass,Octocorals,Eight fold symmetry,,https://en.wikipedia.org/wiki/Octocorallia
+Alcyonacea,Order,"Soft corals and gorgonians, see fans","Many are soft with skeletal elements called sclerites, but gorgonians make a hard skeleton. Found all over - many thrive in nutrient rich water, unlike stony corals. ",,https://en.wikipedia.org/wiki/Alcyonacea
+Pennatulacea,Order,Sea pens and sea pansies,Colonial polyps. Primary polyp off of which the other polyps grow (rather than mineralized skeleton). ,,https://www.reddit.com/r/AIDKE/comments/1euqt0z/a_sea_pen_pennatulacea_spp_is_actually_a_colony/
+Helioporacea,Order,Blue corals,Forms a crystalline calcareous skeleton - unlike other octocorals. Generally a blueish color. ,,https://www.inaturalist.org/taxa/85522-Helioporacea
 Porifera,Phylum,Sponges,Aquatic simple animals. no true tissues,,https://www.pelajaran.co.id/ciri-ciri-struktur-reproduksi-klasifikasi-dan-peranan-porifera/
-Calcarea,Class,Calcareous sponges,Calcium carbonate spicules,,https://naturaldigestionsystem.weebly.com/calcarea.html
-Demospongiae,Class,Common sponges,Network of solica and spongin,,https://en.wikipedia.org/wiki/Demosponge
-Hexactinellida,Class,Glass sponges,Four- and/or six-pointed siliceous spicules,,
-Cnidaria,Phylum,Jelly fish and Anemonies ,Radial Symmetry. Blind gut,,https://en.wikipedia.org/wiki/Cnidaria
+Calcarea,Class,Calcareous sponges,Calcium carbonate spicules. Generally small animals. ,,https://naturaldigestionsystem.weebly.com/calcarea.html
+Demospongiae,Class,Common sponges,"Spicules made of spongin, silicate, or calcium carbonate. Most diverse sponges.",,https://en.wikipedia.org/wiki/Demosponge
+Hexactinellida,Class,Glass sponges,"Four- and/or six-pointed siliceous spicules. Found in deep sea - estimated to live up to 15,000 years.",,https://www.digitalatlasofancientlife.org/learn/porifera/hexactinellida/
+Ctenophora,Phylum,Comb Jellies,"No stinging cells, but have sticky coloblast cells. some have transient anus. Recently thought to be sister to all other animals but that is contentious.","Ctene (fused ciliary plates) arranged in rows (look like combs). Mouth and gastrovascular canals, some lead to an anus. Apical sense organ.",https://www.microscopemaster.com/phylum-ctenophora.html
+Nuda,Class,,No tentacles,,https://en.wikipedia.org/wiki/Ctenophora
+Tenticulata,Class,,Tentacles,,https://www.seawater.no/fauna/ctenophora/pileus.html
+,,,,,
 Nematoda,Phylum,Nematodes,Ubiquitous in nature,,https://en.wikipedia.org/wiki/Nematode
 Brachiopoda,Phylum,Lampshells,"Top and bottom valve, unlike molluscan bivalves",,https://simple.wikipedia.org/wiki/Brachiopod
 Pancrustacea,,Crustaceans,Crabs but also bugs,,https://www.researchgate.net/figure/Morphological-diversity-of-select-pancrustaceans-A-buoy-barnacle-Cirripedia-B_fig1_372991050
 Ecdysozoa,Superphylum,Ecdysozoans,Chitin based exoskeleton,,https://en.wikipedia.org/wiki/Ecdysozoa
 Lophotrochozoa,Superphylum,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore ,,
-Anthozoa,Subphylum,Anthozoans,"Sea anemones, stony corals, soft corrals and sea pens. Generally sessile as adults. ",,https://en.wikipedia.org/wiki/Anthozoa
-Medusozoa,Subphylum,Usually jellyfish,Have a true medusa stage,,https://en.wikipedia.org/wiki/Medusozoa
-Hydrozoa,Class,Hydrozoans,"Often collonial, some freshwater. Medusae have a velum.",,https://alchetron.com/Hydrozoa
-Scyphozoa,Class,True jellyfish,Medusae have no velum. ,,https://en.wikipedia.org/wiki/Scyphozoa
-Hexacorallia,Class,Hexacorals,Six fold symmetry,,https://en.wikipedia.org/wiki/Hexacorallia
-Octocorallia,Class,Octocorals,Eight fold symmetry,,https://en.wikipedia.org/wiki/Octocorallia
 Rotifera,Phylum,Wheel animals,"Small, usually solitary, 'wheels' of cilia - the corona. ",,https://www.cloudynights.com/forums/topic/639395-bdelloid-rotifer-from-a-birdbath/
 Chaetognatha,Phylum,Arrow worma,"Predatory marine worms, hooks on each side of the mouth",,https://www.tnrp.com.au/arrow_worms_phylum_chaetognatha.html
 Nematomorpha,Phylum,Horsehair worms,"Parasitic in arthropods, hard external cuticle",,https://www.wildlifetrusts.org/wildlife-explorer/marine/worms/horsehair-worm
