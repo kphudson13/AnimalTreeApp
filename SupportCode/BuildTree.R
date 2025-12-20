@@ -40,6 +40,7 @@ tree$node.label[tree$node.label == "mrcaott56ott1881"] <- "Mollusca "
 tree$node.label[tree$node.label == "mrcaott42ott570365"] <- "Eumetazoa "
 tree$node.label[tree$node.label == "mrcaott343ott948"] <- "Arachnida "
 tree$node.label[tree$node.label == "mrcaott348ott37291"] <- "Malacostraca "
+tree$node.label[tree$node.label == "mrcaott150ott7012"] <- "Hexacorallia "
 tree$node.label[tree$node.label == "Pterygota (subclass in Opisthokonta) ott1048707"] <- "Insecta "
 tree$node.label[tree$node.label == "Lophotrochozoa ott155737"] <- NA # named clades we dont want
 tree$node.label[tree$node.label == "Pancrustacea ott985906"] <- NA
@@ -53,8 +54,9 @@ tree$tip.label[tree$tip.label == "mrcaott150ott7012"] <- "Hexacorallia"
 tree$tip.label[tree$tip.label == "Onychophora (phylum in Holozoa)"] <- "Onychophora"
 tree$tip.label[tree$tip.label == "Appendicularia (class in Opisthokonta)"] <- "Larvacea"
 tree$tip.label[tree$tip.label == "Brachyura (infraorder in Protostomia)"] <- "Brachyura"
+tree$tip.label[tree$tip.label == "Antipatharia (order worms:22549)"] <- "Antipatharia"
 
-#remove useless node labels
+# remove useless node labels
 tree$node.label <- ifelse(grepl(" ", tree$node.label), str_extract(tree$node.label, "^[^ ]+"), "")
 tree$node.label[tree$node.label == ""] <- NA
 
@@ -94,10 +96,19 @@ tree <- drop.tip(tree, "Branchiopoda")
 tree <- AddTip(tree, where = getMRCA(tree, c("Ostracoda", "Cirripedia")), label = "Branchiopoda", edgeLength = 1)
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Branchiopoda"), 1] - length(tree$tip.label)] <- NA
 
+tree <- AddTip(tree, where = "Cubozoa", label = "Staurozoa", edgeLength = 1)
+tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Staurozoa"), 1] - length(tree$tip.label)] <- NA
+
+tree <- AddTip(tree, where = getMRCA(tree, c("Pennatulacea", "Helioporacea")), label = "Alcyonacea", edgeLength = 1)
+tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Alcyonacea"), 1] - length(tree$tip.label)] <- "Octocorallia"
+
+tree <- AddTip(tree, where = "Nuda", label = "Tenticulata", edgeLength = 1)
+tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Tenticulata"), 1] - length(tree$tip.label)] <- "Ctenophora"
+
+
 # Collapse nodes ----------------------------------------------------------
 
 pairs_to_collapse <- list(
-  c("Ctenophora", "Calcarea"),          # collapse basal taxa
   c("Priapulida", "Onychophora"),       # collapse Ecdysozoa
   c("Bivalvia", "Gastropoda"),          # collapse mollusks
   c("Monoplacophora", "Gastropoda"),    # collapse mollusks
@@ -124,6 +135,12 @@ pairs_to_collapse <- list(
   c("Branchiopoda", "Cirripedia"),      # collapse crustaceans
   c("Pycnogonida", "Merostomata"),      # collapse chelicerates
   c("Trilobita", "Merostomata"),        # collapse chelicerates
+  c("Cubozoa", "Scyphozoa"),            # collapse Medusozoa 
+  c("Staurozoa", "Hydrozoa"),           # collapse Medusozoa 
+  c("Alcyonacea", "Pennatulacea"),      # collapse anthozoa 
+  c("Antipatharia", "Scleractinia"),    # collapse anthozoa 
+  c("Corallimorpharia", "Actiniaria"),  # collapse anthozoa 
+  c("Scleractinia", "Zoantharia"),      # collapse anthozoa 
   c("Crinoidea", "Asteroidea"),         # collapse echinoderms 
   c("Echinoidea", "Asteroidea")         # collapse echinoderms 
 )
@@ -151,7 +168,7 @@ TreePlot <- ggtree(tree, branch.length="none", layout="ellipse", aes(color=Level
   geom_tiplab(fill="white", geom = "label", size = 5, fontface = 2) +
   geom_nodelab(subset = !is.na(node.label), 
                fill="white", geom = "label", size = 5, fontface = 2) +
-  theme(legend.position = c(0.1,0.9),
+  theme(legend.position = c(0.1,0.85),
         legend.title = element_blank(),
         legend.text = element_text(size=16),
         legend.background = element_rect(fill = NA, colour = NA),
