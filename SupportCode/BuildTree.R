@@ -109,52 +109,65 @@ tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Tenticulata"
 # Collapse nodes ----------------------------------------------------------
 
 pairs_to_collapse <- list(
-  c("Priapulida", "Onychophora"),       # collapse Ecdysozoa
-  c("Bivalvia", "Gastropoda"),          # collapse mollusks
-  c("Monoplacophora", "Gastropoda"),    # collapse mollusks
-  c("Polyplacophora", "Bivalvia"),      # collapse mollusks
-  c("Hexactinellida", "Calcarea"),      # collapse sponges
-  c("Vertebrata", "Cephalochordata"),   # collapse chordates  
-  c("Cestoda", "Turbellia"),            # collapse platyhelminthes
-  c("Opiliones", "Uropygi"),            # collapse arachnids
-  c("Scorpiones", "Uropygi"),           # collapse arachnids
-  c("Amblypygi", "Araneae"),            # collapse arachnids
-  c("Pseudoscorpiones", "Araneae"),     # collapse arachnids
-  c("Diptera", "Odonata"),              # collapse insects
-  c("Hemiptera", "Lepidoptera"),        # collapse insects
-  c("Coleoptera", "Lepidoptera"),       # collapse insects
-  c("Hemiptera", "Blattodea"),          # collapse insects
-  c("Coleoptera", "Hymenoptera"),       # collapse insects
-  c("Caridea", "Achelata"),             # collapse decapods
-  c("Anomura", "Astacidea"),            # collapse decapods
-  c("Brachyura", "Astacidea"),          # collapse decapods
-  c("Stomatopoda", "Astacidea"),        # collapse crustaceans
-  c("Isopoda", "Caridea"),              # collapse crustaceans
-  c("Copepoda", "Cirripedia"),          # collapse crustaceans
-  c("Ostracoda", "Cirripedia"),         # collapse crustaceans
-  c("Branchiopoda", "Cirripedia"),      # collapse crustaceans
-  c("Pycnogonida", "Merostomata"),      # collapse chelicerates
-  c("Trilobita", "Merostomata"),        # collapse chelicerates
-  c("Cubozoa", "Scyphozoa"),            # collapse Medusozoa 
-  c("Staurozoa", "Hydrozoa"),           # collapse Medusozoa 
-  c("Alcyonacea", "Pennatulacea"),      # collapse anthozoa 
-  c("Antipatharia", "Scleractinia"),    # collapse anthozoa 
-  c("Corallimorpharia", "Actiniaria"),  # collapse anthozoa 
-  c("Scleractinia", "Zoantharia"),      # collapse anthozoa 
-  c("Crinoidea", "Asteroidea"),         # collapse echinoderms 
-  c("Echinoidea", "Asteroidea")         # collapse echinoderms 
+  c("Calcarea", "Hydrozoa"),              # collapse basal taxa
+  c("Demospongiae", "Hexactinellida"),    # collapse porifera
+  c("Cubozoa", "Staurozoa"),              # collapse medusozoa
+  c("Scyphozoa", "Cubozoa"),              # collapse medusozoa
+  c("Helioporacea", "Pennatulacea"),      # collapse octocorallia
+  c("Zoantharia", "Antipatharia"),        # collapse hexacorralia
+  c("Corallimorpharia", "Scleractinia"),  # collapse hexacorralia
+  c("Zoantharia", "Corallimorpharia"),    # collapse hexacorralia
+  c("Ceriantharia", "Actiniaria"),        # collapse anothozoa
+  c("Vertebrata", "Larvacea"),            # collapse chordata
+  c("Hemichordata", "Crinoidea"),         # collapse deuterostomes
+  c("Echinoidea", "Holothuroidea"),       # collapse echinoderms
+  c("Asteroidea", "Ophiuroidea"),         # collapse echinoderms
+  c("Asteroidea", "Echinoidea"),          # collapse echinoderms
+  c("Cestoda", "Trematoda"),              # collapse platyhelminthes
+  c("Rotifera", "Trematoda"),             # collapse spiralia
+  c("Rotifera", "Polychaeta"),            # collapse spiralia
+  c("Nemertea", "Brachiopoda"),           # collapse lophotrochozoa
+  c("Nemertea", "Bivalvia"),              # collapse lophotrochozoa
+  c("Monoplacophora", "Bivalvia"),        # collapse mollusca
+  c("Monoplacophora", "Coleoidea"),       # collapse mollusca
+  c("Bivalvia", "Gastropoda"),            # collapse mollusca
+  c("Priapulida", "Nematoda"),            # collapse ecdysozoa
+  c("Tardigrada", "Onychophora"),         # collapse ecdysozoa
+  c("Tardigrada", "Trilobita"),           # collapse ecdysozoa
+  c("Merostomata", "Opiliones"),          # collapse chelicerata
+  c("Trilobita", "Opiliones"),            # collapse chelicerata
+  c("Solifugae", "Opiliones"),            # collapse arachnida
+  c("Araneae", "Amblypygi"),              # collapse arachnida
+  c("Araneae", "Scorpiones"),             # collapse arachnida
+  c("Pseudoscorpiones", "Scorpiones"),    # collapse arachnida
+  c("Uropygi", "Amblypygi"),              # collapse arachnida
+  c("Diptera", "Lepidoptera"),            # collapse insecta
+  c("Coleoptera", "Lepidoptera"),         # collapse insecta
+  c("Coleoptera", "Hymenoptera"),         # collapse insecta
+  c("Hemiptera", "Hymenoptera"),          # collapse insecta
+  c("Hemiptera", "Blattodea"),            # collapse insecta
+  c("Blattodea", "Orthoptera"),           # collapse insecta
+  c("Ostracoda", "Branchiopoda"),         # collapse crustacea
+  c("Ostracoda", "Pentastomida"),         # collapse crustacea
+  c("Ostracoda", "Cirripedia"),           # collapse crustacea
+  c("Stomatopoda", "Cirripedia"),         # collapse crustacea
+  c("Isopoda", "Amphipoda"),              # collapse malacostraca
+  c("Isopoda", "Euphausiacea"),           # collapse malacostraca
+  c("Caridea", "Euphausiacea"),           # collapse malacostraca
+  c("Achelata", "Astacidea"),             # collapse decapoda
+  c("Brachyura", "Astacidea"),            # collapse decapoda 
+  c("Brachyura", "Anomura"),              # collapse decapoda 
+  c("Blattodea", "Anomura"),              # collapse arthropods 
+  c("Blattodea", "Diplopoda"),            # collapse arthropods 
+  c("Opiliones", "Anomura"),              # collapse arthropods
+  c("Zoantharia", "Anomura")              # collapse eumetazoa 
 )
 
-# to collapse unwanted nodes 
+
 for (pair in pairs_to_collapse) {
-  node <- getMRCA(tree, pair)
-  if (!is.na(node)) {
-    edges_to_zero <- which(tree$edge[,1] == node)
-    tree$edge.length[edges_to_zero] <- 0
-  }
+  tree <- CollapseNode(tree, getMRCA(tree, pair))
 }
 
-tree <- di2multi(tree) # only works once some edges have 0 length 
 write.nexus(tree, file = "AnimalTreeApp/tree.nex") # tree doesn't change from here 
 
 # Plot and save tree ------------------------------------------------------
