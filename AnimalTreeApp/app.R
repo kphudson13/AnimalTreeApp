@@ -19,7 +19,7 @@ library(dplyr)
 
 load("ggTreeObject")
 tip_info <- read.csv("InvertDescriptions.csv")
-tree <- read.nexus("tree.nex", tree.names = "tree")
+tree <- read.nexus("tree_updated.nex", tree.names = "tree")
 
 # Define UI
 ui <- fluidPage(
