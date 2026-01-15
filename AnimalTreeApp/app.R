@@ -1,6 +1,6 @@
 ###########################
 # 
-# developed Nov 2025 by Kyle Hudson
+# developed Nov 2025-Jan 2026 by Kyle Hudson
 # kphudson@live.ca
 # This app is designed as a teaching tool, the taxonomy is incomplete
 # 
@@ -17,9 +17,9 @@ library(ggtree)
 library(bslib) # for the web app theme 
 library(dplyr)
 
-load("ggTreeObject")
-tip_info <- read.csv("InvertDescriptions.csv")
-tree <- read.nexus("tree_updated.nex", tree.names = "tree")
+load("ggTreeObject") # built from other script 
+taxa_info <- read.csv("InvertDescriptions.csv")
+tree <- read.nexus("tree.nex", tree.names = "tree")
 
 # Define UI
 ui <- fluidPage(
@@ -173,7 +173,7 @@ server <- function(input, output, session) {
   # Centralized modal logic 
   show_taxon_modal <- function(label_clicked) {
     
-    info <- tip_info %>% filter(Clade == label_clicked)
+    info <- taxa_info %>% filter(Clade == label_clicked)
     
     desc <- if (nrow(info) == 0) { # descriptive text from csv
       paste0("Label: ", label_clicked)
