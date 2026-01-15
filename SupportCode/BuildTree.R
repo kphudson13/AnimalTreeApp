@@ -83,54 +83,57 @@ tree$node.label[tree$node.label == ""] <- NA
 
 # Add problematic tips ----------------------------------------------------
 
-tree <- AddTip(tree, where = getMRCA(tree, c("Hemichordata", "Bivalvia")), label = "Xenacoelomorpha", edgeLength = 1)
+tree <- AddTip(tree, where = getMRCA(tree, c("Hemichordata", "Bivalvia")), label = "Xenacoelomorpha")
 # Assign the node label cause nodelabel isnt working
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Xenacoelomorpha"), 1] - length(tree$tip.label)] <- "Bilateria"
 
-tree <- AddTip(tree, where = getMRCA(tree, c("Trematoda", "Cestoda")), label = "Turbellia", edgeLength = 1)
+tree <- AddTip(tree, where = getMRCA(tree, c("Trematoda", "Cestoda")), label = "Turbellia")
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Turbellia"), 1] - length(tree$tip.label)] <- "Platyhelminthes"
 
-tree <- AddTip(tree, where = "Hirudinea", label = "Polychaeta", edgeLength = 1)
+tree <- AddTip(tree, where = "Hirudinea", label = "Polychaeta")
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Polychaeta"), 1] - length(tree$tip.label)] <- "Annelida"
 
-tree <- AddTip(tree, where = "Hirudinea", label = "Oligochaeta", edgeLength = 1)
+tree <- AddTip(tree, where = "Hirudinea", label = "Oligochaeta")
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Oligochaeta"), 1] - length(tree$tip.label)] <- "Clitella"
 
 # this one needs to be moved
 tree <- drop.tip(tree, "Pycnogonida")
-tree <- AddTip(tree, where = getMRCA(tree, c("Merostomata", "Araneae")), label = "Pycnogonida", edgeLength = 1)
+tree <- AddTip(tree, where = getMRCA(tree, c("Merostomata", "Araneae")), label = "Pycnogonida")
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Pycnogonida"), 1] - length(tree$tip.label)] <- "Chelicerata"
 
-tree <- AddTip(tree, where = getMRCA(tree, c("Merostomata", "Araneae")), label = "Trilobita", edgeLength = 1)
-tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Trilobita"), 1] - length(tree$tip.label)] <- NA
+tree <- AddTip(tree, where = getMRCA(tree, c("Merostomata", "Araneae")), label = "Trilobita")
 
 tree <- drop.tip(tree, "Copepoda")
-tree <- AddTip(tree, where = getMRCA(tree, c("Ostracoda", "Cirripedia")), label = "Copepoda", edgeLength = 1)
+tree <- AddTip(tree, where = getMRCA(tree, c("Ostracoda", "Cirripedia")), label = "Copepoda")
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Copepoda"), 1] - length(tree$tip.label)] <- "Crustacea"
 
 tree <- drop.tip(tree, "Branchiopoda")
-tree <- AddTip(tree, where = getMRCA(tree, c("Ostracoda", "Cirripedia")), label = "Branchiopoda", edgeLength = 1)
-tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Branchiopoda"), 1] - length(tree$tip.label)] <- NA
+tree <- AddTip(tree, where = getMRCA(tree, c("Ostracoda", "Cirripedia")), label = "Branchiopoda")
 
-tree <- AddTip(tree, where = "Cubozoa", label = "Staurozoa", edgeLength = 1)
-tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Staurozoa"), 1] - length(tree$tip.label)] <- NA
+tree <- AddTip(tree, where = "Cubozoa", label = "Staurozoa")
 
-tree <- AddTip(tree, where = getMRCA(tree, c("Pennatulacea", "Helioporacea")), label = "Alcyonacea", edgeLength = 1)
+tree <- AddTip(tree, where = getMRCA(tree, c("Pennatulacea", "Helioporacea")), label = "Alcyonacea")
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Alcyonacea"), 1] - length(tree$tip.label)] <- "Octocorallia"
 
-tree <- AddTip(tree, where = "Nuda", label = "Tenticulata", edgeLength = 1)
+tree <- AddTip(tree, where = "Nuda", label = "Tenticulata")
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Tenticulata"), 1] - length(tree$tip.label)] <- "Ctenophora"
 
-tree <- AddTip(tree, where = "Larvacea", label = "Ascidiacea", edgeLength = 1)
+tree <- AddTip(tree, where = "Larvacea", label = "Ascidiacea")
 
-tree <- AddTip(tree, where = "Salpida", label = "Pyrosomida", edgeLength = 1)
+tree <- AddTip(tree, where = "Salpida", label = "Pyrosomida")
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Pyrosomida"), 1] - length(tree$tip.label)] <- "Thaliacea"
 
 tree <- drop.tip(tree, "Clitella") # this shows up in tunicates for some reason
 
+tree <- AddTip(tree, where = "Solifugae", label = "Acari")
+
+# this one needs to be moved
+tree <- drop.tip(tree, "Bryozoa")
+tree <- AddTip(tree, where = "Brachiopoda", label = "Bryozoa")
+
 # Collapse nodes ----------------------------------------------------------
 
-# you could do this in all one big list, as I once did 
+# You could do this in all one big list, as I once did
 # but trouble shooting becomes a pain in the ass
 
 x_crustacea <- list(
@@ -184,6 +187,7 @@ x_chelicerata <- list(
   c("Araneae", "Amblypygi"),              # collapse arachnida
   c("Araneae", "Scorpiones"),             # collapse arachnida
   c("Pseudoscorpiones", "Scorpiones"),    # collapse arachnida
+  c("Solifugae", "Acari"),
   c("Uropygi", "Amblypygi")               # collapse arachnida
 )
 
@@ -194,6 +198,7 @@ for (pair in x_chelicerata) {
 x_lophotrochozoa <- list(
   c("Nemertea", "Brachiopoda"),           # collapse lophotrochozoa
   c("Nemertea", "Bivalvia"),              # collapse lophotrochozoa
+  c("Brachiopoda", "Bryozoa"),
   c("Monoplacophora", "Bivalvia"),        # collapse mollusca
   c("Monoplacophora", "Coleoidea"),       # collapse mollusca
   c("Bivalvia", "Gastropoda")             # collapse mollusca
@@ -248,9 +253,7 @@ for (pair in x_misc) {
   tree <- CollapseNode(tree, getMRCA(tree, pair))
 }
 
-
 write.nexus(tree, file = "AnimalTreeApp/tree.nex")
-
 
 # Plot and save tree ------------------------------------------------------
 
