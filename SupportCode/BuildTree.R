@@ -83,7 +83,7 @@ tree$node.label[tree$node.label == ""] <- NA
 
 # Add problematic tips ----------------------------------------------------
 
-tree <- AddTip(tree, where = getMRCA(tree, c("Hemichordata", "Bivalvia")), label = "Xenacoelomorpha")
+tree <- AddTip(tree, where = getMRCA(tree, c("Enteropneusta", "Bivalvia")), label = "Xenacoelomorpha")
 # Assign the node label cause nodelabel isnt working
 tree$node.label[tree$edge[tree$edge[,2] == which(tree$tip.label == "Xenacoelomorpha"), 1] - length(tree$tip.label)] <- "Bilateria"
 
@@ -210,7 +210,7 @@ for (pair in x_lophotrochozoa) {
 
 x_chordata <- list(
   c("Vertebrata", "Larvacea"),            # collapse chordata
-  c("Hemichordata", "Crinoidea"),         # collapse deuterostomes
+  c("Enteropneusta", "Crinoidea"),        # collapse deuterostomes
   c("Echinoidea", "Holothuroidea"),       # collapse echinoderms
   c("Asteroidea", "Ophiuroidea"),         # collapse echinoderms
   c("Asteroidea", "Echinoidea")           # collapse echinoderms
