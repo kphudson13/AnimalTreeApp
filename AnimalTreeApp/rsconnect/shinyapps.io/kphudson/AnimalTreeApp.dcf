@@ -5,7 +5,7 @@ account: kphudson
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 16037498
-bundleId: 11509019
+bundleId: 11524955
 url: https://kphudson.shinyapps.io/AnimalTreeApp/
 version: 1
 asMultiple: FALSE

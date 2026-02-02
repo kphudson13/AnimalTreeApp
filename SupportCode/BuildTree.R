@@ -127,6 +127,8 @@ tree <- drop.tip(tree, "Clitella") # this shows up in tunicates for some reason
 
 tree <- AddTip(tree, where = "Solifugae", label = "Acari")
 
+tree <- AddTip(tree, where = "Polyplacophora", label = "Aplacophora")
+
 # this one needs to be moved
 tree <- drop.tip(tree, "Bryozoa")
 tree <- AddTip(tree, where = "Brachiopoda", label = "Bryozoa")
@@ -201,6 +203,7 @@ x_lophotrochozoa <- list(
   c("Brachiopoda", "Bryozoa"),
   c("Monoplacophora", "Bivalvia"),        # collapse mollusca
   c("Monoplacophora", "Coleoidea"),       # collapse mollusca
+  c("Polyplacophora", "Aplacophora"),     # collapse mollusca 
   c("Bivalvia", "Gastropoda")             # collapse mollusca
 )
 
