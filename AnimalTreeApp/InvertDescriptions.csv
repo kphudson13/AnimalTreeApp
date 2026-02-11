@@ -26,23 +26,23 @@ Echinoidea,Class,Sea urchins and sand dollars,"Echinoids have lost their arms, b
 Holothuroidea,Class,Sea cucumbers,"Echinoderms that have secondarily evolved bilateral symmetry, have lost their arms. They now have an cylindrical body plan with a anterior and posterior end. ","Gonads, tentacles, pharyngeal bulb, stomach, intestine, respiratory tree, cloaca, cloacal sustenders, longitudinal muschles, pollian vessicles, retractor muscles.",https://en.wikipedia.org/wiki/Sea_cucumber
 Mollusca,Phylum,Molluscs,"Molluscs have a diverse set of physiologies and life histories, leading to their complex taxonomic history. They have a trochophone larve (shared with other trochophorates). Molluscs have a mantle, which secretes a shell in many of the molluscan groups. ","Ventral muscular foot, Radula (teeth), Mantle (epithelial structure that secretes the shell)",https://en.wikipedia.org/wiki/Mollusca
 Aplacophora,Class,Aplacophorans,Deep sea worms that secrete calcareous spicules instead of a shell,,https://en.wikipedia.org/wiki/Aplacophora
-Monoplacophora,Class,Monoplacophorans,"Deep sea benthic animals with a single shell, thought to be extinct until 1950s. Not to be confused with gastrpod limpets. ",,https://www.biorxiv.org/content/10.1101/2023.11.08.566290v1.full
+Monoplacophora,Class,Monoplacophorans,"Deep sea benthic animals with a single shell, thought to be extinct until 1950s. Not to be confused with gastropod limpets. ",,https://www.biorxiv.org/content/10.1101/2023.11.08.566290v1.full
 Polyplacophora,Class,Chitons,"Generally shallow, intertidal ","Seven or eight separate shell plates, girdle (edge of mantle, often embedded with spicules)",https://en.wikipedia.org/wiki/Chiton
 Gastropoda,Class,Snails and Slugs,Torsion rotates the visceral mass so the anus is above the head,,https://en.wikipedia.org/wiki/Gastropoda
 Cephalopoda,Class,"Squid, octopus, cuttlefish, or nautilus","Most intellegent invertebrates, tentacles (suckers on end) or arms (suckers whole way down)","Closed circulatory system, Foot modified into the siphon and arms/tentacles, Shell that is reduced or lost (usually), Large collection of cerebral ganglia",https://www.cell.com/current-biology/fulltext/S0960-9822(23)01056-4
 Nautiloidea,Subclass,Nautiluses,"Still have their shell, used to be much more diverse",External coiled/chambered shell,https://en.wikipedia.org/wiki/Nautilus
-Coleoidea,Subclass,"Squid, octopus, cuttlefish",,"Reduced internal shell, Chromatophores - pigmented cells that produce color, contraction and expansion of sacs allow color change",https://fr.wikipedia.org/wiki/Coleoidea
-Bivalvia,Class,"Clams, oysters, & friends","Laterally compressed between two valves (shells), usually sessile",,https://www.projetecolo.com
-Annelida,Phylum,Segmented worms,"At least one pair of chitinous setae, metameric segmenation",,https://en.wikipedia.org/wiki/Annelid
-Polychaeta,Class,Bristle worms,Tube dwelling and errant lifestyles,Parapodia with bristles,https://www.istockphoto.com/photos/polychaeta
-Clitella,Class,Clitellates,,,https://en.wikipedia.org/wiki/Clitellata
-Oligochaeta,Subclass,Earthworms and friends,All individuals are hermaphroditic,clitellum,https://en.wikipedia.org/wiki/Oligochaeta
-Hirudinea,Subclass,Leaches,Have suckers to attach to hosts ,,https://en.wikipedia.org/wiki/Leech
+Coleoidea,Subclass,"Squid, octopus, cuttlefish","Reduced internal shell, Chromatophores - pigmented cells that produce color, contraction and expansion of sacs allow color change","Arms vs tentacles (foot), siphon, beak, mouth, mantle, heart, gills, heart",https://fr.wikipedia.org/wiki/Coleoidea
+Bivalvia,Class,"Clams, oysters, & friends","Laterally compressed between two valves (shells), usually sessile","Anterior and posterior adductor muscles, gills, incurrent and excurrent siphon, palial line, palial siphon, umbo, hinge teeth, byssal threads, mantle, foot, gut, heart",https://www.projetecolo.com
+Annelida,Phylum,Segmented worms,True metameric segmenation and often chitinous cheatae ,,https://en.wikipedia.org/wiki/Annelid
+Polychaeta,Class,Bristle worms,"Polycheate means 'many bristles', and they usually do have many brisltes.","Parapodia (incl. Notopodia, neuropodia, cheatae), prostomium, antennae, peristomium, anal cirrus",https://www.istockphoto.com/photos/polychaeta
+Clitella,Class,Clitellates,have a collar / clitellum - the thicker girdle that is used to secrete the casing for their eggs,,https://en.wikipedia.org/wiki/Clitellata
+Oligochaeta,Subclass,Earthworms and friends,All individuals are hermaphroditic,"Clitellum, pharynx, hearts, seminal vessicles, crop, gizzard, intenstines, dorsal blood vessel, nephridia",https://en.wikipedia.org/wiki/Oligochaeta
+Hirudinea,Subclass,Leaches,"Most feed on blood or hemolymph, few concume prey whole. Leaches have suckers to attach to hosts and move around. Cheatae are lost secondarily.",,https://en.wikipedia.org/wiki/Leech
 Nemertea,Phylum,Ribbon worms or Proboscis worms ,"Unsegmented, usually predators or parasites",Rhynchocoel - proboscis with stylet in fluid filled cavity,https://pages.uoregon.edu/svetlana/iWeb/Home/Nemerteans.html
 Platyhelminthes,Phylum,Flatworms,"Unsegmented, blind gut, cute eye spots but no respiratory or circulatory systems. Often aquatic or parasitic.",,https://en.wikipedia.org/wiki/Flatworm
-Cestoda,Class,Tapeworms,,Gravid proglottids - egg-filled segments easily released,https://keys.lucidcentral.org/keys/v3/TFI/start%20key/key/platyhelminthes%20key/Media/HTML/Cestoda.html
-Turbellia,Class,Planarians and friends (polyphyletic),"Most are free-living, aquatic terrestrial or marine.",,https://www.istockphoto.com/photos/turbellaria
-Trematoda,Class,Flukes,Internal parasites,,https://phylumproject.weebly.com/class-trematoda.html
+Cestoda,Class,Tapeworms,Generally endoparasites ,Gravid proglottids - egg-filled segments easily released,https://keys.lucidcentral.org/keys/v3/TFI/start%20key/key/platyhelminthes%20key/Media/HTML/Cestoda.html
+Turbellia,Class,Planarians and friends (polyphyletic),"Most are free-living, aquatic terrestrial or marine. Includes planarians",,https://www.istockphoto.com/photos/turbellaria
+Trematoda,Class,Flukes,"Internal parasites with complex life cycles. Different life stages infect different animals, cerceria cause swimmers itch and schistasomiasis.",,https://phylumproject.weebly.com/class-trematoda.html
 Tardigrada,Phylum,"Water bears, ","Cute and small, increadibly resilient",,https://en.wikipedia.org/wiki/Tardigrade
 Onychophora,Phylum,Velvet worms,"Many legs, prey on other inverts by shooting adhesive slime",,https://en.wikipedia.org/wiki/Onychophora
 Arthropoda,Phylum,Arthropods,"Jointed legs, chitinous exoskeleton",,https://en.wikipedia.org/wiki/Arthropod
@@ -127,5 +127,5 @@ Nematomorpha,Phylum,Horsehair worms,"Parasitic in arthropods, hard external cuti
 Xenacoelomorpha,Phylum,Xenacoelomorphs,"Simple flattened worms, most basal bilaterians",,https://en.wikipedia.org/wiki/Xenacoelomorpha
 Eumetazoa,Higher Clade,True animals,True tissues,,https://www.lifeder.com/eumetazoa/
 Bryozoa,Phylum,Moss animals,"Small, live in sedentary colonies, single animals called zooids ",,https://www.inaturalist.org/taxa/68104-Bryozoa
-Priapulida,Phylum,Penis worms,"Sunsegmented worms, extensible spiny proboscis.",,https://en.wikipedia.org/wiki/Priapulida
+Priapulida,Phylum,Penis worms,"Unsegmented worms, extensible spiny proboscis.",,https://en.wikipedia.org/wiki/Priapulida
 Placozoa,Phylum,Placozoans,"Simplest of animals, move with ciliary motion. ",,https://en.wikipedia.org/wiki/Placozoa
