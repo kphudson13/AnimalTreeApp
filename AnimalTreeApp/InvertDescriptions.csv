@@ -44,7 +44,7 @@ Cestoda,Class,Tapeworms,Generally endoparasites ,Gravid proglottids - egg-filled
 Turbellia,Class,Planarians and friends (polyphyletic),"Most are free-living, aquatic terrestrial or marine. Includes planarians",,https://www.istockphoto.com/photos/turbellaria
 Trematoda,Class,Flukes,"Internal parasites with complex life cycles. Different life stages infect different animals, cerceria cause swimmers itch and schistasomiasis.",,https://phylumproject.weebly.com/class-trematoda.html
 Tardigrada,Phylum,"Water bears, ","Cute and small, increadibly resilient",,https://en.wikipedia.org/wiki/Tardigrade
-Onychophora,Phylum,Velvet worms,"Many legs, prey on other inverts by shooting adhesive slime",,https://en.wikipedia.org/wiki/Onychophora
+Onychophora,Phylum,Velvet worms,"Many legs, prey on other inverts by shooting adhesive slime from oral papillae which is suched back into the gut by a muscular pharynx. 13-25 pairs of legs (lobopods)",,https://en.wikipedia.org/wiki/Onychophora
 Arthropoda,Phylum,Arthropods,"Jointed legs, chitinous exoskeleton",,https://en.wikipedia.org/wiki/Arthropod
 Myriapoda,Subphylum,Myriapods,"Centepedes, millipedes and friends. Many legs.",,https://en.wikipedia.org/wiki/Myriapoda
 Chilopoda,Class,Centipedes,One pair of legs per segment,,https://en.wikipedia.org/wiki/Centipede
@@ -55,8 +55,8 @@ Pycnogonida,Class,Sea spiders,"Not spiders, marine animals. ",,https://www.starf
 Arachnida,Class,Arachnids,"Eight legs on cephalothorax, also chelicera and pedipalps",,https://commons.wikimedia.org/wiki/File:Arachnida_collage_(Update).jpg
 Araneae,Order,Spiders,,,https://ucmp.berkeley.edu/arthropoda/arachnida/araneae.html
 Amblypygi,Order,Tail-less whip scorpions,,,https://en.wikipedia.org/wiki/Amblypygi
-Uropygi,Order,Whip scorpiones,,,https://www.inaturalist.org/taxa/48900-Uropygi
-Opiliones,Order,Daddy long-legs or harvestmen,,,https://en.wikipedia.org/wiki/Opiliones
+Uropygi,Order,Whip scorpiones or vinegaroons,"No stinger, but can spray acetic acid",,https://www.inaturalist.org/taxa/48900-Uropygi
+Opiliones,Order,Daddy long-legs or harvestmen,"If you have heard the myth that they are very venomous but their fangs are too small to puncture skin, that is not true at all. ",,https://en.wikipedia.org/wiki/Opiliones
 Pseudoscorpiones,Order,Pseudo-scorpiones,,,https://malaiseprogram.com/fr/fall-2014-smtp-interesting-finds-pseudoscorpions-pseudoscorpiones/
 Scorpiones,Order,Scorpions,,,https://en.wikipedia.org/wiki/Scorpion
 Solifugae,Order,Sun spiders or camel spiders ,,,https://en.wikipedia.org/wiki/Solifugae
@@ -115,14 +115,14 @@ Hexactinellida,Class,Glass sponges,"Four- and/or six-pointed siliceous spicules.
 Ctenophora,Phylum,Comb Jellies,"No stinging cells, but have sticky coloblast cells. some have transient anus. Recently thought to be sister to all other animals but that is contentious.","Ctene (fused ciliary plates) arranged in rows (look like combs). Mouth and gastrovascular canals, some lead to an anus. Apical sense organ.",https://www.microscopemaster.com/phylum-ctenophora.html
 Nuda,Class,,No tentacles,,https://en.wikipedia.org/wiki/Ctenophora
 Tenticulata,Class,,Tentacles,,https://www.seawater.no/fauna/ctenophora/pileus.html
+Nematoda,Phylum,Nematodes,Ubiquitous in nature. Huge size range. Many are parasites. ,"Intestine, vagina, uterus, oviducts",https://en.wikipedia.org/wiki/Nematode
 ,,,,,
-Nematoda,Phylum,Nematodes,Ubiquitous in nature,,https://en.wikipedia.org/wiki/Nematode
 Brachiopoda,Phylum,Lampshells,"Top and bottom valve, unlike molluscan bivalves",,https://simple.wikipedia.org/wiki/Brachiopod
 Pancrustacea,,Crustaceans,Crabs but also bugs,,https://www.researchgate.net/figure/Morphological-diversity-of-select-pancrustaceans-A-buoy-barnacle-Cirripedia-B_fig1_372991050
 Ecdysozoa,Superphylum,Ecdysozoans,Chitin based exoskeleton,,https://en.wikipedia.org/wiki/Ecdysozoa
 Lophotrochozoa,Superphylum,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore ,,
 Rotifera,Phylum,Wheel animals,"Small, usually solitary, 'wheels' of cilia - the corona. ",,https://www.cloudynights.com/forums/topic/639395-bdelloid-rotifer-from-a-birdbath/
-Chaetognatha,Phylum,Arrow worma,"Predatory marine worms, hooks on each side of the mouth",,https://www.tnrp.com.au/arrow_worms_phylum_chaetognatha.html
+Chaetognatha,Phylum,Arrow worms,"Predatory marine worms, hooks on each side of the mouth",,https://www.tnrp.com.au/arrow_worms_phylum_chaetognatha.html
 Nematomorpha,Phylum,Horsehair worms,"Parasitic in arthropods, hard external cuticle",,https://www.wildlifetrusts.org/wildlife-explorer/marine/worms/horsehair-worm
 Xenacoelomorpha,Phylum,Xenacoelomorphs,"Simple flattened worms, most basal bilaterians",,https://en.wikipedia.org/wiki/Xenacoelomorpha
 Eumetazoa,Higher Clade,True animals,True tissues,,https://www.lifeder.com/eumetazoa/
