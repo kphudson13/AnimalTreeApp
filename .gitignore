@@ -1,6 +1,8 @@
 .Rproj.user
+.Rprofile
 .Rhistory
 .RData
 .Ruserdata
 Figures.pptx
+renv/
 NoSearchScript.txt

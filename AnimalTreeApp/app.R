@@ -16,6 +16,7 @@ library(plotly)
 library(ggtree)
 library(bslib) # for the web app theme 
 library(dplyr)
+library(ggiraph)
 
 load("ggTreeObject") # built from other script 
 taxa_info <- read.csv("InvertDescriptions.csv")
@@ -103,10 +104,10 @@ ui <- fluidPage(
           )
         ),
         
-        plotOutput(
-          "TreePlot", 
-          height = paste0(30 * length(tree$tip.label), "px"), # height is dynamic, based off number of tips
-          click = "plot_click"
+        girafeOutput(
+          "TreePlot",
+          height = "150%",
+          width = "100%"
         )
       )
     )
@@ -162,13 +163,54 @@ server <- function(input, output, session) {
   
   make_tree <- reactive({
     xmax <- max(TreePlot$data$x, na.rm = TRUE)
-    TreePlot + ggplot2::xlim(NA, xmax + 1) # add buffer
+    TreePlot +
+      ggplot2::xlim(NA, xmax + 1) +
+      ggplot2::theme(
+        plot.background  = element_rect(fill = "transparent", colour = NA),
+        panel.background = element_rect(fill = "transparent", colour = NA),
+        axis.text = element_text(size = rel(0.8)),
+        legend.text = element_text(size = rel(0.8))
+      )
   })
   
-  output$TreePlot <- renderPlot({
-    make_tree()
-  }, 
-  bg = "transparent")
+  output$TreePlot <- renderGirafe({
+    girafe(
+      ggobj = make_tree(),
+      bg = "transparent",
+      width_svg = 7,
+      height_svg = 14,
+      options = list(
+        opts_sizing(rescale = TRUE, width = 1),
+        opts_selection(
+          type = "single",
+          only_shiny = TRUE,
+          css = "fill:white;stroke:black;"
+        ),
+        opts_tooltip(css = "background:rgba(255,255,255,0.8);"),
+        opts_hover(css = "")
+      )
+    )
+  })
+  
+  
+  # output$TreePlot <- renderGirafe({
+  #   girafe(
+  #     ggobj = make_tree(),
+  #     bg = "transparent",
+  #     width_svg = 10,
+  #     height_svg = 20,
+  #     options = list(
+  #       opts_sizing(rescale = TRUE),
+  #       opts_selection(
+  #         type = "single",
+  #         only_shiny = TRUE,
+  #         css = "fill:white;stroke:black;"
+  #       ),
+  #       opts_tooltip(css = "background:rgba(255,255,255,0.8);"),
+  #       opts_hover(css = "")
+  #     )
+  #   )
+  # })
   
   # Centralized modal logic 
   show_taxon_modal <- function(label_clicked) {
@@ -254,16 +296,36 @@ server <- function(input, output, session) {
     ))
   }
   
-  observeEvent(input$plot_click, { # main panel click 
+  
+  
+  observeEvent(input$TreePlot_selected, {
+    label_clicked <- input$TreePlot_selected
     
-    tree_data <- TreePlot$data
-    nearest <- nearPoints(tree_data, input$plot_click,
-                          xvar = "x", yvar = "y",
-                          threshold = 40, maxpoints = 1)
-    if (nrow(nearest) == 0) return() # stops app from crashing if you click randomly 
+    if (is.null(label_clicked) ||
+        length(label_clicked) == 0 ||
+        !nzchar(label_clicked)) {
+      return()
+    }
     
-    show_taxon_modal(nearest$label)
-  })
+    show_taxon_modal(label_clicked)
+    
+    # Clear the selected label so it does not remain highlighted
+    session$sendCustomMessage(
+      type = "TreePlot_set",
+      message = character(0)
+    )
+  }, ignoreInit = TRUE)
+  
+  # observeEvent(input$plot_click, { # main panel click
+  # 
+  #   tree_data <- TreePlot$data
+  #   nearest <- nearPoints(tree_data, input$plot_click,
+  #                         xvar = "x", yvar = "y",
+  #                         threshold = 0.1, maxpoints = 1)
+  #   if (nrow(nearest) == 0) return() # stops app from crashing if you click randomly
+  # 
+  #   show_taxon_modal(nearest$label)
+  # })
   
   suggestion_obs <- reactiveVal(list())
   suggestion_map <- reactiveVal(list())
