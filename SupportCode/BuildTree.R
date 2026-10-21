@@ -273,16 +273,14 @@ TreePlot <- ggtree(tree, branch.length="none", layout="ellipse", aes(color=Level
     fill = "white",
     geom = "label",
     size = 2,
-    fontface = 2
-  ) +
+    fontface = 2) +
   geom_nodelab(
     aes(data_id = label),
     subset = !is.na(node.label),
     fill = "white",
     geom = "label",
     size = 2,
-    fontface = 2
-  ) +
+    fontface = 2) +
   theme(legend.position = c(0.1,0.85),
         legend.title = element_blank(),
         legend.text = element_text(size=4),

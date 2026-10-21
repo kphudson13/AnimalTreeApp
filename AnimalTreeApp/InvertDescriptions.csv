@@ -1,24 +1,24 @@
 ﻿Clade,Level,CommonName,Description,Anatomy,ImageLink
 Metazoa,Kingdom,Animals,"Animals are motile in at least one development stage, form from a blastula and gastrula during embryonic development, have collagen, are heterotrophic, and are diploid",,https://fr.wikipedia.org/wiki/Metazoa
 Bilateria,Higher Clade,Bilateral Animals,Left-right symmetry (sorta),,https://simple.wikipedia.org/wiki/Bilateria
-Deuterostomia,Higher Clade,Deuterostomes,Anus developes before mouth,,https://en.wikipedia.org/wiki/Deuterostome
-Protostomia,Higher Clade,Protostomes,Mouth developes before anus,,https://en.wikipedia.org/wiki/Protostome
-Nephrozoa,Higher Clade,Nephrozoans,Excretory nephridia,,https://en.wikipedia.org/wiki/Nephrozoa
-Spiralia,Higher Clade,Spiralians,Spiral cleavage,,https://en.wikipedia.org/wiki/Spiralia
-Chordata,Phylum,Chordates,Includes vertebrates and their relatives. Not all characteristics are present in all life stages. ,"Notochord, dorsal hollow nerve cord, pharyngeal gill slits, post anal tail, pharyngeal gill slits, endostyle",https://en.wikipedia.org/wiki/Chordate
-Tunicata,Subphylum,"Tunicates, AKA Urochordata",Only have a notocord in the larval stage (usually). ,"Tunic is produced in adults externally of the body, made of a type of cellulose (maybe from horizontal gene transfer).",https://www.flickr.com/photos/svenalgerie/305699586
+Deuterostomia,Higher Clade,Deuterostomes,Anus developes before mouth (contrast protostomia),,https://en.wikipedia.org/wiki/Deuterostome
+Protostomia,Higher Clade,Protostomes,Mouth developes before anus (contrast deuterostomia),,https://en.wikipedia.org/wiki/Protostome
+Nephrozoa,Higher Clade,Nephrozoans,"Excretory nephridia. If the clade is valid, this includes all bilaterians except Xenaceolomorpha. ",,https://en.wikipedia.org/wiki/Nephrozoa
+Spiralia,Higher Clade,Spiralians,"Exhibit spiral cleavage, a pattern of early development found in most members of the Lophotrochozoa. (Contrast: radial cleavage).",,https://en.wikipedia.org/wiki/Spiralia
+Chordata,Phylum,Chordates,Includes vertebrates and their relatives. Not all characteristics are present in all life stages. ,"Notochord, dorsal hollow nerve cord, pharyngeal gill slits, post anal tail,  endostyle",https://en.wikipedia.org/wiki/Chordate
+Tunicata,Subphylum,"Tunicates, AKA Urochordata","Only have a notocord in the larval stage (usually), are also mobile in the larval stage which is often lost in the simple adult form. Lost their myomeric segmentation which other chordates have retained. ","Tunic is produced in adults externally of the body, made of a type of cellulose (maybe from horizontal gene transfer).",https://www.flickr.com/photos/svenalgerie/305699586
 Ascidiacea,Class,Sea squirts and colonial friends (not actually monophyletic),"Sessile after their larval stage.  Social tunicates retain separate, typical sea squirt bodies, reproduce by stolonous budding, and tend to remain connected by these stolons. They have moderate-sized to small zooids. The zooids of compound ascidians are embedded in a common, colonial tunic.","oral siphon - mouth, leads into pharyngeal basket studded with gill slits. A ventral ridge, the endostyle, forms a seam along the basket, while the dorsal lamina forms a seam along its dorsal margin. The endostyle secrets a mucus net, which is rolled up by the dorsal lamina and passed to the esophagus. The gill slits allow the passage of water through to the atrium exits via the atrial siphon; they are homologous to the gill slits in fishes. Simple gut includes esophagus, small stomach, and long intestine emptying into the atrium. The heart lies on the intestine.",https://en.wikipedia.org/wiki/Tunicate
 Thaliacea,Class,Salps and friends,"Pelagic for their lifeaspan, solitary and clonial forms. The incurrent and excurrent siphons are 180 degrees apart, thus water flow through the animal becomes a mode of gentle jet propulsion as well.",,https://alchetron.com/Thaliacea
 Pyrosomida,Order,Pyrosomes,"Colonial zooids share atrial siphon at posterior end. Their name, which means fire body, is derived from their intense bioluminescence, caused by luminescent bacteria that live in a pair of light producing organs on either side of the pharynx. ",,https://www.newscientist.com/article/2418446-strange-animals-called-pyrosomes-are-thriving-as-the-pacific-heats-up/
 Salpida,Order,Salps,Complex life cycle with colonial and solitary examples. The bulk of the animal is comprised of a greatly enlarged pharynx and atrium. Viscera is resticted to a small corner of the animal. ,,https://en.wikipedia.org/wiki/Salp
 Larvacea,Class,"Larvaceans, AKA Appendicularia","Larvaceans retain their chordate features throughout adulthood. They live and filter feed in an house, an external gelatinous casing secreted by the body.",,https://www.thoughtco.com/biology-of-invertebrate-chordates-4156566
-Vertebrata,Subphylum,Vertebrates and friends,We are vertebrates,Vertical column,https://en.wikipedia.org/wiki/Vertebrate
-Cephalochordata,Subphylum,Lancelets and friends,Resemble a filter feeding benthic fish about 1.5–6 cm long. They wait in the substrate and filter feed.,"Dorsal hollow nerve cord and notochord. Buccal cirri surround mouth leading to pharynx with mucus covered gill slits, filted water exits from atrial cavity to atriopore much like a tunicate. Mucus formed at endostyle which lies in the ventral midline of the pharynx catches particles and is passed to digestive cecum.",https://zookeys.pensoft.net/article/33901/
+Vertebrata,Subphylum,Vertebrates and friends,"Vertical column to protect the spinal chord, also a cranium to protect the brain. We are vertebrates.",,https://en.wikipedia.org/wiki/Vertebrate
+Cephalochordata,Subphylum,Lancelets and friends,Resemble a filter feeding benthic fish about 1.5–6 cm long. ,"Dorsal hollow nerve cord and notochord. Buccal cirri surround mouth leading to pharynx with mucus covered gill slits, filted water exits from atrial cavity to atriopore much like a tunicate. Mucus formed at endostyle which lies in the ventral midline of the pharynx catches particles and is passed to digestive cecum.",https://zookeys.pensoft.net/article/33901/
 Ambulacraria,Higher Clade,Ambulacrarians,Names for shared larval structures.,,https://en.wikipedia.org/wiki/Ambulacrum_%28zoology%29
 Hemichordata,Phylum,Acorn worms & pterobranchs,"They share some characteristics with chordates, hence their name.",,https://en.wikipedia.org/wiki/Hemichordate
 Enteropneusta,Class,Acorn worms ,Acorn worms are solitary marine worms ,"Dorsal nerve cord (not a notocord), gill slits, proboscis, collar, trunk.",https://divemagazine.com/marine-life/marine-curio-25-acorn-worms
-Pterobranchia,Class,Pterobranchs,Pterobranchs also have a tripartite body plan but look very different and can be social. ,,https://en.wikipedia.org/wiki/Hemichordate
-Echinodermata,Phylum,Starfish and Friends,"Echinoderm means spiny skin. Evolved from bilateral animals, now pentaradial (sorta). ORAL (mouth) – ABORAL (anus) axis instead, but no in sea cucumbers. Larvae are still bilateral. ","In all five classes you should be able to find the water vascular system, tube feet, madreporite, mesodermal calcitic endoskeleton. Echinoderms also often have mutable collagenous tissue connecting their ossicles, which can be held ridgid without continued effort (unlike muscles). ",https://en.wikipedia.org/wiki/Echinoderm
+Pterobranchia,Class,Pterobranchs,Pterobranchs also have a tripartite body plan but look very different. They build tubes and can be social. ,,https://en.wikipedia.org/wiki/Hemichordate
+Echinodermata,Phylum,Starfish and Friends,"Echinoderm means spiny skin. Evolved from bilateral animals, now pentaradial (sorta). Oral-aboral axis instead, but not in sea cucumbers. Larvae are still bilateral. Echinoderms also often have mutable collagenous tissue connecting their ossicles, which can be held ridgid without continued effort (unlike muscles). ","Water vascular system, tube feet, madreporite, mesodermal calcitic endoskeleton. ",https://en.wikipedia.org/wiki/Echinoderm
 Crinoidea,Class,Feather stars and sea lilies,"Usually have long arms for suspension feeding coming from central body which is often suspended by the stalk, but unstalked crinoids can swim. Crinoid tube feet lack adhesion discs at the ends but are ciliated to bring food to mouth on the 'top', anus is also on top. Auricularia, doliolaria, vitellaria larvae",,https://en.wikipedia.org/wiki/Crinoid
 Asteroidea,Class,Sea stars (star fish),Usually predatory marine animals. Many can extend their cardiac stomach onto prey and begin digestion externally. Bipinnaria larvae.,"Tube foot, ampulla, madreporite (dorsal), stone canal, ring canal, radial canal, Pedicellaria, pyloric caecum, gonads, stomach (cardiac and pyloric).",https://www.pinterest.com/pin/278519558174677917/
 Ophiuroidea,Class,Brittle stars (incl. basket stars),"The internal organs of digestion and reproduction never enter the arms, as they do in the Asteroidea. Multiple modes of eating, but have only one stomach and have lost their anus. Ophiopluteus larva.","Central disk, madreporite (ventral)",https://en.wikipedia.org/wiki/Brittle_star
@@ -65,14 +65,14 @@ Trilobita,Class,Trilobites,Extinct ancesteral arthropod,"Cephalon, Thorax, Pygid
 Hexapoda,Subphylum,Hexapods,Six legs,"Three body sections. Head: acron + 5 segments, Thorax: 3 segments, Abdomen: 11 segments",https://en.wikipedia.org/wiki/Hexapoda
 Collembola,Class,"AKA Entognatha. Springtails, diplurans and proturans",Six legs but wingless. Entognatha refers to refers to morphology of mouth - mandibles and maxillae are housed in a gnathal pouch ,,https://insightpestnorthwest.com/understanding-springtails-the-tiny-pests-that-can-cause-big-problems/
 Insecta,Class,Insects,"Six legs, three part body plan (head, thorax, abdomen), antennae. Most diverse group of animals.",,https://en.wikipedia.org/wiki/Insect
-Hymenoptera,Order,"Wasps, bees, ants",,,https://en.wikipedia.org/wiki/Hymenoptera
+Hymenoptera,Order,"Wasps, bees, ants","The ovipositor is often modified into a stinger in these insects (hence, males don't sting). Generally well developed mandibles and four winds held together with hamuli. Can be social or solitary. ",,https://en.wikipedia.org/wiki/Hymenoptera
 Coleoptera,Order,Beetles,Most diverse group of animals,,https://www.dreamstime.com/set-beetles-coleoptera-beetles-coleoptera-set-beetles-isolated-white-background-image151423168
-Hemiptera,Order,True bugs,,,https://entomologytoday.org/2021/06/17/true-bugs-almonds-pests-hemiptera-integrated-pest-management/
-Odonata,Order,Dragonflies and damselflies,,,https://uq.pressbooks.pub/insect-science/chapter/the-orders-of-insects-odonata/
-Lepidoptera,Order,Butterflies and moths,,,https://en.wikipedia.org/wiki/Lepidoptera
-Diptera,Order,Flies,,,https://www.facebook.com/sagaOptics/posts/flies-diptera-one-of-the-four-mega-diverse-insect-orders-with-about-160000-speci/1128463808996788/
-Orthoptera,Order,Grasshoppers,,,https://en.wikipedia.org/wiki/Orthoptera
-Blattodea,Order,Cockroaches and termites,,,https://pressbooks.bccampus.ca/unbcbiol322/chapter/blattodea/
+Hemiptera,Order,True bugs,"These are the true bugs. The name derives from half-wing, because the forewing is often leathery at the base, but membranous at the tips. ",,https://entomologytoday.org/2021/06/17/true-bugs-almonds-pests-hemiptera-integrated-pest-management/
+Odonata,Order,Dragonflies and damselflies,"Predatory flying insects, with voracious aquatic larvae as well. Dragonflys have larger eyes which wrap around much of the head and wings that remain down when resting. Damselflies are generally more slender, have lateral eyes and close the wings when resting. ",,https://uq.pressbooks.pub/insect-science/chapter/the-orders-of-insects-odonata/
+Lepidoptera,Order,Butterflies and moths,"These insects have coloured scales overing the body, triangular wings, and a proboscis to drink water. Larvae (caterpillars) are come from eggs generally laid on a host plant. ",,https://en.wikipedia.org/wiki/Lepidoptera
+Diptera,Order,Flies,"Single front set of wings (hense name), hindwings evolved into halteres, organs that sense rotation to coordinate flight. ",,https://www.facebook.com/sagaOptics/posts/flies-diptera-one-of-the-four-mega-diverse-insect-orders-with-about-160000-speci/1128463808996788/
+Orthoptera,Order,Grasshoppers,"Produce sound by stridulation, rubbing the wings on legs or eachother. Incomplete metamorphosis. Generally well developed hind legs for jumping, and flying hindwings that fold under the tegmina (hardened forewings) at rest. ",,https://en.wikipedia.org/wiki/Orthoptera
+Blattodea,Order,Cockroaches and termites,"Termites are often eusocial insects, and cockroaches have been considered pre-social in some aggrigating species. Many behavioural similarites between the groups. ",,https://pressbooks.bccampus.ca/unbcbiol322/chapter/blattodea/
 Crustacea,Subphylum,Crustaceans (now this should include hexapods),,,https://www.ebay.com/itm/167738071155
 Malacostraca,Class,,Abdominal appendages,,https://en.wikipedia.org/wiki/Malacostraca
 Isopoda,Order,"Rolly-pollies, wood lice, giant deep sea isopods",,,https://tropicalisopods.com/products/isopoda-sp-dream-for-sale
@@ -82,13 +82,13 @@ Stomatopoda,Order,Mantis shrimp,"Crazy animals, can see more colours than us, an
 Decapoda,Order,Crabs and friends,Ten legs,,https://en.wikipedia.org/wiki/Decapod
 Caridea,Group,True shrimp,,,https://en.wikipedia.org/wiki/Caridea
 Astacidea,Group,"""normal"" lobsters and crayfish",,"anterior gastric muscles, posterior gastric muscles, mandibular muscles, abdominal extensor muscles, abdominal flexor muscles, gills, cardiac stomach, pyloric stomach, digestive glands, intestine, gastric teeth, testes, heart, antennal gland.",https://en.wikipedia.org/wiki/Astacidea
-Achelata,Group,"Spiny lobsters, slipper lobsters",,,https://en.wikipedia.org/wiki/Achelata
-Anomura,Group,"Hermit, king and porcelain crabs",,,https://en.wikipedia.org/wiki/Anomura
-Brachyura,Group,True crabs,,,https://en.wikipedia.org/wiki/Crab
-Branchiopoda,Class,"Brine shrimp, triops, water fleas, etc",,,https://en.wikipedia.org/wiki/Branchiopoda
-Ostracoda,Class,Seed Shrimp,,,https://en.wikipedia.org/wiki/Ostracod
-Copepoda,Class,Copepods,,,https://www.algaebarn.com/blog/copepods/a-primer-on-the-different-characteristics-and-uses-of-the-major-copepod-groups/
-Pentastomida,Class,Tounge worms,"Not worms, parastic crustaceans",,https://en.wikipedia.org/wiki/Pentastomida
+Achelata,Group,"Spiny lobsters, slipper lobsters","These decapods lack chelae, hense the name. Enlarged second antennae and phyllosoma larvae. ",,https://en.wikipedia.org/wiki/Achelata
+Anomura,Group,"Hermit, king and porcelain crabs","Many instances of carcinisation here. The last pair of legs is often reduced so a ""crab"" with only eight visible legs is generally an anomuran.",,https://en.wikipedia.org/wiki/Anomura
+Brachyura,Group,True crabs,"Ten visible legs, the first ones end in chelae. Abdomen is often small and tucked under the thorax. ",,https://en.wikipedia.org/wiki/Crab
+Branchiopoda,Class,"Brine shrimp, triops, water fleas, etc","United by the presence of gills on many of the animals' appendages, hense the name. Carapace in many forms, and generally have compound eyes. ",,https://en.wikipedia.org/wiki/Branchiopoda
+Ostracoda,Class,Seed Shrimp,"These crustaceans have a bivalve-like shell that hinges on the top, made of chitin and sometimes calcium carbonate. Very abundant in the vossil record, though extant species especially are generally quite small. ",,https://en.wikipedia.org/wiki/Ostracod
+Copepoda,Class,Copepods,Small and abundant crustaceans. Most copepods have a single median bright-red compound eye. ,,https://www.algaebarn.com/blog/copepods/a-primer-on-the-different-characteristics-and-uses-of-the-major-copepod-groups/
+Pentastomida,Class,Tounge worms,"Parastic crustaceans. The name means 'five-openings', whish isn't true. There is one mouth with appendages and the rest of the appendages are hooks to hold onto hosts.",,https://en.wikipedia.org/wiki/Pentastomida
 Cirripedia,Class,Barnacles,Highly derived group of sessile arthropods. Most are suspension feeders - feed with cirri.,,https://en.wikipedia.org/wiki/Barnacle
 Cnidaria,Phylum,Jelly fish and Anemonies ,"Diploblastic: have an ectoderm, endoderm and a mesoglea. All have stinging cells called Nematocytes (cnidocytes), which contain a nematocyst (cnida). Blind gut and no circulatory system. ",,https://en.wikipedia.org/wiki/Cnidaria
 Medusozoa,Subphylum,Usually jellyfish,Have a true medusa stage,,https://en.wikipedia.org/wiki/Medusozoa
@@ -112,20 +112,20 @@ Porifera,Phylum,Sponges,Aquatic simple animals. no true tissues,,https://www.pel
 Calcarea,Class,Calcareous sponges,Calcium carbonate spicules. Generally small animals. ,,https://naturaldigestionsystem.weebly.com/calcarea.html
 Demospongiae,Class,Common sponges,"Spicules made of spongin, silicate, or calcium carbonate. Most diverse sponges.",,https://en.wikipedia.org/wiki/Demosponge
 Hexactinellida,Class,Glass sponges,"Four- and/or six-pointed siliceous spicules. Found in deep sea - estimated to live up to 15,000 years.",,https://www.digitalatlasofancientlife.org/learn/porifera/hexactinellida/
-Ctenophora,Phylum,Comb Jellies,"No stinging cells, but have sticky coloblast cells. some have transient anus. Recently thought to be sister to all other animals but that is contentious.","Ctene (fused ciliary plates) arranged in rows (look like combs). Mouth and gastrovascular canals, some lead to an anus. Apical sense organ.",https://www.microscopemaster.com/phylum-ctenophora.html
-Nuda,Class,,No tentacles,,https://en.wikipedia.org/wiki/Ctenophora
-Tenticulata,Class,,Tentacles,,https://www.seawater.no/fauna/ctenophora/pileus.html
-Nematoda,Phylum,Nematodes,Ubiquitous in nature. Huge size range. Many are parasites. ,"Intestine, vagina, uterus, oviducts",https://en.wikipedia.org/wiki/Nematode
+Ctenophora,Phylum,Comb Jellies,"No stinging cells, but have sticky coloblast cells. Some have transient anus. Recently thought to be sister to all other animals but that is contentious.","Ctene (fused ciliary plates) arranged in rows (look like combs). Mouth and gastrovascular canals, some lead to an anus. Apical sense organ.",https://www.microscopemaster.com/phylum-ctenophora.html
+Nuda,Class,,Ctenophores in this class have no tentacles,,https://en.wikipedia.org/wiki/Ctenophora
+Tenticulata,Class,,"These cenophores have long, contractile tentacles that can retract into specialized sheaths. ",,https://www.seawater.no/fauna/ctenophora/pileus.html
+Nematoda,Phylum,Nematodes,"Ubiquitous in nature, nematodes account for about 80% of all individual animals. Huge size range. Many are parasites, including Ascaris, one of the most common parasitic infections in humans worldwide. Cuticle is formed mostly of protiens, not the polysaccharide chitin. ","Intestine, vagina, uterus, oviducts.",https://en.wikipedia.org/wiki/Nematode
 ,,,,,
-Brachiopoda,Phylum,Lampshells,"Top and bottom valve, unlike molluscan bivalves",,https://simple.wikipedia.org/wiki/Brachiopod
+Brachiopoda,Phylum,Lampshells,"Top and bottom valve hinged at the rear end, unlike molluscan bivalves with left-right valves. Formed from the Ancient Greek words brachion (""arm"") and podos (""foot"").",,https://simple.wikipedia.org/wiki/Brachiopod
 Pancrustacea,,Crustaceans,Crabs but also bugs,,https://www.researchgate.net/figure/Morphological-diversity-of-select-pancrustaceans-A-buoy-barnacle-Cirripedia-B_fig1_372991050
-Ecdysozoa,Superphylum,Ecdysozoans,Chitin based exoskeleton,,https://en.wikipedia.org/wiki/Ecdysozoa
-Lophotrochozoa,Superphylum,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore ,,
+Ecdysozoa,Superphylum,Ecdysozoans,These animals have a chitin based (usually) exoskeleton which they shed to grow (ecdysis). ,,https://en.wikipedia.org/wiki/Ecdysozoa
+Lophotrochozoa,Superphylum,Lophotrochozoans,Have either a trochophote larvae stage or a lophophore. ,,https://www.slideserve.com/tassos/evolution-of-animals-metazoa
 Rotifera,Phylum,Wheel animals,"Small, usually solitary, 'wheels' of cilia - the corona. ",,https://www.cloudynights.com/forums/topic/639395-bdelloid-rotifer-from-a-birdbath/
 Chaetognatha,Phylum,Arrow worms,"Predatory marine worms, hooks on each side of the mouth",,https://www.tnrp.com.au/arrow_worms_phylum_chaetognatha.html
 Nematomorpha,Phylum,Horsehair worms,"Parasitic in arthropods, hard external cuticle",,https://www.wildlifetrusts.org/wildlife-explorer/marine/worms/horsehair-worm
 Xenacoelomorpha,Phylum,Xenacoelomorphs,"Simple flattened worms, most basal bilaterians",,https://en.wikipedia.org/wiki/Xenacoelomorpha
-Eumetazoa,Higher Clade,True animals,True tissues,,https://www.lifeder.com/eumetazoa/
+Eumetazoa,Higher Clade,True animals,"True tissues, organized body plans, and differetiated systems. ",,https://www.lifeder.com/eumetazoa/
 Bryozoa,Phylum,Moss animals,"Small, live in sedentary colonies, single animals called zooids ",,https://www.inaturalist.org/taxa/68104-Bryozoa
 Priapulida,Phylum,Penis worms,"Unsegmented worms, extensible spiny proboscis.",,https://en.wikipedia.org/wiki/Priapulida
-Placozoa,Phylum,Placozoans,"Simplest of animals, move with ciliary motion. ",,https://en.wikipedia.org/wiki/Placozoa
+Placozoa,Phylum,Placozoans,"Simplest of animals, move with ciliary motion. Not discovered until 1883, and still only three species described. ",,https://en.wikipedia.org/wiki/Placozoa
