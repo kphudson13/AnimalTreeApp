@@ -79,28 +79,47 @@ ui <- fluidPage(
       tags$div(
         style = "position:relative;",
         
-        # Floating search box (NEW)
         tags$div(
           style = "
     position:absolute;
     top:20px;
     left:20px;
     z-index:1000;
-    background: rgba(255,255,255,0.9);
-    padding:10px;
-    border-radius:8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    width:220px;
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
   ",
-          textInput(
-            "taxon_search",
-            label = NULL,
-            placeholder = "Search taxon…"
+          
+          # Search box
+          tags$div(
+            style = "
+      background: rgba(255,255,255,0.9);
+      padding:10px;
+      border-radius:8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width:220px;
+    ",
+            textInput(
+              "taxon_search",
+              label = NULL,
+              placeholder = "Search taxon…"
+            ),
+            actionButton(
+              "search_btn",
+              "Search",
+              width = "100%"
+            )
           ),
-          actionButton(
-            "search_btn",
-            "Search",
-            width = "100%"
+          
+          # Dice box
+          tags$div(
+            style = "
+      background: rgba(255,255,255,0.9);
+      padding:10px;
+      border-radius:8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    ",
+            actionButton("random_btn", "🎲")
           )
         ),
         
@@ -192,26 +211,6 @@ server <- function(input, output, session) {
     )
   })
   
-  
-  # output$TreePlot <- renderGirafe({
-  #   girafe(
-  #     ggobj = make_tree(),
-  #     bg = "transparent",
-  #     width_svg = 10,
-  #     height_svg = 20,
-  #     options = list(
-  #       opts_sizing(rescale = TRUE),
-  #       opts_selection(
-  #         type = "single",
-  #         only_shiny = TRUE,
-  #         css = "fill:white;stroke:black;"
-  #       ),
-  #       opts_tooltip(css = "background:rgba(255,255,255,0.8);"),
-  #       opts_hover(css = "")
-  #     )
-  #   )
-  # })
-  
   # Centralized modal logic 
   show_taxon_modal <- function(label_clicked) {
     
@@ -296,8 +295,6 @@ server <- function(input, output, session) {
     ))
   }
   
-  
-  
   observeEvent(input$TreePlot_selected, {
     label_clicked <- input$TreePlot_selected
     
@@ -315,17 +312,6 @@ server <- function(input, output, session) {
       message = character(0)
     )
   }, ignoreInit = TRUE)
-  
-  # observeEvent(input$plot_click, { # main panel click
-  # 
-  #   tree_data <- TreePlot$data
-  #   nearest <- nearPoints(tree_data, input$plot_click,
-  #                         xvar = "x", yvar = "y",
-  #                         threshold = 0.1, maxpoints = 1)
-  #   if (nrow(nearest) == 0) return() # stops app from crashing if you click randomly
-  # 
-  #   show_taxon_modal(nearest$label)
-  # })
   
   suggestion_obs <- reactiveVal(list())
   suggestion_map <- reactiveVal(list())
@@ -402,6 +388,14 @@ server <- function(input, output, session) {
     }))
     
     updateTextInput(session, "taxon_search", value = "")
+  })
+  
+  # For random group button
+  observeEvent(input$random_btn, {
+    labels_all <- unique(trimws(c(tree$tip.label, tree$node.label)))
+    labels_all <- labels_all[!is.na(labels_all) & labels_all != "" & 
+                               labels_all %in% taxa_info$Clade]
+    show_taxon_modal(sample(labels_all, 1))
   })
   
   observeEvent(input$credits, { # credit link click
