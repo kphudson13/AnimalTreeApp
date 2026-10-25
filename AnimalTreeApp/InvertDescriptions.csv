@@ -15,7 +15,7 @@ Larvacea,Class,"Larvaceans, AKA Appendicularia","Larvaceans retain their chordat
 Vertebrata,Subphylum,Vertebrates and friends,"Vertical column to protect the spinal chord, also a cranium to protect the brain. We are vertebrates.",,https://en.wikipedia.org/wiki/Vertebrate
 Cephalochordata,Subphylum,Lancelets and friends,Resemble a filter feeding benthic fish about 1.5–6 cm long. ,"Dorsal hollow nerve cord and notochord. Buccal cirri surround mouth leading to pharynx with mucus covered gill slits, filted water exits from atrial cavity to atriopore much like a tunicate. Mucus formed at endostyle which lies in the ventral midline of the pharynx catches particles and is passed to digestive cecum.",https://zookeys.pensoft.net/article/33901/
 Ambulacraria,Higher Clade,Ambulacrarians,Names for shared larval structures.,,https://en.wikipedia.org/wiki/Ambulacrum_%28zoology%29
-Hemichordata,Phylum,Acorn worms & pterobranchs,"They share some characteristics with chordates, hence their name.",,https://en.wikipedia.org/wiki/Hemichordate
+Hemichordata,Phylum,Acorn worms & pterobranchs,"They share some characteristics with chordates, hence their name. A hollow dorsal nerve cord is present in the collar region in some species. ",,https://en.wikipedia.org/wiki/Hemichordate
 Enteropneusta,Class,Acorn worms ,Acorn worms are solitary marine worms ,"Dorsal nerve cord (not a notocord), gill slits, proboscis, collar, trunk.",https://divemagazine.com/marine-life/marine-curio-25-acorn-worms
 Pterobranchia,Class,Pterobranchs,Pterobranchs also have a tripartite body plan but look very different. They build tubes and can be social. ,,https://en.wikipedia.org/wiki/Hemichordate
 Echinodermata,Phylum,Starfish and Friends,"Echinoderm means spiny skin. Evolved from bilateral animals, now pentaradial (sorta). Oral-aboral axis instead, but not in sea cucumbers. Larvae are still bilateral. Echinoderms also often have mutable collagenous tissue connecting their ossicles, which can be held ridgid without continued effort (unlike muscles). ","Water vascular system, tube feet, madreporite, mesodermal calcitic endoskeleton. ",https://en.wikipedia.org/wiki/Echinoderm
@@ -49,11 +49,11 @@ Arthropoda,Phylum,Arthropods,"Jointed legs, chitinous exoskeleton",,https://en.w
 Myriapoda,Subphylum,Myriapods,"Centepedes, millipedes and friends. Many legs.",,https://en.wikipedia.org/wiki/Myriapoda
 Chilopoda,Class,Centipedes,One pair of legs per segment,,https://en.wikipedia.org/wiki/Centipede
 Diplopoda,Class,Millipedes,Two pairs of legs per segment,,https://en.wikipedia.org/wiki/Millipede
-Chelicerata,Subphylum,Chelicerates,Spiders and Friends,,https://en.wikipedia.org/wiki/Chelicerata
+Chelicerata,Subphylum,Chelicerates,"Spiders and Friends. The chelicerate body plan generally consists of two tagmata, the prosoma and the opisthosoma. The chelicerae, are the only appendages before the mouth. Chelicerae are generally modest pincers used to feed. However, spiders' chelicerae form fangs that most species use to inject venom into prey.",,https://en.wikipedia.org/wiki/Chelicerata
 Merostomata,Class,Horseshoe crabs,"Not crabs, only living example is horseshoe crabs.",,https://en.wikipedia.org/wiki/Xiphosura
 Pycnogonida,Class,Sea spiders,"Not spiders, marine animals. ",,https://www.starfish.ch/register-i/crustaceans-sea-spiders.html
 Arachnida,Class,Arachnids,"Eight legs on cephalothorax, also chelicera and pedipalps",,https://commons.wikimedia.org/wiki/File:Arachnida_collage_(Update).jpg
-Araneae,Order,Spiders,,,https://ucmp.berkeley.edu/arthropoda/arachnida/araneae.html
+Araneae,Order,Spiders,"These air-breathing arthropods that have eight limbs, chelicerae with fangs generally able to inject venom, and spinnerets that extrude silk. ",,https://ucmp.berkeley.edu/arthropoda/arachnida/araneae.html
 Amblypygi,Order,Tail-less whip scorpions,,,https://en.wikipedia.org/wiki/Amblypygi
 Uropygi,Order,Whip scorpiones or vinegaroons,"No stinger, but can spray acetic acid",,https://www.inaturalist.org/taxa/48900-Uropygi
 Opiliones,Order,Daddy long-legs or harvestmen,"If you have heard the myth that they are very venomous but their fangs are too small to puncture skin, that is not true at all. ",,https://en.wikipedia.org/wiki/Opiliones
@@ -74,17 +74,17 @@ Diptera,Order,Flies,"Single front set of wings (hense name), hindwings evolved i
 Orthoptera,Order,Grasshoppers,"Produce sound by stridulation, rubbing the wings on legs or eachother. Incomplete metamorphosis. Generally well developed hind legs for jumping, and flying hindwings that fold under the tegmina (hardened forewings) at rest. ",,https://en.wikipedia.org/wiki/Orthoptera
 Blattodea,Order,Cockroaches and termites,"Termites are often eusocial insects, and cockroaches have been considered pre-social in some aggrigating species. Many behavioural similarites between the groups. ",,https://pressbooks.bccampus.ca/unbcbiol322/chapter/blattodea/
 Crustacea,Subphylum,Crustaceans (now this should include hexapods),,,https://www.ebay.com/itm/167738071155
-Malacostraca,Class,,Abdominal appendages,,https://en.wikipedia.org/wiki/Malacostraca
-Isopoda,Order,"Rolly-pollies, wood lice, giant deep sea isopods",,,https://tropicalisopods.com/products/isopoda-sp-dream-for-sale
-Amphipoda,Order,Scuds or side-swimmers,,,https://www.istockphoto.com/photos/amphipoda
-Euphausiacea,Order,Krill,,,https://en.wikipedia.org/wiki/Krill
+Malacostraca,Class,,"Segmented animals with a common body plan of 20 body segments (rarely 21) divided into a head, thorax, and abdomen. ",,https://en.wikipedia.org/wiki/Malacostraca
+Isopoda,Order,"Rolly-pollies, wood lice, giant deep sea isopods","Branching appendages on the abdomen that are used in respiration. Females brood their young in a pouch under their thorax. Inabit a diversity of marine, freshwater, and terrestrial species with diverse diets. ",,https://tropicalisopods.com/products/isopoda-sp-dream-for-sale
+Amphipoda,Order,Scuds or side-swimmers,Crustaceans that generally have a laterally compressed body and no carapace. Gills are located on the legs and the head is fused to the thorax. Many marine species but also freshwater and terrestrial species. ,,https://www.istockphoto.com/photos/amphipoda
+Euphausiacea,Order,Krill,"Krill are small and exclusively marine crustaceas with a clear carapace (generally). An important food source for many larger animals. Technically there are no walking legs, but there is 5 sets of swimming legs. ",,https://en.wikipedia.org/wiki/Krill
 Stomatopoda,Order,Mantis shrimp,"Crazy animals, can see more colours than us, and can punch hard enough to break shells. ",,https://en.wikipedia.org/wiki/Mantis_shrimp
-Decapoda,Order,Crabs and friends,Ten legs,,https://en.wikipedia.org/wiki/Decapod
-Caridea,Group,True shrimp,,,https://en.wikipedia.org/wiki/Caridea
-Astacidea,Group,"""normal"" lobsters and crayfish",,"anterior gastric muscles, posterior gastric muscles, mandibular muscles, abdominal extensor muscles, abdominal flexor muscles, gills, cardiac stomach, pyloric stomach, digestive glands, intestine, gastric teeth, testes, heart, antennal gland.",https://en.wikipedia.org/wiki/Astacidea
+Decapoda,Order,true crabs and friends,"Crustaceans with ten periopods (walking legs) on the last 5 thoracic segments, the first ones often end in chelae. Many are are scavengers. Only ten periopods, but they can have as many as 38 appendages. ",,https://en.wikipedia.org/wiki/Decapod
+Caridea,Group,True shrimp,Carideans typically have two pairs of chelae and include many marine and freshwater species. Commercially important animals. ,"Stalked eyes, carapace ",https://en.wikipedia.org/wiki/Caridea
+Astacidea,Group,"""normal"" lobsters and crayfish",These decapods have chelae on each of the first three pairs of pereiopods. Include many marine and freshwater species,"Gastric muscles, mandibular muscles, gills, cardiac stomach, pyloric stomach, digestive glands, intestine, testes, heart, antennal gland.",https://en.wikipedia.org/wiki/Astacidea
 Achelata,Group,"Spiny lobsters, slipper lobsters","These decapods lack chelae, hense the name. Enlarged second antennae and phyllosoma larvae. ",,https://en.wikipedia.org/wiki/Achelata
 Anomura,Group,"Hermit, king and porcelain crabs","Many instances of carcinisation here. The last pair of legs is often reduced so a ""crab"" with only eight visible legs is generally an anomuran.",,https://en.wikipedia.org/wiki/Anomura
-Brachyura,Group,True crabs,"Ten visible legs, the first ones end in chelae. Abdomen is often small and tucked under the thorax. ",,https://en.wikipedia.org/wiki/Crab
+Brachyura,Group,True crabs,"True crabs with ten visible legs, the first ones end in chelae. Abdomen is often small and tucked under the thorax. ",,https://en.wikipedia.org/wiki/Crab
 Branchiopoda,Class,"Brine shrimp, triops, water fleas, etc","United by the presence of gills on many of the animals' appendages, hense the name. Carapace in many forms, and generally have compound eyes. ",,https://en.wikipedia.org/wiki/Branchiopoda
 Ostracoda,Class,Seed Shrimp,"These crustaceans have a bivalve-like shell that hinges on the top, made of chitin and sometimes calcium carbonate. Very abundant in the vossil record, though extant species especially are generally quite small. ",,https://en.wikipedia.org/wiki/Ostracod
 Copepoda,Class,Copepods,Small and abundant crustaceans. Most copepods have a single median bright-red compound eye. ,,https://www.algaebarn.com/blog/copepods/a-primer-on-the-different-characteristics-and-uses-of-the-major-copepod-groups/
@@ -126,6 +126,6 @@ Chaetognatha,Phylum,Arrow worms,"Predatory marine worms, hooks on each side of t
 Nematomorpha,Phylum,Horsehair worms,"Parasitic in arthropods, hard external cuticle",,https://www.wildlifetrusts.org/wildlife-explorer/marine/worms/horsehair-worm
 Xenacoelomorpha,Phylum,Xenacoelomorphs,"Simple flattened worms, most basal bilaterians",,https://en.wikipedia.org/wiki/Xenacoelomorpha
 Eumetazoa,Higher Clade,True animals,"True tissues, organized body plans, and differetiated systems. ",,https://www.lifeder.com/eumetazoa/
-Bryozoa,Phylum,Moss animals,"Small, live in sedentary colonies, single animals called zooids ",,https://www.inaturalist.org/taxa/68104-Bryozoa
+Bryozoa,Phylum,Ectoprocta or moss animals,"Small, live in sedentary colonies, single animals called zooids ",,https://www.inaturalist.org/taxa/68104-Bryozoa
 Priapulida,Phylum,Penis worms,"Unsegmented worms, extensible spiny proboscis.",,https://en.wikipedia.org/wiki/Priapulida
 Placozoa,Phylum,Placozoans,"Simplest of animals, move with ciliary motion. Not discovered until 1883, and still only three species described. ",,https://en.wikipedia.org/wiki/Placozoa
