@@ -267,7 +267,7 @@ colnames(Descriptions)[colnames(Descriptions) == "Clade"] = "label" # i think th
 # reorder for the sake of the legend 
 Descriptions$Level <- factor(Descriptions$Level, levels = c("Higher Clade", "Superphylum", "Phylum", "Subphylum", "Class", "Subclass", "Order", "Group"))
 
-TreePlot <- ggtree(tree, branch.length="none", layout="ellipse", aes(color=Level), size = 0.5) %<+% Descriptions + # match descriptions to nodes
+TreePlot <- ggtree(tree, branch.length="none", layout="ellipse", aes(color=Level)) %<+% Descriptions + # match descriptions to nodes
   geom_tiplab(
     aes(data_id = label),
     fill = "white",
@@ -281,12 +281,12 @@ TreePlot <- ggtree(tree, branch.length="none", layout="ellipse", aes(color=Level
     geom = "label",
     size = 2,
     fontface = 2) +
-  theme(legend.position = c(0.1,0.85),
+  theme(legend.position = c(0.1,0.8),
         legend.title = element_blank(),
         legend.text = element_text(size=4),
         legend.background = element_rect(fill = NA, colour = NA),
         panel.background = element_rect(fill = "transparent", colour = NA),
-        plot.background  = element_rect(fill = "transparent", colour = NA)) # incase i decide to add a background
+        plot.background  = element_rect(fill = "transparent", colour = NA)) 
 
 save(TreePlot, file = "AnimalTreeApp/ggTreeObject") # save it so the app can call it
 

@@ -1,21 +1,24 @@
 ###########################
 # 
-# developed Nov 2025-Jan 2026 by Kyle Hudson
+# Developed Nov 2025-Oct 2026 by Kyle Hudson
 # kphudson@live.ca
-# This app is designed as a teaching tool, the taxonomy is incomplete
+# This app controls the UI and server side
+# Other scripts build the taxonomic tree
+# 
+# See https://github.com/kphudson13/AnimalTreeApp
 # 
 # Live laugh love
 # -Kyle 
 # 
 ###########################
 
-library(ape)
+library(ape) 
 library(shiny)
 library(ggplot2)
 library(ggtree)
 library(bslib) # for the web app theme 
-library(dplyr)
-library(ggiraph)
+library(dplyr) 
+library(ggiraph) # new package for making the dynamic plot
 
 load("ggTreeObject") # built from other script 
 taxa_info <- read.csv("InvertDescriptions.csv")
@@ -24,38 +27,34 @@ tree <- read.nexus("tree.nex", tree.names = "tree")
 # Define UI
 ui <- fluidPage(
   tags$head(
-    tags$style(HTML("
-    body {
-      background-image: url('Photos/Background.png'); /* path inside www/Photos */
-      background-size: cover;       /* scale to fill screen */
-      background-repeat: no-repeat; /* don't tile */
-      background-attachment: fixed; /* stays fixed when scrolling */
-      margin-bottom: 40px; /* reserve space equal to footer height */
-    }
-    
-    .ggiraph-toolbar,
-    .btn-zoom { /* to remove plot buttons */
-        display: none !important;
-    }
-    
-    .app-footer p {
-      margin: 0;
-      line-height: 1.2;
-      font-size: 0.9rem;
-    }
-    
-                  "))
+    tags$style(HTML("body {
+                     background-image: url('Photos/Background.png'); /* path inside www/Photos */
+                     background-size: cover;       /* scale to fill screen */
+                     background-repeat: no-repeat; /* don't tile */
+                     background-attachment: fixed; /* stays fixed when scrolling */
+                     margin-bottom: 40px; /* reserve space equal to footer height */
+                    }
+                    
+                    .ggiraph-toolbar,
+                    .btn-zoom { /* to remove plot buttons */
+                      display: none !important;
+                    }
+                    
+                    .app-footer p {
+                      margin: 0;
+                      line-height: 1.2;
+                      font-size: 0.9rem;
+                    }"))
   ),
   
   tags$head( # block so enter button on keyboard works
-    tags$script(HTML("
-    $(document).on('keydown', '#taxon_search', function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        $('#search_btn').click();
-      }
-    });
-  "))
+    tags$script(HTML("$(document).on('keydown', '#taxon_search', function(e) {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                        $('#search_btn').click();
+                      }
+                      });
+                      "))
   ),
   
   theme = bs_theme(preset = "morph"),
@@ -72,7 +71,8 @@ ui <- fluidPage(
       width = 9,  # larger column for the image
       tags$img(
         src = "Photos/Intro.png",
-        style = "width:100%; height:auto;", # shrink image
+        style = "width:100%; 
+                 height:auto;", # shrink image
         alt = "Metazoa overview image" # in case loading fails
       )
     )
@@ -81,11 +81,9 @@ ui <- fluidPage(
   # Main panel 
   fluidRow(
     tags$head(
-      tags$style(HTML("
-        .shiny-plot-output {
-          background-color: transparent !important; /* Make plot container transparent */
-        }
-      "))
+      tags$style(HTML(".shiny-plot-output {
+                         background-color: transparent !important; /* Make plot container transparent */
+                       }"))
     ),
     column(
       width = 12, # full width
@@ -95,25 +93,21 @@ ui <- fluidPage(
         style = "position:relative;",
         
         tags$div(
-          style = "
-    position:absolute;
-    top:20px;
-    left:20px;
-    z-index:1000;
-    display:flex;
-    gap:8px;
-    align-items:flex-start;
-  ",
+          style = "position:absolute;
+                   top:20px;
+                   left:20px;
+                   z-index:1000;
+                   display:flex;
+                   gap:8px;
+                   align-items:flex-start;",
           
           # Search box
           tags$div(
-            style = "
-      background: rgba(255,255,255,0.9);
-      padding:10px;
-      border-radius:8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      width:220px;
-    ",
+            style = "background: rgba(255,255,255,0.9);
+                     padding:10px;
+                     border-radius:8px;
+                     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+                     width:220px;",
             textInput(
               "taxon_search",
               label = NULL,
@@ -128,12 +122,10 @@ ui <- fluidPage(
           
           # Dice box
           tags$div(
-            style = "
-      background: rgba(255,255,255,0.9);
-      padding:10px;
-      border-radius:8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    ",
+            style = "background: rgba(255,255,255,0.9);
+                     padding:10px;
+                     border-radius:8px;
+                     box-shadow: 0 2px 6px rgba(0,0,0,0.2);",
             actionButton("random_btn", "🎲")
           )
         ),
@@ -153,7 +145,7 @@ ui <- fluidPage(
     div(class = "container-fluid py-2",
         div(class = "row align-items-center",
             div(class = "col-12 col-md-4",
-                tags$p("2025 Tree Project / Kyle Hudson")),
+                tags$p("Training Tree Project / Kyle Hudson")),
             div(class = "col-12 col-md-4 text-md-center",
                 tags$p(
                   tags$a("GitHub", href="https://github.com/kphudson13/AnimalTreeApp", target="_blank"),
@@ -172,8 +164,6 @@ server <- function(input, output, session) {
     TreePlot +
       ggplot2::xlim(NA, xmax + 1) +
       ggplot2::theme(
-        plot.background  = element_rect(fill = "transparent", colour = NA),
-        panel.background = element_rect(fill = "transparent", colour = NA),
         axis.text = element_text(size = rel(0.8)),
         legend.text = element_text(size = rel(0.8))
       )
@@ -190,9 +180,8 @@ server <- function(input, output, session) {
         opts_selection(
           type = "single",
           only_shiny = TRUE,
-          css = "fill:white;stroke:black;"
-        ),
-        opts_tooltip(css = "background:rgba(255,255,255,0.8);"),
+          css = "fill:white;stroke:black;"), # Label flashes black when clicked
+        # opts_tooltip(css = "background:rgba(255,255,255,0.8);"),
         opts_hover(css = "")
       )
     )
@@ -205,15 +194,14 @@ server <- function(input, output, session) {
   label_to_node <- function(label) {
     tip_match <- which(tree$tip.label == label)
     
-    node_match <- which(tree$node.label == label)
-    node_match <- node_match + ape::Ntip(tree)
-    
+    node_match <- which(tree$node.label == label) + Ntip(tree)
+
     c(tip_match, node_match)[1]
   }
   
   # Get the displayed label for a tree node number
   node_to_label <- function(node) {
-    n_tips <- ape::Ntip(tree)
+    n_tips <- Ntip(tree)
     
     if (node <= n_tips) {
       tree$tip.label[node]
@@ -334,40 +322,32 @@ server <- function(input, output, session) {
       
       fluidRow(
         tags$div(
-          style = "
-    position:relative;
-    width:100%;
-  ",
+          style = "position:relative;
+                   width:100%;",
           
           # Closest higher clade: outside the modal on the left
           if (length(higher_taxa) > 0) {
             tags$div(
-              style = "
-        position:absolute;
-        right:calc(100% + 18px);
-        top:50%;
-        transform:translateY(-50%);
-        width:150px;
-        z-index:2000;
-      ",
+              style = "position:absolute;
+                       right:calc(100% + 18px);
+                       top:50%;
+                       transform:translateY(-50%);
+                       width:150px;
+                       z-index:2000;",
               lapply(seq_along(higher_taxa), function(i) {
                 tags$div(
-                  style = "
-            background:rgba(255,255,255,0.97);
-            border:1px solid #ccc;
-            border-radius:10px;
-            padding:12px;
-            text-align:center;
-            box-shadow:0 3px 10px rgba(0,0,0,0.22);
-          ",
+                  style = "background:rgba(255,255,255,0.97);
+                           border:1px solid #ccc;
+                           border-radius:10px;
+                           padding:12px;
+                           text-align:center;
+                           box-shadow:0 3px 10px rgba(0,0,0,0.22);",
                   actionLink(
                     higher_ids[i],
                     higher_taxa[i],
-                    style = "
-              font-weight:bold;
-              text-decoration:none;
-              display:block;
-            "
+                    style = "font-weight:bold;
+                             text-decoration:none;
+                             display:block;"
                   )
                 )
               })
@@ -385,7 +365,9 @@ server <- function(input, output, session) {
                   tags$img(src = file_path, style = img_style)
                 },
                 if (nrow(info) > 0 && !is.na(info$ImageLink)) {
-                  tags$p(info$ImageLink, style = "font-size:0.8rem;")
+                  tags$p(info$ImageLink, 
+                         style = "font-size:0.8rem;
+                                  width:80%;")
                 }
               ),
               
@@ -395,7 +377,9 @@ server <- function(input, output, session) {
                   lapply(anat_path, function(path) {
                     tags$img(
                       src = path,
-                      style = "width:100%; height:auto; margin-bottom:10px;"
+                      style = "width:80%; 
+                               height:auto; 
+                               margin-bottom:10px;"
                     )
                   })
                 )
@@ -406,35 +390,29 @@ server <- function(input, output, session) {
           # Lower clades: outside the modal on the right
           if (length(lower_taxa) > 0) {
             tags$div(
-              style = "
-        position:absolute;
-        left:calc(100% + 18px);
-        top:50%;
-        transform:translateY(-50%);
-        width:150px;
-        z-index:2000;
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-      ",
+              style = "position:absolute;
+                       left:calc(100% + 18px);
+                       top:50%;
+                       transform:translateY(-50%);
+                       width:150px;
+                       z-index:2000;
+                       display:flex;
+                       flex-direction:column;
+                       gap:10px;",
               lapply(seq_along(lower_taxa), function(i) {
                 tags$div(
-                  style = "
-            background:rgba(255,255,255,0.97);
-            border:1px solid #ccc;
-            border-radius:10px;
-            padding:12px;
-            text-align:center;
-            box-shadow:0 3px 10px rgba(0,0,0,0.22);
-          ",
+                  style = "background:rgba(255,255,255,0.97);
+                           border:1px solid #ccc;
+                           border-radius:10px;
+                           padding:12px;
+                           text-align:center;
+                           box-shadow:0 3px 10px rgba(0,0,0,0.22);",
                   actionLink(
                     lower_ids[i],
                     lower_taxa[i],
-                    style = "
-              font-weight:bold;
-              text-decoration:none;
-              display:block;
-            "
+                    style = "font-weight:bold;
+                             text-decoration:none;
+                             display:block;"
                   )
                 )
               })
@@ -464,7 +442,6 @@ server <- function(input, output, session) {
       }, once = TRUE, ignoreInit = TRUE)
     })
   }
-  
   
   observeEvent(input$TreePlot_selected, {
     label_clicked <- input$TreePlot_selected
@@ -576,7 +553,9 @@ server <- function(input, output, session) {
   observeEvent(input$credits, { # credit link click
     showModal(modalDialog(
       title = div(
-        style = "display:flex; justify-content:space-between; align-items:center; width:100%;",
+        style = "display:flex; 
+                 justify-content:space-between; 
+                 align-items:center; width:100%;",
         span("Credits"),
         tags$button(
           type = "button",
