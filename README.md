@@ -1,4 +1,6 @@
 # **Animal Tree of Life**  
+![Project Status](https://img.shields.io/badge/Status-Live-blue)
+
 An interactive tree for higher animal clades. 
 This web app is designed to be a learning tool for invertebrate diversity. 
 You are welcome to use and modify the app (see [LICENSE](https://github.com/kphudson13/AnimalTreeApp/blob/main/LICENSE)).   
