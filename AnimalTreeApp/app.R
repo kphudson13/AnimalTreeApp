@@ -5,7 +5,7 @@
 # This app controls the UI and server side
 # Other scripts build the taxonomic tree
 # 
-# See https://github.com/kphudson13/AnimalTreeApp
+# https://github.com/kphudson13/AnimalTreeApp
 # 
 # Live laugh love
 # -Kyle 
@@ -44,98 +44,82 @@ ui <- fluidPage(
                       margin: 0;
                       line-height: 1.2;
                       font-size: 0.9rem;
-                    }"))
-  ),
+                    }"))),
   
-  tags$head( # block so enter button on keyboard works
+  # Block so enter button on keyboard works
+  tags$head( 
     tags$script(HTML("$(document).on('keydown', '#taxon_search', function(e) {
                       if (e.key === 'Enter') {
                         e.preventDefault();
                         $('#search_btn').click();
                       }
                       });
-                      "))
-  ),
+                      "))),
   
   theme = bs_theme(preset = "morph"),
   
   # Intro section always visible
   fluidRow(
     style = "display:flex;", # this just centers the title better 
-    column(
-      width = 3,  # text takes less of the row
-      h2("Animal Tree of Life", style = "margin-top:30px;"),  # use h2 for a nice title size
-      h4("Click a label to see details")
-    ),
-    column(
-      width = 9,  # larger column for the image
-      tags$img(
-        src = "Photos/Intro.png",
-        style = "width:100%; 
+    column(width = 3,  # text takes less of the row
+           h2("Animal Tree of Life", style = "margin-top:30px;"),  # use h2 for a nice title size
+           h4("Click a label to see details")),
+    column(width = 9,  # larger column for the image
+           tags$img(
+             src = "Photos/Intro.png",
+             style = "width:100%; 
                  height:auto;", # shrink image
-        alt = "Metazoa overview image" # in case loading fails
-      )
-    )
-  ),
+             alt = "Metazoa overview image"))), # in case loading fails
   
   # Main panel 
   fluidRow(
     tags$head(
       tags$style(HTML(".shiny-plot-output {
                          background-color: transparent !important; /* Make plot container transparent */
-                       }"))
-    ),
-    column(
-      width = 12, # full width
-      
-      # wrapper so absolute-position elements stay anchored to tree panel
-      tags$div(
-        style = "position:relative;",
-        
-        tags$div(
-          style = "position:absolute;
+                       }"))),
+    column(width = 12, # full width
+           
+           # wrapper so absolute-position elements stay anchored to tree panel
+           tags$div(
+             style = "position:relative;",
+             
+             tags$div(
+               style = "position:absolute;
                    top:20px;
                    left:20px;
                    z-index:1000;
                    display:flex;
                    gap:8px;
                    align-items:flex-start;",
-          
-          # Search box
-          tags$div(
-            style = "background: rgba(255,255,255,0.9);
+               
+               # Search box
+               tags$div(
+                 style = "background: rgba(255,255,255,0.9);
                      padding:10px;
                      border-radius:8px;
                      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
                      width:220px;",
-            textInput(
-              "taxon_search",
-              label = NULL,
-              placeholder = "Search taxon…"
-            ),
-            actionButton(
-              "search_btn",
-              "Search",
-              width = "100%"
-            )
-          ),
-          
-          # Dice box
-          tags$div(
-            style = "background: rgba(255,255,255,0.9);
+                 textInput("taxon_search",
+                           label = NULL,
+                           placeholder = "Search taxon…"),
+                 actionButton("search_btn",
+                              "Search",
+                              width = "100%")),
+               
+               # Dice box
+               tags$div(
+                 style = "background: rgba(255,255,255,0.9);
                      padding:10px;
                      border-radius:8px;
                      box-shadow: 0 2px 6px rgba(0,0,0,0.2);",
-            actionButton("random_btn", "🎲")
-          )
-        ),
-        
-        girafeOutput(
-          "TreePlot",
-          height = "150%",
-          width = "100%"
-        )
-      )
+                 actionButton("random_btn", "🎲"))
+             ),
+             
+             girafeOutput(
+               "TreePlot",
+               height = "150%",
+               width = "100%")
+           )
     )
   ), 
   
@@ -180,9 +164,12 @@ server <- function(input, output, session) {
         opts_selection(
           type = "single",
           only_shiny = TRUE,
-          css = "fill:white;stroke:black;"), # Label flashes black when clicked
-        # opts_tooltip(css = "background:rgba(255,255,255,0.8);"),
-        opts_hover(css = "")
+          css = girafe_css(
+            css = "fill:green;stroke:black;",
+            text = "fill:inherit;stroke:none;")), # Label flashes when clicked
+        opts_hover(css = girafe_css(
+          css = "stroke:black;",
+          text = "stroke:none;")) # Border changed on hover
       )
     )
   })
@@ -193,28 +180,22 @@ server <- function(input, output, session) {
   # Find the tree node number associated with a displayed label
   label_to_node <- function(label) {
     tip_match <- which(tree$tip.label == label)
-    
     node_match <- which(tree$node.label == label) + Ntip(tree)
-
     c(tip_match, node_match)[1]
   }
   
   # Get the displayed label for a tree node number
   node_to_label <- function(node) {
-    n_tips <- Ntip(tree)
-    
-    if (node <= n_tips) {
+    if (node <= Ntip(tree)) {
       tree$tip.label[node]
     } else {
-      tree$node.label[node - n_tips]
+      tree$node.label[node - Ntip(tree)]
     }
   }
   
   # Return only the closest labeled parent clade
   get_higher_taxa <- function(label) {
     node <- label_to_node(label)
-    if (is.na(node)) return(character(0))
-    
     repeat {
       parent_row <- which(tree$edge[, 2] == node)
       
@@ -234,8 +215,6 @@ server <- function(input, output, session) {
   # Return immediate labeled children only
   get_lower_taxa <- function(label) {
     node <- label_to_node(label)
-    if (is.na(node)) return(character(0))
-    
     child_nodes <- tree$edge[tree$edge[, 1] == node, 2]
     child_labels <- vapply(child_nodes, node_to_label, character(1))
     
@@ -251,10 +230,8 @@ server <- function(input, output, session) {
     } else if (info$Anatomy == "") {
       paste0(info$CommonName, "\n", info$Description)
     } else {
-      paste0(
-        info$CommonName, "\n", info$Description,
-        "\nAnatomy to know: ", info$Anatomy
-      )
+      paste0(info$CommonName, "\n", info$Description,
+             "\nAnatomy to know: ", info$Anatomy)
     }
     
     exts <- c(".jpeg", ".jpg", ".png") # Image extentions 
@@ -269,18 +246,11 @@ server <- function(input, output, session) {
     }
     
     anat_path <- NULL
-    for (n in 1:5) {
+    for (n in 1:5) { # Support up to 5 anatomy pictures
       for (ext in exts) {
-        anat_candidate <- file.path(
-          "www", "Photos",
-          paste0(label_clicked, "_anatomy", n, ext)
-        )
-        
+        anat_candidate <- file.path("www", "Photos", paste0(label_clicked, "_anatomy", n, ext))
         if (file.exists(anat_candidate)) {
-          anat_path <- c(
-            anat_path,
-            paste0("Photos/", label_clicked, "_anatomy", n, ext)
-          )
+          anat_path <- c(anat_path, paste0("Photos/", label_clicked, "_anatomy", n, ext))
         }
       }
     }
@@ -422,8 +392,8 @@ server <- function(input, output, session) {
       ),
       
       size = "l",
-      easyClose = TRUE,
-      footer = NULL
+      easyClose = TRUE, # Press outside modal to close
+      footer = NULL # Remove dismiss button
     ))
     
     # Clicking a higher-taxon link opens that taxon's modal
@@ -525,8 +495,8 @@ server <- function(input, output, session) {
           tags$p("No similar taxa found.")
         }
       ),
-      easyClose = TRUE, 
-      footer = NULL
+      easyClose = TRUE, # Press outside modal to close
+      footer = NULL # Remove dismiss button
     ))
     
     # register observers for sanitized IDs
@@ -574,8 +544,8 @@ server <- function(input, output, session) {
         tags$p("Thanks to Wikipedia for most of the pictures")
       ),
       
-      easyClose = TRUE,
-      footer = NULL
+      easyClose = TRUE, # Press outside modal to close
+      footer = NULL # Remove dismiss button
     ))
   })
 }
