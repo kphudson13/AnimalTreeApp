@@ -40,6 +40,15 @@ ui <- fluidPage(
                       display: none !important;
                     }
                     
+                    #TreePlot {
+                      transition: filter 0.3s ease;
+                    }
+                    
+                    #TreePlot.quiz-blur {
+                      filter: blur(8px);
+                      pointer-events: none; /* can't click labels while quizzing */
+                    }
+                    
                     .app-footer p {
                       margin: 0;
                       line-height: 1.2;
@@ -54,7 +63,28 @@ ui <- fluidPage(
                         $('#search_btn').click();
                       }
                       });
+                      Shiny.addCustomMessageHandler('quiz_blur', function(on) {
+                        $('#TreePlot').toggleClass('quiz-blur', on);
+                      });
                       "))),
+  
+  # Quiz mode: send typed answer with the button click so it is never stale
+  tags$head(
+    tags$script(HTML("
+      function quizSubmit(action) {
+        Shiny.setInputValue('quiz_action', {
+          type: action,
+          answer: $('#quiz_answer').val() || '',
+          nonce: Math.random()
+        }, {priority: 'event'});
+      }
+      $(document).on('keydown', '#quiz_answer', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          quizSubmit('next');
+        }
+      });
+    "))),
   
   theme = bs_theme(preset = "morph"),
   
@@ -90,7 +120,7 @@ ui <- fluidPage(
                    z-index:1000;
                    display:flex;
                    gap:8px;
-                   align-items:flex-start;",
+                   align-items:stretch;",
                
                # Search box
                tags$div(
@@ -109,10 +139,14 @@ ui <- fluidPage(
                # Dice box
                tags$div(
                  style = "background: rgba(255,255,255,0.9);
-                     padding:10px;
-                     border-radius:8px;
-                     box-shadow: 0 2px 6px rgba(0,0,0,0.2);",
-                 actionButton("random_btn", "🎲"))
+                          padding:10px;
+                          border-radius:8px;
+                          box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+                          display:flex;
+                          flex-direction:column;
+                          gap:8px;",
+                 actionButton("random_btn", "🎲 Random", style = "flex:1;"),
+                 actionButton("quiz_btn", "📝 Quiz", style = "flex:1;"))
              ),
              
              girafeOutput(
@@ -165,7 +199,7 @@ server <- function(input, output, session) {
           type = "single",
           only_shiny = TRUE,
           css = girafe_css(
-            css = "fill:green;stroke:black;",
+            css = "stroke:black;",
             text = "fill:inherit;stroke:none;")), # Label flashes when clicked
         opts_hover(css = girafe_css(
           css = "stroke:black;",
@@ -517,6 +551,149 @@ server <- function(input, output, session) {
     labels_all <- labels_all[!is.na(labels_all) & labels_all != "" & 
                                labels_all %in% taxa_info$Clade]
     show_taxon_modal(sample(labels_all, 1))
+  })
+  
+  # ---------------- QUIZ MODE ----------------
+  quiz <- reactiveValues(active = FALSE, 
+                         current = NULL, 
+                         correct = 0, 
+                         total = 0,
+                         history = list())
+  
+  # Same pool the random button uses
+  quiz_pool <- function() {
+    labels_all <- unique(trimws(c(tree$tip.label, tree$node.label)))
+    labels_all[!is.na(labels_all) & labels_all != "" &
+                 labels_all %in% taxa_info$Clade]
+  }
+  
+  show_quiz_modal <- function(label) {
+    info <- taxa_info %>% filter(Clade == label)
+    
+    # Description WITHOUT the common name
+    desc <- if (nrow(info) == 0) {
+      ""
+    } else if (info$Anatomy == "") {
+      info$Description
+    } else {
+      paste0(info$Description, "\nAnatomy to know: ", info$Anatomy)
+    }
+    
+    # Collect main + anatomy images
+    exts <- c(".jpeg", ".jpg", ".png")
+    img_paths <- NULL
+    for (ext in exts) {
+      if (file.exists(file.path("www", "Photos", paste0(label, ext)))) {
+        img_paths <- c(img_paths, paste0("Photos/", label, ext))
+        break
+      }
+    }
+    for (n in 1:5) {
+      for (ext in exts) {
+        if (file.exists(file.path("www", "Photos", paste0(label, "_anatomy", n, ext)))) {
+          img_paths <- c(img_paths, paste0("Photos/", label, "_anatomy", n, ext))
+        }
+      }
+    }
+    
+    showModal(modalDialog(
+      title = div(
+        style = "display:flex; gap:8px; align-items:center; width:100%;",
+        div(style = "flex:1;",
+            textInput("quiz_answer", label = NULL, width = "100%",
+                      placeholder = "Type the label of this taxon…")),
+        tags$button(type = "button", class = "btn btn-primary",
+                    onclick = "quizSubmit('next')", "Next"),
+        tags$button(type = "button", class = "btn btn-outline-danger",
+                    onclick = "quizSubmit('end')", "End quiz")
+      ),
+      
+      tags$p(paste0("Score: ", quiz$correct, " / ", quiz$total),
+             style = "font-size:0.85rem; color:#666;"),
+      tags$pre(style = "white-space:pre-wrap;", desc),
+      lapply(img_paths, function(p) {
+        tags$img(src = p, style = "display:block; margin:10px auto; max-width:80%; height:auto;")
+      }),
+      
+      size = "l",
+      easyClose = FALSE, # clicking outside / Esc will not end the quiz
+      footer = NULL
+    ))
+  }
+  
+  observeEvent(input$quiz_btn, {
+    quiz$active  <- TRUE
+    session$sendCustomMessage("quiz_blur", TRUE) # blur the tree
+    quiz$correct <- 0
+    quiz$total   <- 0
+    quiz$history <- list()
+    pool <- quiz_pool()
+    quiz$current <- pool[sample.int(length(pool), 1)]
+    show_quiz_modal(quiz$current)
+  })
+  
+  record_answer <- function(raw_answer) {
+    typed <- trimws(raw_answer)
+    is_correct <- tolower(typed) == tolower(quiz$current)
+    
+    quiz$total <- quiz$total + 1
+    if (is_correct) quiz$correct <- quiz$correct + 1
+    
+    quiz$history[[length(quiz$history) + 1]] <- list(
+      taxon   = quiz$current,
+      answer  = typed,
+      correct = is_correct
+    )
+  }
+  
+  observeEvent(input$quiz_action, {
+    req(quiz$active)
+    act <- input$quiz_action
+    
+    if (identical(act$type, "next")) {
+      record_answer(act$answer)
+      
+      pool <- setdiff(quiz_pool(), quiz$current)
+      quiz$current <- pool[sample.int(length(pool), 1)]
+      removeModal() # stops the scrolling bug
+      show_quiz_modal(quiz$current)
+      
+    } else if (identical(act$type, "end")) {
+      # If something was typed on the current question, grade it too
+      if (nzchar(trimws(act$answer))) record_answer(act$answer)
+      
+      quiz$active <- FALSE
+      session$sendCustomMessage("quiz_blur", FALSE) # unblur the tree
+      
+      pct <- if (quiz$total > 0) round(100 * quiz$correct / quiz$total) else 0
+      
+      # One colored row per question
+      history_ui <- lapply(quiz$history, function(h) {
+        tags$div(
+          style = paste0(
+            "padding:8px 12px; margin-bottom:6px; border-radius:6px; ",
+            "border-left:5px solid ", if (h$correct) "#2e7d32" else "#c62828", "; ",
+            "background:", if (h$correct) "#e8f5e9" else "#ffebee", ";"),
+          tags$strong(paste0(if (h$correct) "✔ " else "✘ ", h$taxon)),
+          tags$div(
+            style = "font-size:0.9rem;",
+            paste0("Your answer: ", if (nzchar(h$answer)) h$answer else "(blank)")
+          )
+        )
+      })
+      
+      removeModal() # stops the scrolling bug
+      showModal(modalDialog(
+        title = "Quiz finished",
+        tags$h3(paste0(quiz$correct, " / ", quiz$total, " correct")),
+        if (quiz$total > 0) tags$p(paste0(pct, "%")),
+        if (length(history_ui) > 0) {
+          tags$div(style = "max-height:50vh; overflow-y:auto;", history_ui)
+        },
+        easyClose = TRUE,
+        footer = modalButton("Close")
+      ))
+    }
   })
   
   # For credits modal
